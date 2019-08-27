@@ -1,0 +1,83 @@
+[@霸血激发]
+{
+#IF
+CHECKVAR HUMAN 苍天霸血 > 1
+#ACT
+MESSAGEBOX  【提示:】\失败：您己激活「苍天霸血」,请勿重复使用！
+break
+
+#IF
+CHECKNAMELIST ..\QUESTDIARY\每日清零\苍天霸血名单.TXT
+#ACT
+MESSAGEBOX  【提示:】\失败：今日您己激活过「苍天霸血」,请等明天再次使用！
+#ELSEACT
+CALCVAR HUMAN 苍天霸血 = 600
+SAVEVAR HUMAN 苍天霸血 ..\QuestDiary\每日清零\每日游戏数据.txt
+ADDNAMELIST ..\QuestDiary\每日清零\苍天霸血名单.TXT
+goto @检测完毕
+
+[@检测完毕]
+;HP增加
+#IF
+#ACT
+MOV D1 <$MAXHP>
+MUL N301 <$STR(D1)> 130
+DIV N301 <$STR(N301)> 100
+DEC N301 <$STR(D1)>
+ChangeModeEx 3 <$HUMAN(苍天霸血)> <$STR(N301)>
+sendmsg 6 生命增加<$STR(N301)>点,持续<$HUMAN(苍天霸血)>秒
+
+
+;MP增加
+#IF
+#ACT
+MOV D2 <$MAXMP>
+MUL N302 <$STR(D2)> 130
+DIV N302 <$STR(N302)> 100
+DEC N302 <$STR(D2)>
+ChangeModeEx 4 <$HUMAN(苍天霸血)> <$STR(N302)>
+sendmsg 6 魔法增加<$STR(N302)>点,持续<$HUMAN(苍天霸血)>秒
+
+;防御
+#IF
+#ACT
+MOV D3 <$MAXAC>
+MUL N303 <$STR(D3)> 130
+DIV N303 <$STR(N303)> 100
+DEC N303 <$STR(D3)>
+MOV D4 <$MAXMAC>
+MUL N304 <$STR(D5)> 130
+DIV N304 <$STR(N304)> 100
+DEC N304 <$STR(D5)>
+ChangeHumAbility 2 + <$STR(N303)>
+ChangeHumAbility 4 + <$STR(N304)>
+sendmsg 6 防御增加<$STR(N303)>点,持续<$HUMAN(苍天霸血)>秒
+sendmsg 6 魔御增加<$STR(N304)>点,持续<$HUMAN(苍天霸血)>秒
+SetOnTimer 101 1
+SetIcon 1 0 20 0 -10 1 0
+SetClientBuff 102 2 8 -1 700 590 {霸血属性：防御增加<$STR(N303)>点.魔御增加<$STR(N304)>点.持续<$HUMAN(苍天霸血)>秒.|253} (开启)
+ShowClientBuff 2 1
+sendmsg 5 「苍天霸血」开始计时，使用时间不足30分钟照常计算~
+SendCenterMsg 180 251 ===距离「苍天霸血」消失时间还剩%d=== 0 <$HUMAN(苍天霸血)> @结束1-1霸血
+
+[@结束1-1霸血]
+#if
+#act
+ChangeHumAbility 2 - <$STR(N303)>
+ChangeHumAbility 4 - <$STR(N304)>
+SetOffTimer 101
+SETICON 1 -1
+ShowClientBuff 2 0
+sendmsg 6 〖提示〗苍天霸血护体已结束.
+MOV N301 0
+MOV N302 0
+MOV N303 0
+MOV N304 0
+MOV D1 0
+MOV D2 0
+MOV D3 0
+MOV D4 0
+break
+
+
+}

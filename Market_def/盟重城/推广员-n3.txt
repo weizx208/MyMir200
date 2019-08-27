@@ -1,0 +1,170 @@
+[@main]
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\推广数据\推广次数.txt <$USERNAME> 邀请次数 <$STR(N$推广数)>
+ReadConfigFileItem ..\QuestDiary\推广数据\22级人数.txt <$USERNAME> 邀请次数 <$STR(N$推广人数)>
+#say
+当前累计推广新人人数：     {<$STR(N$推广数)>/FCOLOR=116}人\
+当前累计推广达到22级人数： {<$STR(N$推广人数)>/FCOLOR=116}人\
+<[填写邀请人]/@@InPutString888>  <[激活我的邀请资格]/@JH>  <领取推广奖励/@领取>　　\
+<[推广说明]/FCOLOR=116>    <邀请新人之前请先激活邀请码>\
+1:新人输入已激活资格的邀请人游戏人物名称则获得成长礼包一个。\
+2:新人朋友达到22级时，邀请人将获得10元宝的奖励。\
+3:新人朋友有 5个达到22级时，邀请人将获得<宣传大使>封号。\
+4:新人朋友有10个达到22级时，邀请人将随机获得<魔神级>宠物蛋一个。\
+<每个IP和机器码只作用一次。/FCOLOR=250>\
+
+
+[@JH]
+#act
+messagebox 激活后将无法填写邀请人。是否激活？ @激活 @不激活
+
+[@不激活]
+#act
+break
+
+[@激活]
+#IF
+check [888] 0
+#ACT
+SET [888] 1
+ADDNAMELIST ..\QuestDiary\推广数据\激活人物.txt
+WriteConfigFileItem ..\QuestDiary\推广数据\机器码.txt <$USERNAME> 机器 <$MACHINEID>
+messagebox 邀请资格：<已激活>
+#ELSEact
+messagebox 邀请资格：<已激活>
+
+[@InPutString888]
+#IF
+CHECKTEXTLIST ..\QuestDiary\推广数据\已使用机器码.txt <$MACHINEID>
+#act
+messagebox 请勿使用小号刷奖励。
+break
+#elseact
+AddTextList ..\QuestDiary\推广数据\已使用机器码.txt <$MACHINEID>
+
+#IF
+CHECKIPLIST ..\QuestDiary\推广数据\IP.txt
+#ACT
+messagebox 请勿使用虚拟机刷奖励。
+break
+#elseact
+ADDIPLIST ..\QuestDiary\推广数据\IP.txt
+
+
+#IF
+#act
+ReadConfigFileItem ..\QuestDiary\推广数据\对应邀请人.txt <$USERNAME> 邀请人 <$STR(S$对应邀请人)>
+
+#IF
+NOT EQUAL S$对应邀请人 
+#ACT
+messagebox  \　\你的邀请人是:<$STR(S$对应邀请人)>
+BREAK
+
+#IF
+CHECKTEXTLIST ..\QuestDiary\推广数据\激活人物.txt <$STR(S888)>
+#ACT
+ReadConfigFileItem ..\QuestDiary\推广数据\机器码.txt <$STR(S888)> 机器 <$STR(S$对应机器)>
+goto @执行计算
+#ELSEACT
+MESSAGEBOX \　\你输入的邀请人不存在，或者未激活邀请码。
+
+[@执行计算]
+#IF
+EQUAL <$STR(S888)> <$USERNAME>
+#ACT
+MESSAGEBOX \　\对不起，您不能当自己的推广人！
+BREAK
+
+#IF
+EQUAL S$对应机器 <$MACHINEID>
+#ACT
+MESSAGEBOX \　\对不起，您不能当自己小号的推广人！
+BREAK
+
+#IF
+#ACT
+MESSAGEBOX \　\您输入的邀请人是【<$STR(S888)>】，确定吗？ @推广 @取消
+
+
+[@推广]
+#IF
+#ACT
+WriteConfigFileItem ..\QuestDiary\推广数据\对应邀请人.txt <$USERNAME> 邀请人 <$STR(S888)>
+ReadConfigFileItem ..\QuestDiary\推广数据\推广次数.txt <$STR(S888)> 邀请次数 <$STR(N$邀请次数)>
+INC N$邀请次数 1
+WriteConfigFileItem ..\QuestDiary\推广数据\推广次数.txt <$STR(S888)> 邀请次数 <$STR(N$邀请次数)>
+GiveStateItem 成长礼包 1 1 0 1 1 1
+goto @main
+
+[@取消]
+#act
+break
+
+[@领取]
+您当前的成功邀请了<$STR(N$推广数)>个新人玩家。     <领取奖励/@LJ1>\ \
+您邀请的玩家中有<$STR(N$推广人数)>个达到了22级。     <领取奖励/@LJ2>\ \
+
+[@LJ1]
+#IF
+LARGE N$推广数 0
+#ACT
+MOV N$推广金币 <$STR(N$推广数)>
+MUL N$推广金币 50000
+messagebox 您当前邀请的人数为<$STR(N$推广数)>，共计金币<$STR(N$推广金币)>。是否全部领取？ @是啊 @取消
+
+[@是啊]
+#IF
+#ACT
+give 金币 <$STR(N$推广金币)>
+WriteConfigFileItem ..\QuestDiary\推广数据\推广次数.txt <$USERNAME> 邀请次数 0
+goto @main
+
+[@LJ2]
+#IF
+NOT CheckActiveFengHao 宣传大使
+LARGE N$推广人数 4
+SMALL N$推广人数 10
+#ACT
+messagebox 您当前邀请的达到22的玩家人数为<$STR(N$推广人数)>，是否领取<宣传大使>封号？ @是啊1 @取消
+break
+
+#IF
+NOT checkitem 魔神蛋(鸡) 1
+LARGE N$推广人数 9
+#ACT
+messagebox 您当前邀请的达到22的玩家人数为<$STR(N$推广人数)>，是否领取<魔神级宠物蛋>？ @是啊2 @取消
+break
+
+#IF
+#ACT
+MOV N$元宝 <$STR(N$推广人数)>
+MUL N$元宝 10
+messagebox 您当前邀请的达到22的玩家人数为<$STR(N$推广人数)>，是否领取<$STR(N$元宝)>元宝？ @是啊3 @取消
+
+[@是啊3]
+#ACT
+WriteConfigFileItem ..\QuestDiary\推广数据\22级人数.txt <$USERNAME> 邀请次数 0
+GAMEGOLD + <$STR(N$元宝)>
+goto @main
+
+[@是啊1]
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\推广数据\22级人数.txt <$USERNAME> 邀请次数 <$STR(N$人数查看)>
+DEC N$人数查看 5
+WriteConfigFileItem ..\QuestDiary\推广数据\22级人数.txt <$USERNAME> 邀请次数 <$STR(N$人数查看)>
+give GIVEFENGHAO 宣传大使 1
+GAMEGOLD + 50
+goto @main
+
+[@是啊2]
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\推广数据\22级人数.txt <$USERNAME> 邀请次数 <$STR(N$人数查看)>
+DEC N$人数查看 10
+WriteConfigFileItem ..\QuestDiary\推广数据\22级人数.txt <$USERNAME> 邀请次数 <$STR(N$人数查看)>
+GiveStateItem 魔神蛋(鸡) 1 1 0 1 1 1
+GAMEGOLD + 100
+goto @main

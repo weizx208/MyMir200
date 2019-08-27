@@ -1,0 +1,28 @@
+[@头盔触发]
+{
+#IF
+EQUAL N$骷髅头盔 1
+#ACT
+SendCenterMsg 180 251 被动技能:召唤骷髅(低级)正在冷却中... 0 3
+BREAK
+
+#if
+checkitemw 骷髅头盔
+#act
+RECALLMOB 骷髅 0 0 0
+RECALLMOB 骷髅 0 0 0
+MOV N$骷髅头盔 1
+SetOnTimer 0 300 1
+}
+
+[@头盔触发1]
+{
+#IF
+checkitemw 骷髅头盔
+#ACT
+#ELSEACT
+KILLCALLMOB 骷髅 2 1
+
+
+
+}

@@ -1,0 +1,8 @@
+#AutoRun NPC RUNONDAY 20:00 @副本重置
+
+#AutoRun NPC HOUR 1 @天气系统
+
+#AutoRun NPC HOUR 2 @清除陵墓
+
+#AutoRun NPC HOUR 1 @清除沃玛魔神
+

@@ -1,0 +1,107 @@
+[@特殊装备]
+{
+#IF
+CHECKTEXTLIST ..\QuestDiary\怪物分类\半兽人.txt <$ATTACKMONSTER_NAME>
+#act
+goto @半兽触发
+
+#IF
+#ACT
+goto @野性戒指
+
+#IF
+CHECKTEXTLIST ..\QuestDiary\怪物分类\死灵类.txt <$ATTACKMONSTER_NAME>
+#ACT
+goto @骷髅触发
+
+#IF
+CHECKTEXTLIST ..\QuestDiary\怪物分类\骷髅类.txt <$ATTACKMONSTER_NAME>
+#ACT
+goto @骷髅触发1
+
+[@骷髅触发1]
+#IF
+CHECKITEMW 死灵手镯 2
+#act
+MOVR N$死灵手镯 4 17
+M.HumanHP - <$STR(N$死灵手镯)>
+BREAK
+
+#IF
+CHECKITEMW 死灵手镯 1
+#act
+MOVR N$死灵手镯 2 9
+M.HumanHP - <$STR(N$死灵手镯)>
+
+[@骷髅触发]
+#IF
+CHECKITEMW 死灵之刃
+#ACT
+MOV N$死灵之刃 <$ATTACKMONSTER_MAXHP>
+DIV N$死灵之刃 100
+M.HumanHP - <$STR(N$死灵之刃)>
+M.PLAYEFFECT 8 1450 10 1 100 0 0 0 0
+
+[@半兽触发]
+#IF
+CHECKITEMW 野性戒指 2
+#act
+M.HumanHP - 14
+break
+
+#IF
+CHECKITEMW 野性戒指 1
+#act
+M.HumanHP - 7
+
+[@野性戒指]
+#IF
+CHECKITEMW 野性戒指 2
+random 3
+#act
+MOV N$狂怒 <$HITSPD>
+INC N$狂怒 6
+ChangeSpeed 2 <$STR(N$狂怒)> 10
+CHANGESTATE 10 10 100 40
+MOV N$狂怒 0
+SetClientBuff 83 5 2 10 9 80 狂怒:攻击速度提升。
+SetClientBuff 83 6 3 10 9 115 嗜血:物理攻击附加吸血。
+break
+
+#IF
+CHECKITEMW 野性戒指 1
+random 6
+#act
+MOV N$狂怒 <$HITSPD>
+INC N$狂怒 3
+ChangeSpeed 2 <$STR(N$狂怒)> 5
+CHANGESTATE 10 5 100 20
+MOV N$狂怒 0
+SetClientBuff 83 5 2 5 9 80 狂怒:攻击速度提升。
+SetClientBuff 83 6 3 5 9 115 嗜血:物理攻击附加吸血。
+
+
+}
+
+[@特殊装备1]
+{
+#IF
+CHECKTEXTLIST ..\QuestDiary\怪物分类\半兽人.txt <$ATTACKMONSTER_NAME>
+#act
+goto @半兽触发1
+
+[@半兽触发1]
+#IF
+CHECKITEMW 野性戒指 2
+#act
+M.HumanHP - 14
+break
+
+#IF
+CHECKITEMW 野性戒指 1
+#act
+M.HumanHP - 7
+break
+
+
+}

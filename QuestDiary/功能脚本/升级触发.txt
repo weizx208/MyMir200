@@ -1,0 +1,101 @@
+[@升级触发]
+{
+#IF
+NOT ISDUMMY
+#ACT
+GMExecute 开始提问 @战力复位
+
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\推广数据\对应邀请人.txt <$USERNAME> 邀请人 <$STR(S$对应邀请人)>
+
+#IF
+NOT EQUAL S$对应邀请人 
+#ACT
+ReadConfigFileItem ..\QuestDiary\推广数据\22级人数.txt <$STR(S$对应邀请人)> 邀请次数 <$STR(N$邀请次数22)>
+INC N$邀请次数22 1
+WriteConfigFileItem ..\QuestDiary\推广数据\22级人数.txt <$STR(S$对应邀请人)> 邀请次数 <$STR(N$邀请次数22)>
+
+#IF
+checkjob wizard
+CHECKLEVELEX = 7
+#ACT
+SENDMSG 0 玩家「<$USERNAME>」通过努力已经达到了7级，希望有位勇士收为徒弟，继续探知神秘的玛法大陆。
+break
+
+#IF
+checkjob warrior
+CHECKLEVELEX = 7
+#ACT
+SENDMSG 0 玩家「<$USERNAME>」通过努力已经达到了7级，希望有位勇士收为徒弟，继续探知神秘的玛法大陆。
+break
+
+#IF
+checkjob taoist
+CHECKLEVELEX = 7
+#ACT
+SENDMSG 0 玩家「<$USERNAME>」通过努力已经达到了7级，希望有位勇士收为徒弟，继续探知神秘的玛法大陆。
+break
+
+
+#IF
+checkjob taoist
+CHECKLEVELEX = 25
+#ACT
+give 神圣战甲术 1
+give 降魔 1
+give 灵魂战衣(男) 1
+give 灵魂战衣(女) 1
+give 道士头盔 1
+give 竹笛 1
+give 道士手镯 2
+give 降妖除魔戒指 2
+give 超级金创药 2
+give 超级魔法药 3
+SENDMSG 7 提示：恭喜您升级到25级，可以学习神圣战甲术技能！
+mapmove 0 331 268
+break
+
+#IF
+checkjob warrior
+CHECKLEVELEX = 25
+#ACT
+give 刺杀剑术 1
+give 凝霜 1
+give 重盔甲(男) 1
+give 重盔甲(女) 1
+give 道士头盔 1
+give 蓝翡翠项链 1
+give 坚固手套 2
+give 珊瑚戒指 2
+give 超级金创药 5
+SENDMSG 7 提示：恭喜您升级到25级，可以学习刺杀剑术技能！
+mapmove 0 331 268
+break
+
+#IF
+checkjob wizard
+CHECKLEVELEX = 25
+#ACT
+give 偃月 1
+give 魔法长袍(男) 1
+give 魔法长袍(女) 1
+give 道士头盔 1
+give 放大镜 1
+give 黑檀手镯 2
+give 降妖除魔戒指 2
+give 超级金创药 1
+give 超级魔法药 4
+mapmove 0 331 268
+break
+
+#IF
+checkjob warrior
+CHECKLEVELEX = 28
+#ACT
+PLAYMAGICBALLEFFECT 88 1060 14 100 180 0 1 0
+PLAYMAGICBALLEFFECT 88 1080 14 100 180 1 1 0
+
+
+
+}

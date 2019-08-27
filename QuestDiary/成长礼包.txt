@@ -1,0 +1,18 @@
+[@成长礼包]
+{
+#IF
+#ACT
+GIVE 金币 50000
+GAMEGOLD + 5
+messagebox 获得金币x50000，元宝x5。
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,1459 @@
+[@main]
+#IF
+ISADMIN
+#say
+—————————<管理员后台操控平台>———现在时间：<$DATETIME>————————\ 
+<☆/AUTOCOLOR=154><≡≡≡≡≡≡≡/AUTOCOLOR=245><☆/AUTOCOLOR=154><热血传奇天果纯真版><☆/AUTOCOLOR=154><≡≡≡≡≡≡≡/AUTOCOLOR=245><☆/AUTOCOLOR=154>\ \
+<[怪物攻城开关]/@怪物攻城>      <[装备调整系统]/@装备调整>      <[管理超级传送]/@使用移动> \
+<[召唤怪物宝宝]/@召唤宝宝>      \
+<[变更自身职业]/@职业变更>      <[变更自身性别]/@性别变更>      <[改变自身发型]/@修改发型> \ \
+<☆/AUTOCOLOR=154><≡≡≡≡≡≡≡/AUTOCOLOR=245><☆/AUTOCOLOR=154><天果纯真版后台界面><☆/AUTOCOLOR=154><≡≡≡≡≡≡≡/AUTOCOLOR=245><☆/AUTOCOLOR=154>\ \
+——————————————————————————————\
+当前在线人数为:<$USERCOUNT>人                       <返回到盟重土城/@返回主城>\
+#elseact
+messagebox 对不起!!!你不是管理员!!!快点闪开!!!!
+
+;--------------------------------------------------------------------------------
+
+[@怪物攻城]
+这里可以控制<怪物攻城>，你想要怪物进攻哪个城市？\ \
+<盟重省/@盟重省>　　<比奇城/@比奇城>　　<封魔谷/@封魔谷>　　<苍月岛/@苍月岛>\ \
+这里可以选择<清除怪物>，你想清除哪个城里的怪物?\ \
+<盟重省/@清盟重省>　　<比奇城/@清比奇城>　　<封魔谷/@清封魔谷>　　<苍月岛/@清苍月岛>     <返回/@作弊界面>
+[@盟重省]
+请选择进攻盟重省的怪物！\ 
+<暗之系怪物进攻/@盟暗之系>\
+<牛魔系怪物进攻/@盟牛魔系>\
+<虹魔系怪物进攻/@盟虹魔系>\
+<BOSS系怪物进攻/@盟BOSS系>\
+<返回/@怪物攻城>
+[@比奇城]
+请选择进攻比奇城的怪物！\ 
+<暗之系怪物进攻/@比暗之系>\
+<牛魔系怪物进攻/@比牛魔系>\
+<虹魔系怪物进攻/@比虹魔系>\
+<BOSS系怪物进攻/@比BOSS系>\
+<返回/@怪物攻城>
+[@封魔谷]
+请选择进攻封魔谷的怪物！\ 
+<暗之系怪物进攻/@封暗之系>\
+<牛魔系怪物进攻/@封牛魔系>\
+<虹魔系怪物进攻/@封虹魔系>\
+<BOSS系怪物进攻/@封BOSS系>\
+<返回/@怪物攻城>
+[@苍月岛]
+请选择进攻苍月岛的怪物！\ 
+<暗之系怪物进攻/@苍暗之系>\
+<牛魔系怪物进攻/@苍牛魔系>\
+<虹魔系怪物进攻/@苍虹魔系>\
+<BOSS系怪物进攻/@苍BOSS系>\
+<返回/@怪物攻城>
+
+[@苍BOSS系]
+#IF
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 1
+PARAM4 50
+MOBPLACE 黄泉教主
+MOBPLACE 重装使者
+MOBPLACE 地藏王
+MOBPLACE 沃玛教主
+MOBPLACE 虹魔教主
+MOBPLACE 祖玛教主
+SENDMSG 0 怪物进攻了苍月岛！
+goto @苍月岛
+
+[@苍虹魔系]
+#IF
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 5
+PARAM4 50
+MOBPLACE 虹魔蝎卫
+MOBPLACE 虹魔猪卫
+SENDMSG 0 怪物进攻了苍月岛！
+goto @苍月岛
+
+[@苍牛魔系]
+#IF
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 3
+PARAM4 50
+MOBPLACE 牛魔将军8
+MOBPLACE 牛魔王
+MOBPLACE 牛魔祭司8
+MOBPLACE 牛魔法师8
+MOBPLACE 牛魔战士
+SENDMSG 0 怪物进攻了苍月岛！
+goto @苍月岛
+
+[@苍暗之系]
+#IF
+#ACT
+MISSION 5 141 337
+PARAM1 177
+PARAM2 315
+PARAM3 2
+PARAM4 50
+MOBPLACE 暗之双头血魔
+MOBPLACE 暗之双头金刚
+MOBPLACE 暗之骷髅精灵
+MOBPLACE 暗之黄泉教主
+MOBPLACE 暗之虹魔教主
+MOBPLACE 暗之沃玛教主
+MOBPLACE 暗之牛魔王
+SENDMSG 0 怪物进攻了苍月岛！
+goto @苍月岛
+
+[@封BOSS系]
+#IF
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 1
+PARAM4 50
+MOBPLACE 黄泉教主
+MOBPLACE 重装使者
+MOBPLACE 触龙神
+MOBPLACE 地藏王
+MOBPLACE 沃玛教主
+MOBPLACE 虹魔教主
+MOBPLACE 祖玛教主
+SENDMSG 0 怪物进攻了封魔谷！
+goto @封魔谷
+
+[@封虹魔系]
+#IF
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 5
+PARAM4 50
+MOBPLACE 虹魔蝎卫
+MOBPLACE 虹魔猪卫
+SENDMSG 0 怪物进攻了封魔谷！
+goto @封魔谷
+
+[@封牛魔系]
+#IF
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 3
+PARAM4 50
+MOBPLACE 牛魔将军8
+MOBPLACE 牛魔王
+MOBPLACE 牛魔祭司8
+MOBPLACE 牛魔法师8
+MOBPLACE 牛魔战士
+SENDMSG 0 怪物进攻了封魔谷！
+goto @封魔谷
+
+[@封暗之系]
+#IF
+#ACT
+MISSION 4 240 200
+PARAM1 202
+PARAM2 226
+PARAM3 2
+PARAM4 50
+MOBPLACE 暗之双头血魔
+MOBPLACE 暗之双头金刚
+MOBPLACE 暗之骷髅精灵
+MOBPLACE 暗之黄泉教主
+MOBPLACE 暗之虹魔教主
+MOBPLACE 暗之沃玛教主
+MOBPLACE 暗之牛魔王
+SENDMSG 0 怪物进攻了封魔谷！
+goto @封魔谷
+
+[@比BOSS系]
+#IF
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 1
+PARAM4 50
+MOBPLACE 黄泉教主
+MOBPLACE 重装使者
+MOBPLACE 触龙神
+MOBPLACE 地藏王
+MOBPLACE 沃玛教主
+MOBPLACE 虹魔教主
+MOBPLACE 祖玛教主
+SENDMSG 0 怪物进攻了比奇城！
+goto @比奇城
+
+[@比虹魔系]
+#IF
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 5
+PARAM4 50
+MOBPLACE 虹魔蝎卫
+MOBPLACE 虹魔猪卫
+SENDMSG 0 怪物进攻了比奇城！
+goto @比奇城
+
+[@比牛魔系]
+#IF
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 3
+PARAM4 50
+MOBPLACE 牛魔将军8
+MOBPLACE 牛魔王
+MOBPLACE 牛魔祭司8
+MOBPLACE 牛魔法师8
+MOBPLACE 牛魔战士
+SENDMSG 0 怪物进攻了比奇城！
+goto @比奇城
+
+[@比暗之系]
+#IF
+#ACT
+MISSION 0 334 266
+PARAM1 247
+PARAM2 261
+PARAM3 2
+PARAM4 50
+MOBPLACE 暗之双头血魔
+MOBPLACE 暗之双头金刚
+MOBPLACE 暗之骷髅精灵
+MOBPLACE 暗之黄泉教主
+MOBPLACE 暗之虹魔教主
+MOBPLACE 暗之沃玛教主
+MOBPLACE 暗之牛魔王
+SENDMSG 0 怪物进攻了比奇城！
+goto @比奇城
+
+[@盟BOSS系]
+#IF
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 1
+PARAM4 50
+MOBPLACE 黄泉教主
+MOBPLACE 重装使者
+MOBPLACE 触龙神
+MOBPLACE 地藏王
+MOBPLACE 沃玛教主
+MOBPLACE 虹魔教主
+MOBPLACE 祖玛教主
+SENDMSG 0 怪物进攻了盟重省！
+goto @盟重省
+
+[@盟虹魔系]
+#IF
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 5
+PARAM4 50
+MOBPLACE 虹魔蝎卫
+MOBPLACE 虹魔猪卫
+SENDMSG 0 怪物进攻了盟重省！
+goto @盟重省
+
+[@盟牛魔系]
+#IF
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 3
+PARAM4 50
+MOBPLACE 牛魔将军8
+MOBPLACE 牛魔王
+MOBPLACE 牛魔祭司8
+MOBPLACE 牛魔法师8
+MOBPLACE 牛魔战士
+SENDMSG 0 怪物进攻了盟重省！
+goto @盟重省
+
+[@盟暗之系]
+#IF
+#ACT
+MISSION 3 330 330
+PARAM1 294
+PARAM2 341
+PARAM3 2
+PARAM4 50
+MOBPLACE 暗之双头血魔
+MOBPLACE 暗之双头金刚
+MOBPLACE 暗之骷髅精灵
+MOBPLACE 暗之黄泉教主
+MOBPLACE 暗之虹魔教主
+MOBPLACE 暗之沃玛教主
+MOBPLACE 暗之牛魔王
+SENDMSG 0 怪物进攻了盟重省！
+goto @盟重省
+
+[@清盟重省]
+#IF
+#ACT
+CLEARMAPMON 3
+SENDMSG 6 盟重省怪物清除完毕！
+goto @管理
+
+[@清比奇城]
+#IF
+#ACT
+CLEARMAPMON 0
+SENDMSG 6 怪物清除完毕！
+goto @管理
+
+[@清苍月岛]
+#IF
+#ACT
+CLEARMAPMON 5
+SENDMSG 6 怪物清除完毕！
+goto @管理
+
+[@清封魔谷]
+#IF
+#ACT
+CLEARMAPMON 4
+SENDMSG 6 怪物清除完毕！
+goto @管理
+
+;--------------------------------------------------------------------------------
+
+[@装备调整]
+※<〓〓〓〓〓〓〓〓〓>装备调整菜单<〓〓〓〓〓〓〓〓〓>※\
+附加∶<手镯/@item5> <戒指/@item7> <属性> 注意调整范围∶<0-255>...\
+附加∶<勋章/@item9> <腰带/@item8> <属性> 注意调整范围∶<0-255>...\
+附加∶<武器/@item1> <靴子/@item6> <属性> 注意调整范围∶<0-255>...\
+附加∶<头盔/@item4> <盔甲/@item0> <属性> 注意调整范围∶<0-255>...\
+附加∶<项链/@item3> \ \
+ <作弊首页/@作弊界面>
+
+[@item6]
+#IF
+  CHECKITEMTYPE 11 28
+#ACT
+  BREAK
+#SAY
+
+※<〓〓〓〓〓〓〓〓〓>靴子调整菜单<〓〓〓〓〓〓〓〓〓>※\
+ 「调整<$RING_L><防御>」　<＋/@XZDC1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><魔御>」　<＋/@XZMC1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><攻击>」　<＋/@XZDS1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><魔法>」　<＋/@XZXY1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><道术>」　<＋/@XZZQ1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><持久>」　<＋/@XZCJ1>　注意调整范围∶<0-255>...　　　　<返回/@装备调整>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的靴子戴在身上...\ \
+
+<返回/@装备调整>\
+;-----------------------------------------------------------------------
+[@XZDC1]
+#ACT
+  UPGRADEITEMEX 11 0 1 1 0
+  goto @item6
+
+[@XZMC1]
+#ACT
+  UPGRADEITEMEX 11 1 1 1 0
+  goto @item6
+
+[@XZDS1]
+#ACT
+  UPGRADEITEMEX 11 2 1 1 0
+  goto @item6
+
+[@XZZQ1]
+#ACT
+  UPGRADEITEMEX 11 4 1 1 0
+  goto @item6
+
+[@XZXY1]
+#ACT
+  UPGRADEITEMEX 11 3 1 1 0
+  goto @item6
+
+[@XZCJ1]
+#ACT
+  UPGRADEITEMEX 11 14 1 1 0
+  goto @item6
+;-----------------------------------------------------------------------
+[@item8]
+#IF
+  CHECKITEMTYPE 10 27
+#ACT
+  BREAK
+#SAY
+※<〓〓〓〓〓〓〓〓〓>腰带调整菜单<〓〓〓〓〓〓〓〓〓>※\
+ 「调整<$RING_L><防御>」　<＋/@YDDC1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><魔御>」　<＋/@YDMC1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><攻击>」　<＋/@YDDS1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><魔法>」　<＋/@YDXY1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><道术>」　<＋/@YDZQ1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><持久>」　<＋/@YDCJ1>　注意调整范围∶<0-255>...　　　　<返回/@装备调整>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的腰带戴在身上...\ \
+
+<返回/@装备调整>\
+;-----------------------------------------------------------------------
+[@YDDC1]
+#ACT
+  UPGRADEITEMEX 10 0 1 1 0
+  goto @item8
+
+[@YDMC1]
+#ACT
+  UPGRADEITEMEX 10 1 1 1 0
+  goto @item8
+
+[@YDDS1]
+#ACT
+  UPGRADEITEMEX 10 2 1 1 0
+  goto @item8
+
+[@YDZQ1]
+#ACT
+  UPGRADEITEMEX 10 4 1 1 0
+  goto @item8
+
+[@YDXY1]
+#ACT
+  UPGRADEITEMEX 10 3 1 1 0
+  goto @item8
+
+[@YDCJ1]
+#ACT
+  UPGRADEITEMEX 10 14 1 1 0
+  goto @item8
+[@item9]
+#IF
+  CHECKITEMTYPE 2 30
+#ACT
+  BREAK
+#SAY
+※<〓〓〓〓〓〓〓〓〓>勋章调整菜单<〓〓〓〓〓〓〓〓〓>※\
+ 「调整<$RING_L><防御>」　<＋/@XUDC1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><魔御>」　<＋/@XUMC1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><攻击>」　<＋/@XUDS1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><魔法>」　<＋/@XUXY1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><道术>」　<＋/@XUZQ1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><持久>」　<＋/@XUCJ1>　注意调整范围∶<0-255>...　　　　<返回/@装备调整>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的勋章戴在身上...\ \
+
+<返回/@装备调整>\
+;-----------------------------------------------------------------------
+[@XUDC1]
+#ACT
+  UPGRADEITEMEX 2 0 1 1 0
+  goto @item9
+
+[@XUMC1]
+#ACT
+  UPGRADEITEMEX 2 1 1 1 0
+  goto @item9
+
+[@XUDS1]
+#ACT
+  UPGRADEITEMEX 2 2 1 1 0
+  goto @item9
+
+[@XUZQ1]
+#ACT
+  UPGRADEITEMEX 2 4 1 1 0
+  goto @item9
+
+[@XUXY1]
+#ACT
+  UPGRADEITEMEX 2 3 1 1 0
+  goto @item9
+
+[@XUCJ1]
+#ACT
+  UPGRADEITEMEX 2 14 1 1 0
+  goto @item9
+[@item7]
+#IF
+  checkitemTYPE 7 22
+#ACT
+  BREAK
+#SAY
+※<〓〓〓〓〓〓〓〓〓>戒指调整菜单<〓〓〓〓〓〓〓〓〓>※\
+ 「调整<$RING_L><防御>」　<＋/@JZDC1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><魔御>」　<＋/@JZMC1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><攻击>」　<＋/@JZDS1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><魔法>」　<＋/@JZXY1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><道术>」　<＋/@JZZQ1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><持久>」　<＋/@JZCJ1>　注意调整范围∶<0-255>...　　　　<返回/@装备调整>\
+#IF
+  checkitemTYPE 7 23
+#ACT
+  BREAK
+#SAY
+※<〓〓〓〓〓〓〓〓〓>戒指调整菜单<〓〓〓〓〓〓〓〓〓>※\
+ 「调整<$RING_L><躲避>」　<＋/@JZDC1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><恢复>」　<＋/@JZMC1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><攻击>」　<＋/@JZDS1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><魔法>」　<＋/@JZXY1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><道术>」　<＋/@JZZQ1>　注意调整范围∶<0-255>...\
+ 「调整<$RING_L><持久>」　<＋/@JZCJ1>　注意调整范围∶<0-255>...　　　　<返回/@装备调整>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的戒指戴在右边...\ \
+
+<返回/@装备调整>\
+;-----------------------------------------------------------------------
+[@JZDC1]
+#ACT
+  UPGRADEITEMEX 7 0 1 1 0
+  goto @item7
+
+[@JZMC1]
+#ACT
+  UPGRADEITEMEX 7 1 1 1 0
+  goto @item7
+
+[@JZDS1]
+#ACT
+  UPGRADEITEMEX 7 2 1 1 0
+  goto @item7
+
+[@JZZQ1]
+#ACT
+  UPGRADEITEMEX 7 4 1 1 0
+  goto @item7
+
+[@JZXY1]
+#ACT
+  UPGRADEITEMEX 7 3 1 1 0
+  goto @item7
+
+[@JZCJ1]
+#ACT
+  UPGRADEITEMEX 7 14 1 1 0
+  goto @item7
+[@item5]
+#IF
+  checkitemTYPE 5 24
+#ACT
+  BREAK
+#SAY
+※<〓〓〓〓〓〓〓〓〓>手镯调整菜单<〓〓〓〓〓〓〓〓〓>※\
+ 「调整<$ARMRING_L><准确>」　<＋/@SZDC1>　注意调整范围∶<0-255>...\
+ 「调整<$ARMRING_L><敏捷>」　<＋/@SZMC1>　注意调整范围∶<0-255>...\
+ 「调整<$ARMRING_L><攻击>」　<＋/@SZDS1>　注意调整范围∶<0-255>...\
+ 「调整<$ARMRING_L><魔法>」　<＋/@SZXY1>　注意调整范围∶<0-255>...\
+ 「调整<$ARMRING_L><道术>」　<＋/@SZZQ1>　注意调整范围∶<0-255>...\
+ 「调整<$ARMRING_L><持久>」　<＋/@SZCJ1>　注意调整范围∶<0-255>...　　　　<返回/@装备调整>\
+#IF
+  checkitemTYPE 5 26
+#ACT
+  BREAK
+#SAY
+※<〓〓〓〓〓〓〓〓〓>手镯调整菜单<〓〓〓〓〓〓〓〓〓>※\
+ 「调整<$ARMRING_L><防御>」　<＋/@SZDC1>　注意调整范围∶<0-255>...\
+ 「调整<$ARMRING_L><魔御>」　<＋/@SZMC1>　注意调整范围∶<0-255>...\
+ 「调整<$ARMRING_L><攻击>」　<＋/@SZDS1>　注意调整范围∶<0-255>...\
+ 「调整<$ARMRING_L><魔法>」　<＋/@SZXY1>　注意调整范围∶<0-255>...\
+ 「调整<$ARMRING_L><道术>」　<＋/@SZZQ1>　注意调整范围∶<0-255>...\
+ 「调整<$ARMRING_L><持久>」　<＋/@SZCJ1>　注意调整范围∶<0-255>...　　　　<返回/@装备调整>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的手镯戴在右边...\ \
+
+<返回/@装备调整>\
+;-----------------------------------------------------------------------
+[@SZDC1]
+#ACT
+  UPGRADEITEMEX 5 0 1 1 0
+  goto @item5
+
+[@SZMC1]
+#ACT
+  UPGRADEITEMEX 5 1 1 1 0
+  goto @item5
+
+[@SZDS1]
+#ACT
+  UPGRADEITEMEX 5 2 1 1 0
+  goto @item5
+
+[@SZZQ1]
+#ACT
+  UPGRADEITEMEX 5 4 1 1 0
+  goto @item5
+
+[@SZXY1]
+#ACT
+  UPGRADEITEMEX 5 3 1 1 0
+  goto @item5
+
+[@SZCJ1]
+#ACT
+  UPGRADEITEMEX 5 14 1 1 0
+  goto @item5
+
+[@item4]
+#IF
+  checkitemTYPE 4 15
+#ACT
+  BREAK
+#SAY
+※<〓〓〓〓〓〓〓〓〓>头盔调整菜单<〓〓〓〓〓〓〓〓〓>※\
+ 「调整<$NECKLACE><防御>」　<＋/@TKDC1>　注意调整范围∶<0-255>...\
+ 「调整<$NECKLACE><魔御>」　<＋/@TKMC1>　注意调整范围∶<0-255>...\
+ 「调整<$NECKLACE><攻击>」　<＋/@TKDS1>　注意调整范围∶<0-255>...\
+ 「调整<$NECKLACE><魔法>」　<＋/@TKXY1>　注意调整范围∶<0-255>...\
+ 「调整<$NECKLACE><道术>」　<＋/@TKZQ1>　注意调整范围∶<0-255>...\
+ 「调整<$NECKLACE><持久>」　<＋/@TKCJ1>　注意调整范围∶<0-255>...　　　　<返回/@装备调整>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的头盔戴在身上...\ \
+
+<返回/@装备调整>\
+;-----------------------------------------------------------------------
+[@TKDC1]
+#ACT
+  UPGRADEITEMEX 4 0 1 1 0
+  goto @item4
+
+[@TKMC1]
+#ACT
+  UPGRADEITEMEX 4 1 1 1 0
+  goto @item4
+
+[@TKDS1]
+#ACT
+  UPGRADEITEMEX 4 2 1 1 0
+  goto @item4
+
+[@TKZQ1]
+#ACT
+  UPGRADEITEMEX 4 4 1 1 0
+  goto @item4
+
+[@TKXY1]
+#ACT
+  UPGRADEITEMEX 4 3 1 1 0
+  goto @item4
+
+[@TKCJ1]
+#ACT
+  UPGRADEITEMEX 4 14 1 1 0
+  goto @item4
+[@item3]
+#IF
+  checkitemTYPE 3 19
+#ACT
+  BREAK
+#SAY
+※<〓〓〓〓〓〓〓〓〓>项链调整菜单<〓〓〓〓〓〓〓〓〓>※\
+ 「调整<$NECKLACE><躲避>」　<＋/@XPDC1>　注意调整范围∶<0-255>...\
+ 「调整<$NECKLACE><幸运>」　<＋/@XPMC1>　注意调整范围∶<0-255>...\
+ 「调整<$NECKLACE><攻击>」　<＋/@XPDS1>　注意调整范围∶<0-255>...\
+ 「调整<$NECKLACE><魔法>」　<＋/@XPXY1>　注意调整范围∶<0-255>...\
+ 「调整<$NECKLACE><道术>」　<＋/@XPZQ1>　注意调整范围∶<0-255>...\
+ 「调整<$NECKLACE><持久>」　<＋/@XPCJ1>　注意调整范围∶<0-255>...　　　　<返回/@装备调整>\
+#IF
+  checkitemTYPE 3 20
+#ACT
+  BREAK
+#SAY
+※<〓〓〓〓〓〓〓〓〓>项链调整菜单<〓〓〓〓〓〓〓〓〓>※\
+ 「调整<$NECKLACE><准确>」　<＋/@XPDC1>　注意调整范围∶<0-255>...\
+ 「调整<$NECKLACE><敏捷>」　<＋/@XPMC1>　注意调整范围∶<0-255>...\
+ 「调整<$NECKLACE><攻击>」　<＋/@XPDS1>　注意调整范围∶<0-255>...\
+ 「调整<$NECKLACE><魔法>」　<＋/@XPXY1>　注意调整范围∶<0-255>...\
+ 「调整<$NECKLACE><道术>」　<＋/@XPZQ1>　注意调整范围∶<0-255>...\
+ 「调整<$NECKLACE><持久>」　<＋/@XPCJ1>　注意调整范围∶<0-255>...　　　　<返回/@装备调整>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的项链戴在身上...\ \
+
+<返回/@装备调整>\
+;-----------------------------------------------------------------------
+[@XPDC1]
+#ACT
+  UPGRADEITEMEX 3 0 1 1 0
+  goto @item3
+
+[@XPMC1]
+#ACT
+  UPGRADEITEMEX 3 1 1 1 0
+  goto @item3
+
+[@XPDS1]
+#ACT
+  UPGRADEITEMEX 3 2 1 1 0
+  goto @item3
+
+[@XPZQ1]
+#ACT
+  UPGRADEITEMEX 3 4 1 1 0
+  goto @item3
+
+[@XPXY1]
+#ACT
+  UPGRADEITEMEX 3 3 1 1 0
+  goto @item3
+
+[@XPCJ1]
+#ACT
+  UPGRADEITEMEX 3 14 1 1 0
+  goto @item3
+[@item0]
+#IF
+  checkitemTYPE 0 10
+#ACT
+  BREAK
+#SAY
+※<〓〓〓〓〓〓〓〓〓>盔甲调整菜单<〓〓〓〓〓〓〓〓〓>※\
+ 「调整<$DRESS><防御>」　<＋/@KKDC1>　注意调整范围∶<0-255>...\
+ 「调整<$DRESS><魔御>」　<＋/@KKMC1>　注意调整范围∶<0-255>...\
+ 「调整<$DRESS><攻击>」　<＋/@KKDS1>　注意调整范围∶<0-255>...\
+ 「调整<$DRESS><魔法>」　<＋/@KKXY1>　注意调整范围∶<0-255>...\
+ 「调整<$DRESS><道术>」　<＋/@KKZQ1>　注意调整范围∶<0-255>...\
+ 「调整<$DRESS><持久>」　<＋/@KKCJ1>　注意调整范围∶<0-255>...　　　　<返回/@装备调整>\
+#IF
+  checkitemTYPE 0 11
+#ACT
+  BREAK
+#SAY
+※<〓〓〓〓〓〓〓〓〓>盔甲调整菜单<〓〓〓〓〓〓〓〓〓>※\
+ 「调整<$DRESS><防御>」　<＋/@KKDC1>　注意调整范围∶<0-255>...\
+ 「调整<$DRESS><魔御>」　<＋/@KKMC1>　注意调整范围∶<0-255>...\
+ 「调整<$DRESS><攻击>」　<＋/@KKDS1>　注意调整范围∶<0-255>...\
+ 「调整<$DRESS><魔法>」　<＋/@KKXY1>　注意调整范围∶<0-255>...\
+ 「调整<$DRESS><道术>」　<＋/@KKZQ1>　注意调整范围∶<0-255>...\
+ 「调整<$DRESS><持久>」　<＋/@KKCJ1>　注意调整范围∶<0-255>...　　　　<返回/@装备调整>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的盔甲穿在身上...\ \
+
+<返回/@装备调整>\
+;-----------------------------------------------------------------------
+[@KKDC1]
+#ACT
+  UPGRADEITEMEX 0 0 1 1 0
+  goto @item0
+
+[@KKMC1]
+#ACT
+  UPGRADEITEMEX 0 1 1 1 0
+  goto @item0
+
+[@KKDS1]
+#ACT
+  UPGRADEITEMEX 0 2 1 1 0
+  goto @item0
+
+[@KKZQ1]
+#ACT
+  UPGRADEITEMEX 0 4 1 1 0
+  goto @item0
+
+[@KKXY1]
+#ACT
+  UPGRADEITEMEX 0 3 1 1 0
+  goto @item0
+
+[@KKCJ1]
+#ACT
+  UPGRADEITEMEX 0 14 1 1 0
+  goto @item0
+;-----------------------------------------------------------------------
+[@item1]
+#IF
+  checkitemTYPE 1 5
+#ACT
+  BREAK
+#SAY
+※<〓〓〓〓〓〓〓〓〓>武器调整菜单<〓〓〓〓〓〓〓〓〓>※\
+ 「调整<$WEAPON><攻击>」　<＋/@WQDC1>　注意调整范围∶<0-255>...\
+ 「调整<$WEAPON><魔法>」　<＋/@WQMC1>　注意调整范围∶<0-255>...\
+ 「调整<$WEAPON><道术>」　<＋/@WQDS1>　注意调整范围∶<0-255>...\
+ 「调整<$WEAPON><幸运>」　<＋/@WQXY1>　注意调整范围∶<0-255>...\
+ 「调整<$WEAPON><准确>」　<＋/@WQZQ1>　注意调整范围∶<0-255>...\
+ 「调整<$WEAPON><速度>」　<＋/@WQSD1>　注意调整范围∶<0-255>...\
+ 「调整<$WEAPON><持久>」　<＋/@WQCJ1>　注意调整范围∶<0-255>...　　　　<返回/@装备调整>\
+#IF
+  checkitemTYPE 1 6
+#ACT
+  BREAK
+#SAY
+※<〓〓〓〓〓〓〓〓〓>武器调整菜单<〓〓〓〓〓〓〓〓〓>※\
+ 「调整<$WEAPON><攻击>」　<＋/@WQDC1>　注意调整范围∶<0-255>...\
+ 「调整<$WEAPON><魔法>」　<＋/@WQMC1>　注意调整范围∶<0-255>...\
+ 「调整<$WEAPON><道术>」　<＋/@WQDS1>　注意调整范围∶<0-255>...\
+ 「调整<$WEAPON><幸运>」　<＋/@WQXY1>　注意调整范围∶<0-255>...\
+ 「调整<$WEAPON><准确>」　<＋/@WQZQ1>　注意调整范围∶<0-255>...\
+ 「调整<$WEAPON><速度>」 <-＋/@WQSD1>　注意调整范围∶<0-255>...\
+ 「调整<$WEAPON><持久>」　<＋/@WQCJ1>　注意调整范围∶<0-255>...　　　　<返回/@装备调整>\
+#IF
+#ACT
+  BREAK
+#SAY
+请将要调整的武器拿在手中...\ \
+
+<返回/@装备调整>\
+
+[@WQDC1]
+#ACT
+  UPGRADEITEMEX 1 0 1 1 0
+  goto @item1
+
+[@WQMC1]
+#ACT
+  UPGRADEITEMEX 1 1 1 1 0
+  goto @item1
+
+[@WQDS1]
+#ACT
+  UPGRADEITEMEX 1 2 1 1 0
+  goto @item1
+
+[@WQZQ1]
+#ACT
+  UPGRADEITEMEX 1 5 1 1 0
+  goto @item1
+
+[@WQXY1]
+#ACT
+  UPGRADEITEMEX 1 3 1 1 0
+  goto @item1
+
+[@WQSD1]
+#ACT
+  UPGRADEITEMEX 1 6 1 1 0
+  goto @item1
+
+[@WQCJ1]
+#ACT
+  UPGRADEITEMEX 1 14 1 1 0
+  goto @item1
+
+;--------------------------------------------------------------------------------
+
+[@使用移动]
+※<〓〓〓〓〓〓〓〓〓〓>安全区域<〓〓〓〓〓〓〓〓〓〓>※\
+※<比奇大城/@比奇大城>※<毒蛇村庄/@毒蛇山谷>※<银杏小村/@银杏小村>※<边界小村/@边界小村>※<盟重土城/@盟重土城>※\ \
+※<封 魔 谷/@封魔神谷>※<苍 月 岛/@苍月之岛>※<白 日 门/@白日门>※<沙 巴 克/@沙巴克>※<土城书店/@土城书店>※\ \
+※<比奇宫殿/@比奇宫殿>※<红 名 村/@红名村>※<姻缘神殿/@姻缘神殿>※<客栈赌场/@客栈赌场>※<沃玛森林/@沃玛森林>※\ 
+※<〓〓〓〓〓〓〓〓〓〓>安全区域<〓〓〓〓〓〓〓〓〓〓>※\ \ 
+※   安全区域地图可免费传送   ※<返回首页/@main>※<下 一 页/@危险区域>※\ 
+　　　　　　　　　　　　　　　　　　　　
+[@危险区域]
+※<〓〓〓〓〓〓〓〓〓〓>危险区域<〓〓〓〓〓〓〓〓〓〓>※\
+※<兽人古墓/@兽人古墓>※<天然洞穴/@天然洞穴>※<比奇矿区/@比奇矿区>※<毒蛇矿区/@毒蛇矿区>※<尸 王 殿/@尸王殿>※\ \
+※<沃玛入口/@沃玛入口>※<蜈蚣洞口/@蜈蚣洞口>※<未知暗殿/@未知暗殿>※<石墓入口/@石墓入口>※<祖玛入口/@祖玛入口>※\ \
+※<封魔矿区/@封魔矿区>※<霸者大厅/@霸者大厅>※<尸魔洞口/@尸魔洞口>※<骨魔洞口/@骨魔洞口>※<牛魔入口/@牛魔入口>※\ 
+※<〓〓〓〓〓〓〓〓〓〓>危险区域<〓〓〓〓〓〓〓〓〓〓>※\ \
+※    需要两万金币的传送费    ※<上 一 页/@使用移动>※<下 一 页/@恐怖区域>※\ 
+
+[@恐怖区域]
+※<〓〓〓〓〓〓〓〓〓〓>恐怖区域<〓〓〓〓〓〓〓〓〓〓>※\
+※<死亡棺材/@死亡棺材>※<沃玛三层/@沃玛三层>※<石墓五层/@石墓五层>※<祖玛六层/@祖玛六层>※<炼狱回廊/@炼狱回廊>※\ \
+※<尸魔三层/@尸魔三层>※<骨魔五层/@骨魔五层>※<牛魔七层/@牛魔七层>※<不 归 路/@不归路>※<丛林迷宫/@丛林迷宫>※\ \
+※<抉择之地/@抉择之地>※<影 之 道/@影之道>※<幻境六层/@幻境六层>※<圣域地图/@圣域地图>※<六新衣服/@六新衣服>※\
+※<〓〓〓〓〓〓〓〓〓〓>恐怖区域<〓〓〓〓〓〓〓〓〓〓>※\ \
+※　  需要五万金币的传送费　  ※<上 一 页/@危险区域>※<返回首页/@main>※\
+
+[@六新衣服]
+※<〓〓〓〓〓〓〓〓〓〓>六新衣服<〓〓〓〓〓〓〓〓〓〓>※\
+※<困惑殿堂（男战士）/@困惑殿堂>※　　　　※<地狱烈焰（女战士）/@地狱烈焰>※\ \
+※<堕落坟场（男法师）/@堕落坟场>※　　　　※<死亡神殿（女法师）/@死亡神殿>※\ \
+※<深渊魔域（男道士）/@深渊魔域>※　　　　※<钳虫巢穴（女道士）/@钳虫巢穴>※\ 
+※<〓〓〓〓〓〓〓〓〓〓>六新衣服<〓〓〓〓〓〓〓〓〓〓>※\ \
+※　       需要五万金币的传送费　       ※<返    回/@恐怖区域>※\ 
+[@沃玛森林]
+#act
+mapmove 1 562 553
+
+[@红名村]
+#act
+mapmove 3 830 650
+
+[@姻缘神殿]
+#act
+mapmove M101 21 33
+
+[@客栈赌场]
+#act
+mapmove 0101 8 8
+
+[@兽人古墓]
+#if
+checkgold 20000
+#act
+take 金币 20000
+GIVE 回城卷 1
+mapmove 0 147 34
+
+[@天然洞穴]
+#if
+checkgold 20000
+#act
+take 金币 20000
+GIVE 回城卷 1
+mapmove 0 42 109 
+
+[@毒蛇矿区]
+#if
+checkgold 20000
+#act
+take 金币 20000
+GIVE 回城卷 1
+mapmove 2 564 171
+
+[@沃玛入口]
+#if
+checkgold 20000
+#act
+take 金币 20000
+GIVE 回城卷 1
+mapmove D021 25 25
+
+[@蜈蚣洞口]
+#if
+checkgold 20000
+#act
+take 金币 20000
+GIVE 回城卷 1
+mapmove 3 140 87 
+
+[@石墓入口]
+#if
+checkgold 20000
+#act
+take 金币 20000
+GIVE 回城卷 1
+mapmove D710 26 20
+
+[@祖玛入口]
+#if
+checkgold 20000
+#act
+take 金币 20000
+GIVE 回城卷 1
+mapmove 0157 19 16
+
+[@丛林迷宫]
+#if
+checkgold 50000
+#act
+take 金币 50000
+GIVE 回城卷 1
+mapmove 11 356 246
+
+[@封魔矿区]
+#if
+checkgold 20000
+#act
+take 金币 20000
+GIVE 回城卷 1
+mapmove D2000 77 15
+
+[@尸王殿]
+#if
+checkgold 20000
+#act
+take 金币 20000
+GIVE 回城卷 1
+mapmove Q004
+
+[@未知暗殿]
+#if
+checkgold 20000
+#act
+take 金币 20000
+GIVE 回城卷 1
+mapmove M001
+
+[@石墓五层]
+#if
+checkgold 50000
+#act
+take 金币 50000
+GIVE 回城卷 1
+mapmove D715 84 80
+
+[@祖玛六层]
+#if
+checkgold 50000
+#act
+take 金币 50000
+GIVE 回城卷 1
+mapmove D5071
+
+[@霸者大厅]
+#if
+checkgold 20000
+#act
+take 金币 20000
+GIVE 回城卷 1
+mapmove D2008
+
+[@尸魔三层]
+#if
+checkgold 50000
+#act
+take 金币 50000
+GIVE 回城卷 1
+mapmove D2052
+
+[@骨魔五层]
+#if
+checkgold 50000
+#act
+take 金币 50000
+GIVE 回城卷 1
+mapmove D2067
+
+[@牛魔七层]
+#if
+checkgold 50000
+#act
+take 金币 50000
+GIVE 回城卷 1
+mapmove D2079
+
+[@幻境六层]
+#if
+#say
+由于需要进入幻境地图，除了原本的5万金币传送费外\
+还需要减少2点的声望，你确认要传送到幻境六层吗？\ \
+<确认/@幻境六层1>\
+<返回/@恐怖区域>
+
+[@幻境六层1]
+#if
+CHECKCREDITPOINT > 1
+checkgold 50000
+#act
+CREDITPOINT - 2
+take 金币 50000
+GIVE 回城卷 1
+SENDMSG 5 提示：已使用传送服务，你减少了2点声望，当前声望：<$CREDITPOINT>点...
+mapmove H005 38 227
+#elsesay
+你的金币或声望值不够，无法传送！！\ \
+<返回/@恐怖区域>
+
+[@钳虫巢穴]
+#if
+checkgold 50000
+#act
+take 金币 50000
+GIVE 回城卷 1
+mapmove 11 343 325
+
+[@死亡神殿]
+#if
+checkgold 50000
+#act
+take 金币 50000
+GIVE 回城卷 1
+mapmove 4 205 218
+
+[@地狱烈焰]
+#if
+checkgold 50000
+#act
+take 金币 50000
+GIVE 回城卷 1
+mapmove 0 428 474
+
+[@深渊魔域]
+#if
+checkgold 50000
+#act
+take 金币 50000
+GIVE 回城卷 1
+mapmove 1 215 312
+
+[@堕落坟场]
+#if
+checkgold 50000
+#act
+take 金币 50000
+GIVE 回城卷 1
+mapmove 1 320 56
+
+[@困惑殿堂]
+#if
+checkgold 50000
+#act
+take 金币 50000
+GIVE 回城卷 1
+mapmove r001 55 94
+
+[@牛魔入口]
+#if
+checkgold 20000
+#act
+take 金币 20000
+GIVE 回城卷 1
+mapmove D2070 31 20
+
+[@尸魔洞口]
+#if
+checkgold 20000
+#act
+take 金币 20000
+GIVE 回城卷 1
+mapmove 5 526 612
+
+[@骨魔洞口]
+#if
+checkgold 20000
+#act
+take 金币 20000
+GIVE 回城卷 1
+mapmove 5 548 128
+
+[@抉择之地]
+#if
+checkgold 50000
+#act
+take 金币 50000
+GIVE 回城卷 1
+mapmove D1004
+
+[@比奇矿区]
+#if
+checkgold 20000
+#act
+take 金币 20000
+GIVE 回城卷 1
+mapmove 0 664 214
+
+[@沃玛三层]
+#if
+checkgold 50000
+#act
+take 金币 50000
+GIVE 回城卷 1
+mapmove D024 16 19
+
+[@死亡棺材]
+#if
+checkgold 50000
+#act
+take 金币 50000
+GIVE 回城卷 1
+MAPMOVE D606
+
+[@土城书店]
+#ACT
+GIVE 回城卷 1
+mapmove 3 410 323
+
+[@封魔堡]
+#ACT
+mapmove B341 21 26
+
+[@比奇宫殿]
+#ACT
+GIVE 回城卷 1
+mapmove 0122 21 33
+
+[@沙巴克]
+#ACT
+GIVE 回城卷 1
+mapmove 3 675 333
+[@比奇大城]
+#ACT
+mapmove 0 333 268
+[@银杏小村]
+#ACT
+mapmove 0 634 612
+[@边界小村]
+#ACT
+mapmove 0 288 615
+[@盟重土城]
+#ACT
+mapmove 3 330 330
+[@白日门]
+#ACT
+mapmove 11 177 324
+[@苍月之岛]
+#ACT
+mapmove 5 139 337
+[@封魔神谷]
+#ACT
+mapmove 4 233 210
+[@毒蛇山谷]
+#ACT
+mapmove 2 503 482
+
+[@不归路]
+#if
+checkgold 50000
+#act
+take 金币 50000
+GIVE 回城卷 1
+mapmove D701 105 158
+
+[@炼狱回廊]
+#if
+checkgold 50000
+#act
+take 金币 50000
+GIVE 回城卷 1
+mapmove D2012 
+
+[@影之道]
+#if
+#say
+由于需要进入幻境地图，除了原本的5万金币传送费外\
+还需要减少2点的声望，你确认要传送到影之道吗？\ \
+<确认/@影之道1>\
+<返回/@恐怖区域>
+
+[@影之道1]
+#if
+CHECKCREDITPOINT > 1
+checkgold 50000
+#act
+CREDITPOINT - 2
+take 金币 50000
+GIVE 回城卷 1
+SENDMSG 5 提示：已使用传送服务，你减少了2点声望，当前声望：<$CREDITPOINT>点...
+mapmove H102 209 227
+#elsesay
+你的金币或声望值不够，无法传送！！\ \
+<返回/@恐怖区域>
+
+
+[@圣域地图]
+#if
+#say
+由于需要进入幻境地图，除了原本的5万金币传送费外\
+还需要减少2点的声望，你确认要传送到圣域地图吗？\ \
+<确认/@圣域地图1>\
+<返回/@恐怖区域>
+
+[@圣域地图1]
+#if
+CHECKCREDITPOINT > 1
+checkgold 50000
+#act
+CREDITPOINT - 2
+take 金币 50000
+GIVE 回城卷 1
+SENDMSG 5 提示：已使用传送服务，你减少了2点声望，当前声望：<$CREDITPOINT>点...
+mapmove H010 370 375
+#elsesay
+你的金币或声望值不够，无法传送！！\ \
+<返回/@恐怖区域>
+
+;--------------------------------------------------------------------------------
+
+[@召唤宝宝]
+#if
+#say
+你可以召唤以下怪物为自己的宝宝，召唤宝宝等级默认为7级。\ \
+<[召唤虎卫]/@虎卫>  <[召唤鹰卫]/@鹰卫>  <[召唤白野猪]/@白野猪>\ \
+<[返回]/@作弊界面>
+
+[@虎卫]
+#if
+CHECKSLAVECOUNT > 4
+#act
+MESSAGEBOX 你最多只能带五个宝宝！！
+#elseact
+RECALLMOB 虎卫 7
+
+[@鹰卫]
+#if
+CHECKSLAVECOUNT > 4
+#act
+MESSAGEBOX 你最多只能带五个宝宝！！
+#elseact
+RECALLMOB 鹰卫 7
+
+[@白野猪]
+#if
+CHECKSLAVECOUNT > 4
+#act
+MESSAGEBOX 你最多只能带五个宝宝！！
+#elseact
+RECALLMOB 白野猪 7
+
+;--------------------------------------------------------------------------------
+
+[@职业变更]
+#IF
+CHECKJOB warrior
+#SAY
+是不是战士不好玩呀，换换别的职业试试吧！\ \
+『<玩玩法师/@法师>』\
+『<玩玩道士/@道士>』\ \
+〖<返回/@作弊界面>〗
+#ACT
+break
+#IF
+CHECKJOB wizard
+#SAY
+是不是法师不好玩呀，换换别的职业试试吧！\ \
+『<玩玩战士/@战士>』\
+『<玩玩道士/@道士>』\ \
+〖<返回/@作弊界面>〗
+#ACT
+break
+
+#IF
+CHECKJOB taoist
+#SAY
+是不是道士不好玩呀，换换别的职业试试吧！\ \
+『<玩玩战士/@战士>』\
+『<玩玩法师/@法师>』\ \
+〖<返回/@作弊界面>〗
+#ACT
+break
+
+[@战士]
+#IF
+#ACT
+CLEARSKILL
+CHANGEJOB warrior
+MESSAGEBOX 恭喜:玩家「<$USERNAME>」成功转职。
+BREAK
+
+[@法师]
+#IF
+#ACT
+CLEARSKILL
+CHANGEJOB WIZARD
+MESSAGEBOX 恭喜:玩家「<$USERNAME>」成功转职。
+BREAK
+
+[@道士]
+#IF
+#ACT
+CLEARSKILL
+CHANGEJOB taoist
+MESSAGEBOX 恭喜:玩家「<$USERNAME>」成功转职。
+BREAK
+
+;--------------------------------------------------------------------------------
+
+[@性别变更]
+#IF
+gender man
+#SAY
+是不是做猛男没什么意思呀，想不想尝尝做淑女的滋味呀！！！\ \
+『<尝尝/@towoman>』\ \
+〖<返回/@作弊界面>〗
+#ELSESAY
+是不是做淑女挺累的，想不想尝尝做猛男的滋味呀！！！\ \
+『<尝尝/@toman>』\ \
+〖<返回/@作弊界面>〗
+
+[@toman]
+#IF
+#ACT
+CHANGEGENDER 0
+#SAY
+呵呵，你已经变成一位猛男了。\ \
+〖<返回/@作弊界面>〗
+
+[@towoman]
+#IF
+#ACT
+CHANGEGENDER 1
+#SAY
+呵呵，你已经变成一位淑女了。\ \
+〖<返回/@作弊界面>〗
+
+;--------------------------------------------------------------------------------
+
+[@修改发型]
+#IF
+gender man
+#ACT
+goto @修改发型Man
+#ELSEACT
+goto @修改发型Woman
+[@修改发型Man]
+想不想来个光头呀，酷呆了！！！\ \
+<[没头发]/@hairman0>\
+<[有头发]/@hairman1>\ \
+<[返回]/@作弊界面>
+[@hairman0]
+#ACT
+HAIRSTYLE 0
+#SAY
+呵呵，光头是不是很酷呀！！！ \ \
+<返回/@修改发型>
+[@hairman1]
+#ACT
+HAIRSTYLE 1
+#SAY
+呵呵，你的发型已经改变了... \ \
+<返回/@修改发型>
+[@修改发型Woman]
+<[短发型]/@hairWoman0>\
+<[长发型]/@hairWoman1>\ \
+<[返回]/@作弊界面>
+[@hairWoman0]
+#ACT
+HAIRSTYLE 0
+#SAY
+呵呵，你的发型已经改变了... \ \
+<返回/@修改发型>
+[@hairWoman1]
+#ACT
+HAIRSTYLE 1
+#SAY
+呵呵，你的发型已经改变了... \ \
+<返回/@修改发型>
+
+[@发型一]
+#ACT 
+HAIRSTYLE 0
+
+[@发型二]
+#ACT 
+HAIRSTYLE 1
+
+;--------------------------------------------------------------------------------
+
+

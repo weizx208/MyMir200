@@ -1,0 +1,32 @@
+[@MAIN]
+#IF
+check [006] 1
+#ACT
+goto @回去复命
+break
+#IF
+LARGE M2 8
+#ACT
+SET [006] 1
+MOV M2 0
+give 聚灵珠(小) 1
+DelayCall 5000 @回去复命
+SENDMSG 6 你已经消灭10个残肢僵尸了，赶快回去找任务使者。
+SendCenterMsg 254 255 任务使者：恭喜【<$USERNAME>】消灭了10个残肢僵尸. 
+break
+#SAY
+\ \ \
+恭喜你完成任务。\ \ \
+<Img:101><马上回去复命/@>
+#IF
+small M2 10
+#ACT
+INC M2 1
+GuildNoticeMsg 255 233 提示：当前已经击杀[残肢僵尸]：(<$STR(M2)>/10)只。
+break
+[@回去复命]
+#IF
+#ACT
+SENDMSG 7 提示：[消灭残肢]任务已完成，可以找任务使者提交任务了！
+mapmove D401 92 57
+break

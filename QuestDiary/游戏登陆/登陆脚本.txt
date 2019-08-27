@@ -1,0 +1,204 @@
+[@登陆设置]
+{
+#IF
+#ACT
+SENDMSG 6 〖提示〗当前的声望值为:<$CREDITPOINT>点...
+
+
+#OR
+EQUAL T1 道士
+EQUAL T1 法师
+#ACT
+PLAYMAGICBALLEFFECT 88 1060 14 100 180 0 1 0
+PLAYMAGICBALLEFFECT 88 1080 14 100 180 1 1 0
+
+#IF
+EQUAL T1 战士
+CHECKLEVEL 28
+#ACT
+PLAYMAGICBALLEFFECT 88 1060 14 100 180 0 1 0
+PLAYMAGICBALLEFFECT 88 1080 14 100 180 1 1 0
+
+#IF
+checkitemw 霸者之刃
+#act
+SetOnTimer 11 30
+
+#IF
+checkitemw 开天
+#act
+AddHumNewValue 4 + 100 65535
+
+#IF
+CompareText <$USERNAME> 空间
+#ACT
+KICK
+
+#IF
+CHECKVAR HUMAN 苍天霸血 > 1
+#ACT
+#CALL [\功能脚本\苍天霸血.txt] @检测完毕
+
+
+;----------------------- ↓↓↓↓↓↓↓↓↓-----自定义按钮触发-----↓↓↓↓↓↓↓↓↓----------------------- 691  688 691  
+
+
+#IF
+SMALL U88 28801
+#ACT
+MOV N$疲劳 <$STR(U88)>
+DIV N$疲劳 288
+ADDBUTTON 85 31 102 102 102 <$STR(N$分辨率宽1)> <$STR(N$分辨率高1)> 7 -1
+ADDBUTTON 85 33 <$STR(N$疲劳)> <$STR(N$疲劳)> <$STR(N$疲劳)> <$STR(N$分辨率宽3)> <$STR(N$分辨率高3)> 7 -1 251#剩余内力值:<$STR(N$疲劳)>点。\180#当内力值为0时击杀怪物将不会获得经验。\253#(在城镇区域活动会逐渐恢复内力值)\剩余时间为:<$STR(U88)>秒。
+ADDBUTTON 85 32 103 103 103 <$STR(N$分辨率宽2)> <$STR(N$分辨率高2)> 7 251#内力值:
+;SetOnTimer 1 1
+#ELSEACT
+ADDBUTTON 85 31 102 102 102 <$STR(N$分辨率宽1)> <$STR(N$分辨率高1)> 7 -1
+ADDBUTTON 85 33 100 100 100 <$STR(N$分辨率宽3)> <$STR(N$分辨率高3)> 7 -1 251#剩余内力值:<$STR(N$疲劳)>点。\250#当内力值为0时击杀怪物将不会获得经验。\253#(在城镇区域活动会逐渐恢复内力值)\剩余时间为:<$STR(U88)>秒。
+ADDBUTTON 85 32 103 103 103 <$STR(N$分辨率宽2)> <$STR(N$分辨率高2)> 7 251#内力值:
+;SetOnTimer 1 1
+
+
+#IF
+LARGE U16 0
+#ACT
+MOV N$魔能之眼 <$STR(U16)>
+MUL N$魔能之眼 2
+CHANGESPEED 3 <$STR(N$魔能之眼)>
+
+#IF
+#ACT
+#CALL [穿戴改名\衣服.TXT] @衣服
+
+#IF
+ISNEWHUMAN
+#ACT
+AddTextListEx ..\QuestDiary\数据文件\玩家名字.txt <$USERNAME> 0
+goto @Tips
+break
+
+#OR
+Check [901] 1
+Check [902] 1
+Check [903] 1
+#ACT
+DelayCall 3000 @新手登录奖励
+RECALLMOB 守护鹰卫 3 30  1
+break
+
+#IF
+ISCASTLEMASTER
+#ACT
+SENDMSG 0 万众欢呼，号令天下的沙城主『<$USERNAME>』进入游戏!
+SetIcon 0 65535
+
+[@Tips]
+#IF
+ISNEWHUMAN
+gender man
+CHECKJOB warrior
+#ACT
+MOV T1 战士
+goto @welcome
+break
+
+#IF
+ISNEWHUMAN
+gender WOMAN
+CHECKJOB warrior
+#ACT
+MOV T1 战士
+goto @welcome
+break
+
+#IF
+ISNEWHUMAN
+gender man
+CHECKJOB wizard
+#ACT
+MOV T1 法师
+PLAYMAGICBALLEFFECT 88 1060 14 100 180 0 1 0
+PLAYMAGICBALLEFFECT 88 1080 14 100 180 1 1 0
+goto @welcome
+break
+
+#IF
+ISNEWHUMAN
+gender WOMAN
+CHECKJOB wizard
+#ACT
+MOV T1 法师
+PLAYMAGICBALLEFFECT 88 1060 14 100 180 0 1 0
+PLAYMAGICBALLEFFECT 88 1080 14 100 180 1 1 0
+goto @welcome
+break
+
+#IF
+ISNEWHUMAN
+gender man
+CHECKJOB taoist
+#ACT
+MOV T1 道士
+PLAYMAGICBALLEFFECT 88 1060 14 100 180 0 1 0
+PLAYMAGICBALLEFFECT 88 1080 14 100 180 1 1 0
+goto @welcome
+break
+
+#IF
+ISNEWHUMAN
+gender WOMAN
+CHECKJOB taoist
+#ACT
+MOV T1 道士
+PLAYMAGICBALLEFFECT 88 1060 14 100 180 0 1 0
+PLAYMAGICBALLEFFECT 88 1080 14 100 180 1 1 0
+goto @welcome
+break
+
+[@welcome]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV U88 28800
+SENDMSG 5 新手提示：请按F12呼出游戏内挂，请于4级前到助手小姐处接任务！
+set [901] 1
+set [902] 1
+set [903] 1
+DelayCall 1000 @新手登录奖励
+CloseBigDialogBox
+SendCenterMsg 243 0 天下风云出我辈，一入江湖岁月催，欢迎『<$USERNAME>』加入到这个充满神秘的玛法世界... 1 8
+#say
+<╔──────/AUTOCOLOR=90><『焚天战神录1.76』独家版本提示/AUTOCOLOR=151><──────╗/AUTOCOLOR=90>\
+<│/AUTOCOLOR=90>1.凡使用加速、脱机、公开刷屏捣乱,刷广告,我们有权封号。<│/AUTOCOLOR=90>\
+<│/AUTOCOLOR=90>2.凡游戏内辱骂管理、盗号、诈骗，外挂我们有权封号处理。<│/AUTOCOLOR=90>\
+<│/AUTOCOLOR=90>3.凡未经担保,私下交易，购买黑货,被骗,被封号,自己负责。<│/AUTOCOLOR=90>\
+<│/AUTOCOLOR=90>4.游戏内元宝、装备、道具被骗、被盗，我们概不负责找回。<│/AUTOCOLOR=90>\
+<│/AUTOCOLOR=90>5.<申请账号时的密码，请务必牢记，忘记或丢失请自负责任。><│/AUTOCOLOR=90>\
+<╚───────────────────────────╝/AUTOCOLOR=90>\
+< 温馨提示：本服有[内挂自动打怪功能]!/AUTOCOLOR=254>\
+< 当前版本更新日期：2017-08-30/AUTOCOLOR=250>　　　　　　<同意遵守并继续游戏/@exit>　
+
+
+[@新手登录奖励]
+#IF
+Check [901] 1
+#ACT
+set [799] 1
+SendCenterMsg 251 0 您将获得系统送出的第1份礼物，请稍等[%d] 0 120 @天果礼物一
+break
+#IF
+Check [902] 1
+#ACT
+SendCenterMsg 251 0 您将获得系统送出的第2份礼物，请稍等[%d] 0 180 @天果礼物二
+break
+#IF
+Check [903] 1
+#ACT
+SendCenterMsg 251 0 您将获得系统送出的第3份礼物，请稍等[%d] 0 300 @天果礼物三
+break
+#ELSEACT
+SENDMSG 5 提示：如痴、如梦、似醉、似醒。请勿迷恋本游戏！
+break
+
+
+}

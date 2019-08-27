@@ -1,0 +1,508 @@
+[@±Ì«È]
+{
+\ \ \ \ \
+<—°‘Ò±Ì«È∑¢ÀÕ:/SCOLOR=253>\
+<PlayImgEx:82:160:2:200:0:0:0:0:/@LabelA>  <PlayImgEx:82:170:11:200:0:0:0:0:/@LabelB>  <PlayImgEx:82:190:2:200:0:0:0:0:/@LabelC>  <PlayImgEx:82:200:2:200:0:0:0:0:/@LabelD>  <PlayImgEx:82:210:4:200:0:0:0:0:/@LabelE>  <PlayImgEx:82:220:2:200:0:0:0:0:/@LabelF>  <PlayImgEx:82:230:4:200:0:0:0:0:/@LabelG>  <PlayImgEx:82:240:2:200:0:0:0:0:/@LabelH>  <PlayImgEx:82:250:9:200:0:0:0:0:/@LabelI>  <PlayImgEx:82:260:9:200:0:0:0:0:/@LabelJ>  <PlayImgEx:82:270:5:200:0:0:0:0:/@LabelK>  <PlayImgEx:82:280:10:200:0:0:0:0:/@LabelL>  <PlayImgEx:82:290:7:200:0:0:0:0:/@LabelM>  <PlayImgEx:82:300:5:200:0:0:0:0:/@LabelN>\ \ \
+<PlayImgEx:82:310:6:200:0:0:0:0:/@LabelO>  <PlayImgEx:82:320:2:200:0:0:0:0:/@LabelP>  <PlayImgEx:82:330:5:200:0:0:0:0:/@LabelQ>  <PlayImgEx:82:340:9:200:0:0:0:0:/@LabelR>  <PlayImgEx:82:350:2:200:0:0:0:0:/@LabelS>  <PlayImgEx:82:360:2:200:0:0:0:0:/@LabelT>  <PlayImgEx:82:370:2:200:0:0:0:0:/@LabelU>  <PlayImgEx:82:380:8:200:0:0:0:0:/@LabelV>  <PlayImgEx:82:390:12:200:0:0:0:0:/@LabelW>  <PlayImgEx:82:410:5:200:0:0:0:0:/@LabelX>\ \ \
+<∏¸∂‡±Ì«È/@TIEBA>\
+
+#ACT
+OPENMERCHANTBIGDLG 9 211 0 4 0 0 1 590 0 1
+
+[@LabelA]
+#ACT
+PLAYEFFECT 82 420 2 5 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelB]
+#ACT
+PLAYEFFECT 82 430 11 1 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelC]
+#ACT
+PLAYEFFECT 82 450 2 5 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelD]
+#ACT
+PLAYEFFECT 82 460 2 5 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelE]
+#ACT
+PLAYEFFECT 82 470 4 2 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelF]
+#ACT
+PLAYEFFECT 82 480 2 5 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelG]
+#ACT
+PLAYEFFECT 82 490 4 2 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelH]
+#ACT
+PLAYEFFECT 82 500 2 5 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelI]
+#ACT
+PLAYEFFECT 82 510 9 1 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelJ]
+#ACT
+PLAYEFFECT 82 520 9 1 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelK]
+#ACT
+PLAYEFFECT 82 530 5 2 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelL]
+#ACT
+PLAYEFFECT 82 540 10 1 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelM]
+#ACT
+PLAYEFFECT 82 550 7 1 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelN]
+#ACT
+PLAYEFFECT 82 560 5 2 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelO]
+#ACT
+PLAYEFFECT 82 570 6 2 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelP]
+#ACT
+PLAYEFFECT 82 580 2 5 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelQ]
+#ACT
+PLAYEFFECT 82 590 5 2 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelR]
+#ACT
+PLAYEFFECT 82 600 9 1 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelS]
+#ACT
+PLAYEFFECT 82 610 2 5 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelT]
+#ACT
+PLAYEFFECT 82 620 2 5 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelU]
+#ACT
+PLAYEFFECT 82 630 2 5 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelV]
+#ACT
+PLAYEFFECT 82 640 8 1 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelW]
+#ACT
+PLAYEFFECT 82 650 12 1 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+[@LabelX]
+#ACT
+PLAYEFFECT 82 670 5 2 300 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+
+[@TIEBA]
+\ \ \ \ \
+<—°‘Ò±Ì«È∑¢ÀÕ:/SCOLOR=253>\
+<Img:0:82:0:0/@Label0>  <Img:1:82:0:0/@Label1>  <Img:2:82:0:0/@Label2>  <Img:3:82:0:0/@Label3>  <Img:4:82:0:0/@Label4>  <Img:5:82:0:0/@Label5>  <Img:6:82:0:0/@Label6>  <Img:7:82:0:0/@Label7>  <Img:8:82:0:0/@Label8>  <Img:9:82:0:0/@Label9>  <Img:10:82:0:0/@Label10>  <Img:11:82:0:0/@Label11>  <Img:12:82:0:0/@Label12>  <Img:13:82:0:0/@Label13>\ \ \
+<Img:14:82:0:0/@Label14>  <Img:15:82:0:0/@Label15>  <Img:16:82:0:0/@Label16>  <Img:17:82:0:0/@Label17>  <Img:18:82:0:0/@Label18>  <Img:19:82:0:0/@Label19>  <Img:20:82:0:0/@Label20>  <Img:21:82:0:0/@Label21>  <Img:22:82:0:0/@Label22>  <Img:23:82:0:0/@Label23>  <Img:24:82:0:0/@Label24>  <Img:25:82:0:0/@Label25>  <Img:26:82:0:0/@Label26>  <Img:27:82:0:0/@Label27>\ \ \
+<Img:28:82:0:0/@Label28>  <Img:29:82:0:0/@Label29>  <Img:30:82:0:0/@Label30>  <Img:31:82:0:0/@Label31>  <Img:32:82:0:0/@Label32>  <Img:33:82:0:0/@Label33>  <Img:34:82:0:0/@Label34>  <Img:35:82:0:0/@Label35>  <Img:36:82:0:0/@Label36>  <Img:37:82:0:0/@Label37>  <Img:38:82:0:0/@Label38>  <Img:39:82:0:0/@Label39>  <Img:40:82:0:0/@Label40>  <Img:41:82:0:0/@Label41>\ \ \
+<Img:42:82:0:0/@Label42>  <Img:43:82:0:0/@Label43>  <Img:44:82:0:0/@Label44>  <Img:45:82:0:0/@Label45>  <Img:46:82:0:0/@Label46>  <Img:47:82:0:0/@Label47>  <Img:48:82:0:0/@Label48>  <Img:49:82:0:0/@Label49>  <Img:50:82:0:0/@Label50>  <Img:51:82:0:0/@Label51>  <Img:52:82:0:0/@Label52>  <Img:53:82:0:0/@Label53>  <Img:54:82:0:0/@Label54>  <Img:55:82:0:0/@Label55>\ \ \
+<Img:56:82:0:0/@Label56>  <Img:57:82:0:0/@Label57>  <Img:58:82:0:0/@Label58>  <Img:59:82:0:0/@Label59>  <Img:60:82:0:0/@Label60>  <Img:61:82:0:0/@Label61>  <Img:62:82:0:0/@Label62>  <Img:63:82:0:0/@Label63>  <Img:64:82:0:0/@Label64>  <Img:65:82:0:0/@Label65>  <Img:66:82:0:0/@Label66>  <Img:67:82:0:0/@Label67>  <Img:68:82:0:0/@Label68>  <Img:69:82:0:0/@Label69>\ \ \
+<Img:70:82:0:0/@Label70>  <Img:71:82:0:0/@Label71>\ \ \
+
+[@Label0]
+#ACT
+MOV N$±‡∫≈ 80
+goto @Label
+
+[@Label1]
+#ACT
+MOV N$±‡∫≈ 81
+goto @Label
+
+[@Label2]
+#ACT
+MOV N$±‡∫≈ 82
+goto @Label
+
+[@Label3]
+#ACT
+MOV N$±‡∫≈ 83
+goto @Label
+
+[@Label4]
+#ACT
+MOV N$±‡∫≈ 84
+goto @Label
+
+[@Label5]
+#ACT
+MOV N$±‡∫≈ 85
+goto @Label
+
+[@Label6]
+#ACT
+MOV N$±‡∫≈ 86
+goto @Label
+
+[@Label7]
+#ACT
+MOV N$±‡∫≈ 87
+goto @Label
+
+[@Label8]
+#ACT
+MOV N$±‡∫≈ 88
+goto @Label
+
+[@Label9]
+#ACT
+MOV N$±‡∫≈ 89
+goto @Label
+
+[@Label10]
+#ACT
+MOV N$±‡∫≈ 90
+goto @Label
+
+[@Label11]
+#ACT
+MOV N$±‡∫≈ 91
+goto @Label
+
+[@Label12]
+#ACT
+MOV N$±‡∫≈ 92
+goto @Label
+
+[@Label13]
+#ACT
+MOV N$±‡∫≈ 93
+goto @Label
+
+[@Label14]
+#ACT
+MOV N$±‡∫≈ 94
+goto @Label
+
+[@Label15]
+#ACT
+MOV N$±‡∫≈ 95
+goto @Label
+
+[@Label16]
+#ACT
+MOV N$±‡∫≈ 96
+goto @Label
+
+[@Label17]
+#ACT
+MOV N$±‡∫≈ 97
+goto @Label
+
+[@Label18]
+#ACT
+MOV N$±‡∫≈ 98
+goto @Label
+
+[@Label19]
+#ACT
+MOV N$±‡∫≈ 99
+goto @Label
+
+[@Label20]
+#ACT
+MOV N$±‡∫≈ 100
+goto @Label
+
+[@Label21]
+#ACT
+MOV N$±‡∫≈ 101
+goto @Label
+
+[@Label22]
+#ACT
+MOV N$±‡∫≈ 102
+goto @Label
+
+[@Label23]
+#ACT
+MOV N$±‡∫≈ 103
+goto @Label
+
+[@Label24]
+#ACT
+MOV N$±‡∫≈ 104
+goto @Label
+
+[@Label25]
+#ACT
+MOV N$±‡∫≈ 105
+goto @Label
+
+[@Label26]
+#ACT
+MOV N$±‡∫≈ 106
+goto @Label
+
+[@Label27]
+#ACT
+MOV N$±‡∫≈ 107
+goto @Label
+
+[@Label28]
+#ACT
+MOV N$±‡∫≈ 108
+goto @Label
+
+[@Label29]
+#ACT
+MOV N$±‡∫≈ 109
+goto @Label
+
+[@Label30]
+#ACT
+MOV N$±‡∫≈ 110
+goto @Label
+
+[@Label31]
+#ACT
+MOV N$±‡∫≈ 111
+goto @Label
+
+[@Label32]
+#ACT
+MOV N$±‡∫≈ 112
+goto @Label
+
+[@Label33]
+#ACT
+MOV N$±‡∫≈ 113
+goto @Label
+
+[@Label34]
+#ACT
+MOV N$±‡∫≈ 114
+goto @Label
+
+[@Label35]
+#ACT
+MOV N$±‡∫≈ 115
+goto @Label
+
+[@Label36]
+#ACT
+MOV N$±‡∫≈ 116
+goto @Label
+
+[@Label37]
+#ACT
+MOV N$±‡∫≈ 117
+goto @Label
+
+[@Label38]
+#ACT
+MOV N$±‡∫≈ 118
+goto @Label
+
+[@Label39]
+#ACT
+MOV N$±‡∫≈ 119
+goto @Label
+
+[@Label40]
+#ACT
+MOV N$±‡∫≈ 120
+goto @Label
+
+[@Label41]
+#ACT
+MOV N$±‡∫≈ 121
+goto @Label
+
+[@Label42]
+#ACT
+MOV N$±‡∫≈ 122
+goto @Label
+
+[@Label43]
+#ACT
+MOV N$±‡∫≈ 123
+goto @Label
+
+[@Label44]
+#ACT
+MOV N$±‡∫≈ 124
+goto @Label
+
+[@Label45]
+#ACT
+MOV N$±‡∫≈ 125
+goto @Label
+
+[@Label46]
+#ACT
+MOV N$±‡∫≈ 126
+goto @Label
+
+[@Label47]
+#ACT
+MOV N$±‡∫≈ 127
+goto @Label
+
+[@Label48]
+#ACT
+MOV N$±‡∫≈ 128
+goto @Label
+
+[@Label49]
+#ACT
+MOV N$±‡∫≈ 129
+goto @Label
+
+[@Label50]
+#ACT
+MOV N$±‡∫≈ 130
+goto @Label
+
+[@Label51]
+#ACT
+MOV N$±‡∫≈ 131
+goto @Label
+
+[@Label52]
+#ACT
+MOV N$±‡∫≈ 132
+goto @Label
+
+[@Label53]
+#ACT
+MOV N$±‡∫≈ 133
+goto @Label
+
+[@Label54]
+#ACT
+MOV N$±‡∫≈ 134
+goto @Label
+
+[@Label55]
+#ACT
+MOV N$±‡∫≈ 135
+goto @Label
+
+[@Label56]
+#ACT
+MOV N$±‡∫≈ 136
+goto @Label
+
+[@Label57]
+#ACT
+MOV N$±‡∫≈ 137
+goto @Label
+
+[@Label58]
+#ACT
+MOV N$±‡∫≈ 138
+goto @Label
+
+[@Label59]
+#ACT
+MOV N$±‡∫≈ 139
+goto @Label
+
+[@Label60]
+#ACT
+MOV N$±‡∫≈ 140
+goto @Label
+
+[@Label61]
+#ACT
+MOV N$±‡∫≈ 141
+goto @Label
+
+[@Label62]
+#ACT
+MOV N$±‡∫≈ 142
+goto @Label
+
+[@Label63]
+#ACT
+MOV N$±‡∫≈ 143
+goto @Label
+
+[@Label64]
+#ACT
+MOV N$±‡∫≈ 144
+goto @Label
+
+[@Label65]
+#ACT
+MOV N$±‡∫≈ 145
+goto @Label
+
+[@Label66]
+#ACT
+MOV N$±‡∫≈ 146
+goto @Label
+
+[@Label67]
+#ACT
+MOV N$±‡∫≈ 147
+goto @Label
+
+[@Label68]
+#ACT
+MOV N$±‡∫≈ 148
+goto @Label
+
+[@Label69]
+#ACT
+MOV N$±‡∫≈ 149
+goto @Label
+
+[@Label70]
+#ACT
+MOV N$±‡∫≈ 150
+goto @Label
+
+[@Label71]
+#ACT
+MOV N$±‡∫≈ 151
+goto @Label
+
+[@Label]
+#act
+PLAYEFFECT 82 <$STR(N$±‡∫≈)> 1 1 3000 1 -6 -120 1
+CLOSEMERCHANTBIGDLG
+
+}

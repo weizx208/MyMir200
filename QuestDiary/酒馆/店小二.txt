@@ -1,0 +1,38 @@
+(@buy @sell @bigstorage @biggetback @getnextpage @getPreviouspage )
+[@店小二开始]
+{
+#IF
+#ACT
+#SAY
+欢迎来到卧龙酒馆，您是想要喝点酒吧？\
+目前我这里只有烧酒，不过嘛……\
+很快玛法大陆都会沉浸在一片酒香中的。\
+烧酒每坛100元宝，嘿嘿。\ \
+<使用仓库/@cak>       <买烧酒/@mai>
+
+[@cak]
+需要帮什么忙吗？\
+目前不收取保管费，请多利用。\ \
+ <保管/@bigstorage>东西\
+ <找回/@biggetback>东西\
+ <捆/@MBIND>各种卷书和药水\
+ <退出/@exit> 
+
+[@bigstorage]
+需要保管什么东西？\ \ \
+ <返回/@main>
+
+[@biggetback]
+请看目录决定找什么东西。\ \ 
+<上一页/@getPreviouspage> <下一页/@getnextpage> \\
+ <返回/@main>
+
+[@mai]
+#IF
+CHECKGAMEGOLD > 99
+#ACT
+GAMEGOLD - 100
+GIVE 烧酒 1
+#ELSEACT
+MESSAGEBOX 元宝不足100个，无法购买！
+}

@@ -1,0 +1,908 @@
+[@攻击功能]
+{
+#IF
+#ACT
+GetAllCustomItemValue 3 N$神圣攻击 N$神圣攻击百分比
+GetAllCustomItemValue 4 N$神圣魔法 N$神圣魔法百分比
+GetAllCustomItemValue 5 N$神圣道术 N$神圣道术百分比
+
+#IF
+CheckJob Warrior
+LARGE N$神圣攻击 0
+CHECKTEXTLIST ..\QuestDiary\怪物分类\暗系怪物.txt <$ATTACKMONSTER_NAME>
+#ACT
+MOV N$怪物当前 <$ATTACKMONSTER_HP>
+DIV N$怪物当前 100
+MUL N$怪物当前 <$STR(N$神圣攻击)>
+M.HumanHP - <$STR(N$怪物当前)>
+M.PLAYEFFECT 14 920 10 1 100 0 0 0 0
+
+#IF
+CheckJob Wizard
+LARGE N$神圣魔法 0
+CHECKTEXTLIST ..\QuestDiary\怪物分类\暗系怪物.txt <$ATTACKMONSTER_NAME>
+#ACT
+MOV N$怪物当前 <$ATTACKMONSTER_HP>
+DIV N$怪物当前 100
+MUL N$怪物当前 <$STR(N$神圣魔法)>
+M.HumanHP - <$STR(N$怪物当前)>
+M.PLAYEFFECT 13 920 10 1 100 0 0 0 0
+
+#IF
+CheckJob Taoist
+LARGE N$神圣道术 0
+CHECKTEXTLIST ..\QuestDiary\怪物分类\暗系怪物.txt <$ATTACKMONSTER_NAME>
+#ACT
+MOV N$怪物当前 <$ATTACKMONSTER_HP>
+DIV N$怪物当前 100
+MUL N$怪物当前 <$STR(N$神圣道术)>
+M.HumanHP - <$STR(N$怪物当前)>
+M.PLAYEFFECT 13 920 10 1 50 0 0 0 0
+
+#IF
+EQUAL N$雷霆盾 1
+RANDOM 4
+#ACT
+M.PLAYEFFECT 51 1180 10 1 100 0 0 0 0
+PLAYSOUND Wav\2410-3.wav 1 4
+L.ChangeState 1 2
+
+#IF
+EQUAL N$雷霆麻痹 1
+#ACT
+ChangeHumAbility 6 + 40 7
+
+#IF
+checkitemw 玄天
+#ACT
+;SCENESHAKE 3 3
+
+#IF
+checkitemw 开天
+EQUAL <$CURRRUSEMAGICID> 66
+EQUAL N$开天 0
+#ACT
+MOV N$开天 1
+AddHumNewValue 2 + 50 8
+AddHumNewValue 3 + 50 8
+
+CHANGESTATE 10 8 100 50
+PLAYEFFECT 22 174 12 8 100 0 0 0 0
+DELAYGOTO 10000 @开天开关
+
+#IF
+checkitemw 开天
+RANDOM 8
+#ACT
+M.HumanHP - 300
+M.PLAYEFFECT 33 400 9 1 100 0 0 0 0
+
+
+#IF
+checkitemw 屠龙
+EQUAL N$屠戮 0
+RANDOM 8
+#act
+MOV N$屠戮 1
+MOV N$风火 <$HITSPD>
+INC N$风火 8
+CHANGESPEED 2 <$STR(N$风火)> 10
+ChangeHumAbility 6 + <$DC> 10
+ChangeState 10 10 100 30
+PLAYEFFECT 17 1090 20 5 100 0 0 0 0
+DELAYGOTO 20000 @屠戮开关
+
+#IF
+checkitemw 屠龙
+RANDOM 12
+#ACT
+MOVR N$龙破 <$DC> <$MAXDC>
+MUL N$龙破 3
+PLAYEFFECT 19 40 17 1 100 0 0 0 0
+RangeHarm <$X> <$Y> 2 <$STR(N$龙破)> 0 0
+<$CURRRTARGETNAME>.SetNextDamage 20
+
+#IF
+checkitemw 屠龙
+#ACT
+goto @龙族检测
+
+#IF
+checkitemw 双刃斧
+#ACT
+goto @双刃斧检测
+
+#IF
+checkitemw 怒斩
+EQUAL N$怒斩天雷 1
+#ACT
+AddHumNewValue 0 - 100 65535
+MOV N$天雷伤害 <$LEVEL>
+MUL N$天雷伤害 4
+INC N$天雷伤害 26
+M.PLAYEFFECT 13 250 7 1 100 0 0 0 0
+M.HumanHP - <$STR(N$天雷伤害)>
+MOV N$天雷伤害 0
+MOV N$怒斩天雷 0
+StopPlayEffect 51 1180 10 0 100 0 0 0 0
+goto @怒斩检测
+
+#IF
+checkitemw 怒斩
+EQUAL N$怒斩天雷 0
+RANDOM 8
+#act
+MOV N$怒斩天雷 1
+AddHumNewValue 0 + 100 65535
+PLAYEFFECT 51 1180 10 0 100 0 0 0 0
+PLAYSOUND Wav\2410-3.wav 1 4
+
+#IF
+checkitemw 龙纹剑
+random 12
+#act
+M.CHANGESTATE 6 4
+SetNextDamage 200
+M.PLAYEFFECT 25 1260 6 1 100 0 0 0 0
+PLAYEFFECT 25 1180 12 1 100 0 0 0 0
+
+#IF
+checkitemw 裁决之杖
+checkitemw 绿色项链
+checkitemw 骑士手镯
+checkitemw 力量戒指
+random 12
+EQUAL N$风暴 0
+#act
+MOV N$风暴 1
+PLAYEFFECT 25 363 7 16 100 0 65 0 0
+SetOnTimer 7 1 15
+DELAYGOTO 20000 @风暴
+
+#IF
+checkitemw 裁决之杖
+EQUAL <$CURRRUSEMAGICID> 26
+#act
+releasemagic 焰气斩 0 0 1
+
+#IF
+checkitemw 无极棍
+random 8
+EQUAL N$无极棍 0
+#act
+MOV N$无极棍 1
+PLAYEFFECT 15 520 7 1 200 0 0 -60 0
+ChangeHumAbility 10 + <$MAXSC> 10
+DELAYGOTO 20000 @无极真气
+
+#IF
+checkitemw 井中月
+random 8
+#act
+PLAYEFFECT 27 563 3 1 120 0 0 0 0
+RangeHarm <$X> <$Y> 3 <$MAXDC> 1 3
+
+#IF
+checkitemw 银蛇
+checkitemw 天珠项链
+checkitemw 心灵手镯
+checkitemw 铂金戒指
+EQUAL N$邪恶真气 0
+random 8
+#act
+ChangeHumAbility 9 + <$SC> 8
+AddHumNewValue 4 + 100 8
+MOV N$邪恶真气 1
+PLAYEFFECT 8 990 10 8 100 0 0 0 0
+DELAYGOTO 8000 @邪恶真气
+
+#IF
+checkitemw 罗刹
+random 12
+#act
+SetOnTimer 4 1 6
+
+#IF
+checkitemw 修罗
+random 8
+#act
+SetNextDamage 150
+<$CURRRTARGETNAME>.SetNextDamage 50
+M.PLAYEFFECT 10 440 10 1 100 0 0 0 0
+PLAYSOUND Wav\M5-2.wav 1 4 0
+
+#IF
+checkitemw 斩马刀
+M.CheckHpPer < 10
+random 8
+#act
+M.PLAYEFFECT 11 1805 6 1 100 0 0 0 0
+M.HumanHP - <$ATTACKMONSTER_HP>
+
+#IF
+checkitemw 破魂
+random 8
+#act
+goto @破魂声音
+
+#IF
+checkitemw 蛇眼戒指
+#act
+goto @蛇眼戒指
+
+#IF
+checkitemw 骷髅头盔
+checkitemw 骷髅戒指 2
+checkitemw 死神手套 2
+EQUAL <$CURRRUSEMAGICID> 7
+#act
+MOV N$攻杀 <$PKPOWER>
+DIV N$攻杀 4
+M.ChangeState 1 1
+M.HumanHP - <$STR(N$攻杀)>
+
+#IF
+checkitemw 半月
+random 8
+#act
+M.ChangeState 2 1
+
+#IF
+checkitemw 八荒
+CheckRangeMonCount <$MAP> <$X> <$Y> 3 < 2
+#ACT
+MOVR N$八荒 4 13
+M.PLAYEFFECT 8 633 8 1 100 0 0 0 0
+M.HumanHP - <$STR(N$八荒)>
+
+#IF
+EQUAL U6 1
+random 50
+#ACT
+M.PLAYEFFECT 10 170 5 1 100 0 0 0 0
+M.HumanHP - 8
+SendCenterMsg 180 251 发动怒意狂击！ 0 3
+
+#IF
+EQUAL U6 2
+random 25
+#ACT
+M.PLAYEFFECT 10 170 5 1 100 0 0 0 0
+M.HumanHP - 16
+SendCenterMsg 180 251 发动怒意狂击！ 0 3
+
+#IF
+EQUAL U6 3
+random 16
+#ACT
+M.PLAYEFFECT 10 170 5 1 100 0 0 0 0
+M.HumanHP - 24
+SendCenterMsg 180 251 发动怒意狂击！ 0 3
+
+#IF
+LARGE U13 0
+#ACT
+MOV N$吸血 <$STR(U13)>
+MUL N$吸血 2
+PLAYEFFECT 8 1090 10 1 100 0 0 0 0
+HumanHP + <$STR(N$吸血)>
+
+#IF
+LARGE U14 0
+random 20
+#ACT
+goto @狼召唤
+
+#IF
+EQUAL U15 1
+random 200
+#ACT
+goto @分身1
+
+#IF
+EQUAL U15 2
+random 100
+#ACT
+goto @分身1
+
+#IF
+EQUAL U15 3
+random 60
+#ACT
+goto @分身1
+
+
+[@开天开关]
+#ACT
+MOV N$开天 0
+
+[@龙族检测]
+#IF
+CHECKTEXTLIST ..\QuestDiary\怪物分类\龙族.txt <$ATTACKMONSTER_NAME>
+#act
+MOV N$龙族伤害 <$LEVEL>
+INC N$龙族伤害 <$MAXDC>
+M.HumanHP - <$STR(N$龙族伤害)>
+
+#IF
+#ACT
+RangeHarm <$X> <$Y> 2 <$STR(N$龙破)> 0 0
+
+[@双刃斧检测]
+#IF
+LARGE N$攻击层数 4
+#ACT
+PLAYSOUND Wav\M13-3.wav 1 4
+PLAYEFFECT 22 0 20 1 100 0 0 0 0
+RangeHarm <$X> <$Y> 4 <$MAXDC> 0 0
+MOV N$双刃斧 0
+MOV N$攻击层数 0
+AddHumNewValue 0 - 100 20
+BREAK
+
+#IF
+#ACT
+INC N$双刃斧 10
+INC N$攻击层数 1
+AddHumNewValue 0 + 20 20
+M.HumanHP - <$STR(N$双刃斧)>
+
+
+[@屠戮开关]
+#ACT
+MOV N$屠戮 0
+
+[@风暴]
+#act
+MOV N$风暴 0
+
+[@狼召唤]
+#IF
+CHECKSLAVENAME 野狼
+#ACT
+break
+
+#IF
+EQUAL U14 1
+#ACT
+RECALLMOB 野狼 1 0 0
+SendCenterMsg 180 251 召唤出了1只凶恶的野狼。 0 3
+DELAYGOTO 30000 @杀死野狼
+
+#IF
+EQUAL U14 2
+#ACT
+RECALLMOB 野狼 1 0 0
+RECALLMOB 野狼 1 0 0
+SendCenterMsg 180 251 召唤出了2只凶恶的野狼。 0 3
+DELAYGOTO 30000 @杀死野狼
+
+#IF
+EQUAL U14 3
+#ACT
+RECALLMOB 野狼 1 0 0
+RECALLMOB 野狼 1 0 0
+RECALLMOB 野狼 1 0 0
+SendCenterMsg 180 251 召唤出了3只凶恶的野狼。 0 3
+DELAYGOTO 30000 @杀死野狼
+
+[@杀死野狼]
+#ACT
+KILLCALLMOB 野狼 3 1
+SendCenterMsg 180 251 野狼逃跑了... 0 3
+
+[@分身1]
+#IF
+CHECKSLAVENAME <$USERNAME>(影)
+#ACT
+break
+
+#IF
+EQUAL U15 1
+#ACT
+RecallSelf 1
+SENDDELAYMSG 分身协同作战持续%s后消失。 15 255 0 @杀死分身
+
+#IF
+EQUAL U15 2
+#ACT
+RecallSelf 1
+SENDDELAYMSG 分身协同作战持续%s后消失。 17 255 0 @杀死分身
+
+#IF
+EQUAL U15 3
+#ACT
+RecallSelf 1
+SENDDELAYMSG 分身协同作战持续%s后消失。 20 255 0 @杀死分身
+
+[@杀死分身]
+#ACT
+KILLCALLMOB <$USERNAME>(影) 1 1
+SendCenterMsg 252 251 影分身消散了！ 0 3
+
+[@蛇眼戒指]
+#IF
+checkitemw 蛇眼戒指 2
+random 16
+#act
+M.CHANGESTATE 4 14
+BREAK
+
+#IF
+checkitemw 蛇眼戒指 1
+random 32
+#act
+M.CHANGESTATE 4 7
+
+[@破魂声音]
+#IF
+gender man
+#act
+PLAYSOUND Wav\M7-1.wav 1 4 0
+Releasemagic 魂击 0 0 1
+#elseact
+PLAYSOUND Wav\M7-2.wav 1 4 0
+Releasemagic 魂击 0 0 1
+
+[@邪恶真气]
+#act
+MOV N$邪恶真气 0
+
+[@无极真气]
+#act
+MOV N$无极棍 0
+
+[@怒斩检测]
+#IF
+LARGE <$ATTACKMONSTER_HP> <$HP>
+#ACT
+MOV N$怪物血量 <$ATTACKMONSTER_HP>
+DIV N$怪物血量 25
+M.HumanHP - <$STR(N$怪物血量)>
+
+#IF
+LARGE U11 0
+#ACT
+M.PLAYEFFECT 7 1570 10 1 100 0 0 0 0
+PLAYSOUND Wav\M23-3.wav 1 4
+M.ChangeState 1 2
+SendCenterMsg 180 251 怪物被雷电击晕了。 0 3
+
+}
+
+
+;======================================================
+;======================================================
+;======================================================
+;======================================================
+;======================================================
+
+
+[@魔法攻击功能]
+{
+#IF
+#ACT
+GetAllCustomItemValue 3 N$神圣攻击 N$神圣攻击百分比
+GetAllCustomItemValue 4 N$神圣魔法 N$神圣魔法百分比
+GetAllCustomItemValue 5 N$神圣道术 N$神圣道术百分比
+
+#IF
+CheckJob Warrior
+LARGE N$神圣攻击 0
+CHECKTEXTLIST ..\QuestDiary\怪物分类\暗系怪物.txt <$ATTACKMONSTER_NAME>
+#ACT
+MOV N$怪物当前 <$ATTACKMONSTER_HP>
+DIV N$怪物当前 100
+MUL N$怪物当前 <$STR(N$神圣攻击)>
+M.HumanHP - <$STR(N$怪物当前)>
+M.PLAYEFFECT 13 920 10 1 100 0 0 0 0
+
+#IF
+CheckJob Wizard
+LARGE N$神圣魔法 0
+CHECKTEXTLIST ..\QuestDiary\怪物分类\暗系怪物.txt <$ATTACKMONSTER_NAME>
+#ACT
+MOV N$怪物当前 <$ATTACKMONSTER_HP>
+DIV N$怪物当前 100
+MUL N$怪物当前 <$STR(N$神圣魔法)>
+M.HumanHP - <$STR(N$怪物当前)>
+M.PLAYEFFECT 13 920 10 1 100 0 0 0 0
+
+#IF
+CheckJob Taoist
+LARGE N$神圣道术 0
+CHECKTEXTLIST ..\QuestDiary\怪物分类\暗系怪物.txt <$ATTACKMONSTER_NAME>
+#ACT
+MOV N$怪物当前 <$ATTACKMONSTER_HP>
+DIV N$怪物当前 100
+MUL N$怪物当前 <$STR(N$神圣道术)>
+M.HumanHP - <$STR(N$怪物当前)>
+M.PLAYEFFECT 13 920 10 1 100 0 0 0 0
+
+#IF
+checkitemw 镇天
+EQUAL N$沙尘 0
+random 6
+#ACT
+MOV S$沙尘地图 <$MAP>
+MOV N$沙尘 1
+;SETWEATHEREFFECT <$MAP> 1 23 0 wav\旋风.wav 
+SetOnTimer 12 1 20
+DELAYGOTO 25000 @沙尘
+
+#IF
+checkitemw 玄天
+EQUAL N$天灾 0
+random 12
+#act
+SCENESHAKE 2 10
+MOV S$天灾地图 <$MAP>
+MOV N$天灾 1
+SetOnTimer 14 1 10
+DELAYGOTO 25000 @天灾
+
+#IF
+checkitemw 嗜魂法杖
+random 2
+EQUAL N$时间静止 0
+#act
+MOV N$时间静止 1
+SetBodyColor 0 20 0
+ChangeHumAbility 20 = 255 20
+AddHumNewValue 2 = 100 20
+AddHumNewValue 1 + 100 20
+PLAYEFFECT 18 1040 24 1 100 0 0 0 0
+releasemagic 时间静止 0 3 2
+DELAYGOTO 30000 @时间
+
+#IF
+EQUAL N$阴阳盾 1
+EQUAL <$CURRRUSEMAGICID> 13
+#ACT
+releasemagic 裂神符 0 3 1
+
+#IF
+checkitemw 法神头盔
+checkitemw 法神项链
+checkitemw 法神手镯
+checkitemw 法神戒指
+#act
+goto @法神套装
+
+#IF
+EQUAL <$CURRRUSEMAGICID> 27
+#ACT
+releasemagic 龙影剑法 1 3 2
+
+#IF
+checkitemw 龙牙
+EQUAL N$龙牙 0
+random 12
+#ACT
+MOV S$LY0 <$MAP>
+MOV N$LY <$X>
+MOV N$LY1 <$Y>
+MAPEFFECT <$STR(S$LY0)> <$STR(N$LY)> <$STR(N$LY1)> 57 1140 6 4 100 1 0
+MAPEFFECT <$STR(S$LY0)> <$STR(N$LY)> <$STR(N$LY1)> 31 1860 30 1 100 1 0
+PLAYSOUND Wav\8200-2.wav 1 4
+AddHumNewValue 2 + 100 5
+AddHumNewValue 3 + 100 5
+SetOnTimer 8 1 3
+MOV N$龙牙 1
+DELAYGOTO 8000 @龙牙
+
+#IF
+checkitemw 龙纹剑
+checkitemw 灵魂项链
+checkitemw 三眼手镯
+checkitemw 泰坦戒指
+EQUAL <$CURRRUSEMAGICID> 13
+#act
+releasemagic 幽冥火符 0 0 1
+
+#IF
+checkitemw 龙纹剑
+random 12
+#act
+M.CHANGESTATE 6 4
+SetNextDamage 200
+M.PLAYEFFECT 25 1260 6 1 100 0 0 0 0
+PLAYEFFECT 25 1180 12 1 100 0 0 0 0
+
+#IF
+checkitemw 骨玉权杖
+random 12
+#act
+goto @火系检测
+
+#IF
+checkitemw 无极棍
+random 8
+EQUAL N$无极棍 0
+#act
+MOV N$无极棍 1
+PLAYEFFECT 15 520 7 1 200 0 0 -60 0
+ChangeHumAbility 10 + <$MAXSC> 10
+DELAYGOTO 20000 @无极真气
+
+#IF
+checkitemw 银蛇
+checkitemw 天珠项链
+checkitemw 心灵手镯
+checkitemw 铂金戒指
+EQUAL N$邪恶真气 0
+random 8
+#act
+ChangeHumAbility 9 + <$SC> 8
+AddHumNewValue 4 + 100 8
+MOV N$邪恶真气 1
+PLAYEFFECT 8 990 10 8 100 0 0 0 0
+DELAYGOTO 8000 @邪恶真气
+
+#IF
+checkitemw 偃月
+random 16
+EQUAL N$偃月 0
+#act
+MOV N$偃月 1
+ChangeHumAbility 7 + 4 8
+SetClientBuff 83 4 21 8 9 45 增益状态:魔法下限得到了提高。
+DELAYGOTO 10000 @偃月
+
+#IF
+checkitemw 蛇眼戒指
+#act
+goto @蛇眼戒指1
+
+#IF
+checkitemw 海魂
+EQUAL N$潮汐 0
+#ACT
+MOV N$潮汐 1
+SetOnTimer 2 1 10
+
+#IF
+LARGE N$潮汐值 0
+#act
+M.HumanHP - <$STR(N$潮汐值)>
+
+#IF
+checkitemw 半月
+random 18
+#act
+M.ChangeState 2 1
+
+#IF
+LARGE U11 0
+#ACT
+goto @技能ID
+
+#IF
+LARGE U14 0
+random 20
+#ACT
+goto @狼召唤1
+
+#IF
+EQUAL U15 1
+random 200
+#ACT
+goto @分身11
+
+#IF
+EQUAL U15 2
+random 100
+#ACT
+goto @分身11
+
+#IF
+EQUAL U15 3
+random 60
+#ACT
+goto @分身11
+
+[@天灾]
+#act
+MOV N$天灾 0
+
+[@沙尘]
+#act
+MOV N$沙尘 0
+
+[@时间]
+#act
+MOV N$时间静止 0
+
+[@龙牙]
+#act
+MOV N$龙牙 0
+
+[@火系检测]
+#OR
+EQUAL <$CURRRUSEMAGICID> 1
+EQUAL <$CURRRUSEMAGICID> 5
+EQUAL <$CURRRUSEMAGICID> 9
+EQUAL <$CURRRUSEMAGICID> 22
+EQUAL <$CURRRUSEMAGICID> 23
+#ACT
+MOV N500 1
+DELAYGOTO 15000 @火径关闭
+
+[@火径关闭]
+#act
+MOV N500 0
+
+[@狼召唤1]
+#IF
+CHECKSLAVENAME 野狼
+#ACT
+break
+
+#IF
+EQUAL U14 1
+#ACT
+RECALLMOB 野狼 1 0 0
+SendCenterMsg 180 251 召唤出了1只凶恶的野狼。 0 3
+DELAYGOTO 30000 @杀死野狼1
+
+#IF
+EQUAL U14 2
+#ACT
+RECALLMOB 野狼 1 0 0
+RECALLMOB 野狼 1 0 0
+SendCenterMsg 180 251 召唤出了2只凶恶的野狼。 0 3
+DELAYGOTO 30000 @杀死野狼1
+
+#IF
+EQUAL U14 3
+#ACT
+RECALLMOB 野狼 1 0 0
+RECALLMOB 野狼 1 0 0
+RECALLMOB 野狼 1 0 0
+SendCenterMsg 180 251 召唤出了3只凶恶的野狼。 0 3
+DELAYGOTO 30000 @杀死野狼1
+
+[@杀死野狼1]
+#ACT
+KILLCALLMOB 野狼 3 1
+SendCenterMsg 180 251 野狼逃跑了... 0 3
+
+[@分身11]
+#IF
+CHECKSLAVENAME <$USERNAME>(影)
+#ACT
+break
+
+#IF
+EQUAL U15 1
+#ACT
+RecallSelf 1
+SENDDELAYMSG 分身协同作战持续%s后消失。 15 255 0 @杀死分身1
+
+#IF
+EQUAL U15 2
+#ACT
+RecallSelf 1
+SENDDELAYMSG 分身协同作战持续%s后消失。 17 255 0 @杀死分身1
+
+#IF
+EQUAL U15 3
+#ACT
+RecallSelf 1
+SENDDELAYMSG 分身协同作战持续%s后消失。 20 255 0 @杀死分身1
+
+[@杀死分身1]
+#ACT
+KILLCALLMOB <$USERNAME>(影) 3 1
+SendCenterMsg 252 251 影分身消散了！ 0 3
+
+[@技能ID]
+#IF
+EQUAL U11 1
+RANDOM 100
+#ACT
+goto @技能ID1
+
+#IF
+EQUAL U11 2
+RANDOM 33
+#ACT
+goto @技能ID1
+
+#IF
+EQUAL U11 3
+RANDOM 20
+#ACT
+goto @技能ID1
+
+[@技能ID1]
+#OR
+EQUAL <$CURRRUSEMAGICID> 10
+EQUAL <$CURRRUSEMAGICID> 11
+EQUAL <$CURRRUSEMAGICID> 24
+#ACT
+M.PLAYEFFECT 7 1570 10 1 100 0 0 0 0
+PLAYSOUND Wav\M23-3.wav 1 4
+M.ChangeState 1 2
+SendCenterMsg 180 251 怪物被雷电击晕了。 0 3
+
+[@蛇眼戒指1]
+#IF
+checkitemw 蛇眼戒指 2
+random 50
+#act
+M.CHANGESTATE 4 14
+BREAK
+
+#IF
+checkitemw 蛇眼戒指 1
+random 100
+#act
+M.CHANGESTATE 4 7
+
+[@偃月]
+#act
+MOV N$偃月 0
+
+[@邪恶真气]
+#act
+MOV N$邪恶真气 0
+
+[@无极真气]
+#act
+MOV N$无极棍 0
+
+[@法神套装]
+#OR
+EQUAL <$CURRRUSEMAGICID> 10
+EQUAL <$CURRRUSEMAGICID> 11
+EQUAL <$CURRRUSEMAGICID> 20
+EQUAL <$CURRRUSEMAGICID> 24
+#ACT
+GOTO @毁灭检测
+
+#OR
+EQUAL <$CURRRUSEMAGICID> 1
+EQUAL <$CURRRUSEMAGICID> 5
+EQUAL <$CURRRUSEMAGICID> 8
+EQUAL <$CURRRUSEMAGICID> 9
+EQUAL <$CURRRUSEMAGICID> 22
+EQUAL <$CURRRUSEMAGICID> 23
+EQUAL <$CURRRUSEMAGICID> 45
+EQUAL <$CURRRUSEMAGICID> 47
+EQUAL <$CURRRUSEMAGICID> 58
+#ACT
+#ELSEACT
+BREAK
+
+#IF
+SMALL N$业火 3
+RANDOM 4
+#ACT
+INC N$业火 1
+releasemagic 业火阵 0 1 1
+DELAYGOTO 70000 @业火重置
+
+[@业火重置]
+#act
+DEC N$业火 1
+
+[@毁灭重置]
+#act
+MOV N$毁灭 0
+
+[@毁灭检测]
+#IF
+RANDOM 12
+EQUAL N$毁灭 0
+#ACT
+MOV N$毁灭 1
+MOV N$坐标X <$X>
+MOV N$坐标Y <$Y>
+PLAYSOUND Wav\2410-3.wav 3 4
+MAPEFFECT <$MAP> <$STR(N$坐标X)> <$STR(N$坐标Y)> 62 3370 20 3 100 1 0
+SetOnTimer 10 1 5
+DELAYGOTO 10000 @毁灭重置
+
+
+}

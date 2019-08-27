@@ -1,0 +1,271 @@
+[@法师封号]
+{
+#IF
+CheckVar GLOBAL 男法名字 = <$USERNAME>
+#ACT
+INC <$STR(S$称号显示)> \╰★╮　天下第一　╭★╯\╰☆╮男法师╭☆╯
+SENDMSG 0 天下第一男法师 %s 在%M(%x:%y)上线...
+#IF
+CheckVar GLOBAL 女法名字 = <$USERNAME>
+#ACT
+INC <$STR(S$称号显示)> \╰★╮　天下第一　╭★╯\╰☆╮女法师╭☆╯
+SENDMSG 0 天下第一女法师 %s 在%M(%x:%y)上线...
+#IF
+check [800] 1
+#ACT
+INC <$STR(S$称号显示)> \╰╮VIP会员╭╯
+SETICON 0 100 240 -30 10 6 0 0 200
+goto @会员检测二
+break
+[@会员检测二]
+#IF
+gender WOMAN
+checkrenewlevel > 9
+#ACT
+INC <$STR(S$称号显示)> \鳳·天狂玄傲魔神
+#IF
+gender WOMAN
+checkrenewlevel = 9
+#ACT
+INC <$STR(S$称号显示)> \鳳·天狂玄傲法神
+#IF
+gender WOMAN
+checkrenewlevel = 8
+#ACT
+INC <$STR(S$称号显示)> \鳳·天猖玄元法神
+#IF
+gender WOMAN
+checkrenewlevel = 7
+#ACT
+INC <$STR(S$称号显示)> \鳳·天暴玄宗法神
+#IF
+gender WOMAN
+checkrenewlevel = 6
+#ACT
+INC <$STR(S$称号显示)> \鳳·天魁玄灵法神
+#IF
+gender WOMAN
+checkrenewlevel = 5
+#ACT
+INC <$STR(S$称号显示)> \鳳·天异玄奥法神
+#IF
+gender WOMAN
+checkrenewlevel = 4
+#ACT
+INC <$STR(S$称号显示)> \鳳·天地玄极法神
+#IF
+gender WOMAN
+checkrenewlevel = 3
+#ACT
+INC <$STR(S$称号显示)> \鳳·天地玄极法王
+#IF
+gender WOMAN
+checkrenewlevel = 2
+#ACT
+INC <$STR(S$称号显示)> \鳳·天地玄极法宗
+#IF
+gender WOMAN
+checkrenewlevel = 1
+#ACT
+INC <$STR(S$称号显示)> \鳳·天地玄极法灵
+#IF
+gender man
+checkrenewlevel > 9
+#ACT
+INC <$STR(S$称号显示)> \龍·天狂玄傲魔神
+#IF
+gender man
+checkrenewlevel = 9
+#ACT
+INC <$STR(S$称号显示)> \龍·天狂玄傲法神
+#IF
+gender man
+checkrenewlevel = 8
+#ACT
+INC <$STR(S$称号显示)> \龍·天猖玄元法神
+#IF
+gender man
+checkrenewlevel = 7
+#ACT
+INC <$STR(S$称号显示)> \龍·天暴玄宗法神
+#IF
+gender man
+checkrenewlevel = 6
+#ACT
+INC <$STR(S$称号显示)> \龍·天魁玄灵法神
+#IF
+gender man
+checkrenewlevel = 5
+#ACT
+INC <$STR(S$称号显示)> \龍·天异玄奥法神
+#IF
+gender man
+checkrenewlevel = 4
+#ACT
+INC <$STR(S$称号显示)> \龍·天地玄极法神
+#IF
+gender man
+checkrenewlevel = 3
+#ACT
+INC <$STR(S$称号显示)> \龍·天地玄极法王
+#IF
+gender man
+checkrenewlevel = 2
+#ACT
+INC <$STR(S$称号显示)> \龍·天地玄极法宗
+#IF
+gender man
+checkrenewlevel = 1
+#ACT
+INC <$STR(S$称号显示)> \龍·天地玄极法灵
+#IF
+CHECKLEVELEX > 200
+#ACT
+INC <$STR(S$称号显示)> \天幻法神
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 180
+#ACT
+INC <$STR(S$称号显示)> \天幻法圣
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 170
+#ACT
+INC <$STR(S$称号显示)> \天幻法皇
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 160
+#ACT
+INC <$STR(S$称号显示)> \天幻法王
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 150
+#ACT
+INC <$STR(S$称号显示)> \天幻法宗
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 140
+#ACT
+INC <$STR(S$称号显示)> \天幻法灵
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 135
+#ACT
+INC <$STR(S$称号显示)> \天幻法魄
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 130
+#ACT
+INC <$STR(S$称号显示)> \天幻法魂
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 125
+#ACT
+INC <$STR(S$称号显示)> \幻神法神
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 120
+#ACT
+INC <$STR(S$称号显示)> \幻神法圣
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 115
+#ACT
+INC <$STR(S$称号显示)> \幻神法皇
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 110
+#ACT
+INC <$STR(S$称号显示)> \幻神法王
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 105
+#ACT
+INC <$STR(S$称号显示)> \幻神法宗
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 100
+#ACT
+INC <$STR(S$称号显示)> \幻神法灵
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 95
+#ACT
+INC <$STR(S$称号显示)> \幻神法魄
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 90
+#ACT
+INC <$STR(S$称号显示)> \幻神法魂
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 85
+#ACT
+INC <$STR(S$称号显示)> \法神
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 80
+#ACT
+INC <$STR(S$称号显示)> \法圣
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 75
+#ACT
+INC <$STR(S$称号显示)> \法皇
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 70
+#ACT
+INC <$STR(S$称号显示)> \法王
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 65
+#ACT
+INC <$STR(S$称号显示)> \法宗
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 60
+#ACT
+INC <$STR(S$称号显示)> \法灵
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 55
+#ACT
+INC <$STR(S$称号显示)> \法魄
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 40
+#ACT
+INC <$STR(S$称号显示)> \法魂
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 10
+#ACT
+INC <$STR(S$称号显示)> \小法师
+GOTO @显示封号
+break
+}

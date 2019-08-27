@@ -1,0 +1,98 @@
+[@开始战力排名]
+{
+#IF
+#act
+MOV N$总战斗力 0
+MOV N$体力值上限 <$MAXHP>
+MOV N$魔力值上限 <$MAXHP>
+MOV N$防御力上限 <$MAXAC>
+MOV N$防御力下限 <$AC>
+MOV N$魔防力上限 <$MAXMAC>
+MOV N$魔防力下限 <$MAC>
+MOV N$攻击力上限 <$MAXDC>
+MOV N$攻击力下限 <$DC>
+MOV N$魔法力上限 <$MAXMC>
+MOV N$魔法力下限 <$MC>
+MOV N$道术力上限 <$MAXSC>
+MOV N$道术力下限 <$SC>
+MOV N$准确 <$HIT> 
+MOV N$敏捷 <$SPD> 
+MOV N$攻速 <$HITSPD>
+MOV N$神力倍数 <$POWERRATE>
+MOV N$人物等级 <$LEVEL>
+
+MOV N$暴击几率 <$ELEMENT>
+MOV N$攻击伤害 <$ELEMENT1>
+MOV N$物理减伤 <$ELEMENT2>
+MOV N$魔法减伤 <$ELEMENT3>
+MOV N$忽视防御 <$ELEMENT4>
+MOV N$伤害反弹 <$ELEMENT5>
+MOV N$人物爆率 <$ELEMENT6>
+MOV N$体力增加 <$ELEMENT7>
+MOV N$魔力增加 <$ELEMENT8>
+
+
+DIV N$体力值上限 5
+DIV N$魔力值上限 4
+MUL N$防御力上限 3
+MUL N$防御力下限 2
+MUL N$魔防力上限 2
+MUL N$魔防力下限 1
+MUL N$攻击力上限 8
+MUL N$攻击力下限 6
+MUL N$魔法力上限 7
+MUL N$魔法力下限 5
+MUL N$道术力上限 7
+MUL N$道术力下限 5
+MUL N$准确 30
+MUL N$敏捷 20
+MUL N$攻速 80
+MUL N$神力倍数 80
+MUL N$人物等级 10
+
+MUL N$暴击几率 80
+MUL N$攻击伤害 30
+MUL N$物理减伤 12
+MUL N$魔法减伤 5
+MUL N$忽视防御 8
+MUL N$伤害反弹 8
+MUL N$人物爆率 5
+MUL N$体力增加 3
+MUL N$魔力增加 1
+
+INC N$总战斗力 <$STR(N$体力值上限)>
+INC N$总战斗力 <$STR(N$魔力值上限)>
+INC N$总战斗力 <$STR(N$防御力上限)>
+INC N$总战斗力 <$STR(N$防御力下限)>
+INC N$总战斗力 <$STR(N$魔防力上限)>
+INC N$总战斗力 <$STR(N$魔防力下限)>
+INC N$总战斗力 <$STR(N$攻击力上限)>
+INC N$总战斗力 <$STR(N$攻击力下限)>
+INC N$总战斗力 <$STR(N$魔法力上限)>
+INC N$总战斗力 <$STR(N$魔法力下限)>
+INC N$总战斗力 <$STR(N$道术力上限)>
+INC N$总战斗力 <$STR(N$道术力下限)>
+INC N$总战斗力 <$STR(N$准确)>
+INC N$总战斗力 <$STR(N$敏捷)>
+INC N$总战斗力 <$STR(N$攻速)>
+INC N$总战斗力 <$STR(N$神力倍数)>
+INC N$总战斗力 <$STR(N$人物等级)>
+
+INC N$总战斗力 <$STR(N$暴击几率)>
+INC N$总战斗力 <$STR(N$攻击伤害)>
+INC N$总战斗力 <$STR(N$物理减伤)>
+INC N$总战斗力 <$STR(N$魔法减伤)>
+INC N$总战斗力 <$STR(N$忽视防御)>
+INC N$总战斗力 <$STR(N$伤害反弹)>
+INC N$总战斗力 <$STR(N$人物爆率)>
+INC N$总战斗力 <$STR(N$体力增加)>
+INC N$总战斗力 <$STR(N$魔力增加)>
+CALCVAR HUMAN 总战斗力 = <$STR(N$总战斗力)>
+SAVEVAR HUMAN 总战斗力 ..\QuestDiary\数据文件\战力排行\战力变量.txt
+SortVarToList 总战斗力 ..\QuestDiary\数据文件\战力排行\战力变量.txt ..\QuestDiary\数据文件\战力排行\战力排序.txt 0 1
+GetStringPos ..\QuestDiary\数据文件\战力排行\战力排序.txt <$USERNAME>:<$STR(N$总战斗力)>
+INC N0 1
+setranklevelname <$STR(S$称号显示)>\【战力:<$STR(N$总战斗力)>点‖第<$STR(N0)>名】\
+BREAK
+
+}

@@ -1,0 +1,332 @@
+[@连杀脚本_A]
+{
+#IF
+equal N$连杀数 0
+#ACT
+MOV N$连杀数 1
+CLEARDELAYGOTO
+PLAYSOUND Wav\杀1.mp3 1 0
+MOV N501 120
+GOTO @连杀脚本_结束
+ChangeHumAbility 1 - <$STR(N$加防御)>
+ChangeHumAbility 2 - <$STR(N$加防御)>
+ChangeHumAbility 3 - <$STR(N$加攻击)>
+ChangeHumAbility 4 - <$STR(N$加攻击)>
+ChangeHumAbility 5 - <$STR(N$加攻击)>
+ChangeHumAbility 6 - <$STR(N$加攻击)>
+ChangeHumAbility 7 - <$STR(N$加攻击)>
+ChangeHumAbility 8 - <$STR(N$加攻击)>
+ChangeHumAbility 9 - <$STR(N$加攻击)>
+ChangeHumAbility 10 - <$STR(N$加攻击)>
+MOV N$加防御 4
+MOV N$加攻击 4
+ChangeHumAbility 1 + <$STR(N$加防御)>
+ChangeHumAbility 2 + <$STR(N$加防御)>
+ChangeHumAbility 3 + <$STR(N$加攻击)>
+ChangeHumAbility 4 + <$STR(N$加攻击)>
+ChangeHumAbility 5 + <$STR(N$加攻击)>
+ChangeHumAbility 6 + <$STR(N$加攻击)>
+ChangeHumAbility 7 + <$STR(N$加攻击)>
+ChangeHumAbility 8 + <$STR(N$加攻击)>
+ChangeHumAbility 9 + <$STR(N$加攻击)>
+ChangeHumAbility 10 + <$STR(N$加攻击)>
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+DELAYGOTO 8192 @连杀归零
+BREAK
+#IF
+equal N$连杀数 1
+#ACT
+MOV N$连杀数 2
+CLEARDELAYGOTO
+PLAYSOUND Wav\杀2.mp3 1 0
+MOV N501 121
+GOTO @连杀脚本_结束
+ChangeHumAbility 1 - <$STR(N$加防御)>
+ChangeHumAbility 2 - <$STR(N$加防御)>
+ChangeHumAbility 3 - <$STR(N$加攻击)>
+ChangeHumAbility 4 - <$STR(N$加攻击)>
+ChangeHumAbility 5 - <$STR(N$加攻击)>
+ChangeHumAbility 6 - <$STR(N$加攻击)>
+ChangeHumAbility 7 - <$STR(N$加攻击)>
+ChangeHumAbility 8 - <$STR(N$加攻击)>
+ChangeHumAbility 9 - <$STR(N$加攻击)>
+ChangeHumAbility 10 - <$STR(N$加攻击)>
+MOV N$加防御 8
+MOV N$加攻击 8
+ChangeHumAbility 1 + <$STR(N$加防御)>
+ChangeHumAbility 2 + <$STR(N$加防御)>
+ChangeHumAbility 3 + <$STR(N$加攻击)>
+ChangeHumAbility 4 + <$STR(N$加攻击)>
+ChangeHumAbility 5 + <$STR(N$加攻击)>
+ChangeHumAbility 6 + <$STR(N$加攻击)>
+ChangeHumAbility 7 + <$STR(N$加攻击)>
+ChangeHumAbility 8 + <$STR(N$加攻击)>
+ChangeHumAbility 9 + <$STR(N$加攻击)>
+ChangeHumAbility 10 + <$STR(N$加攻击)>
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+DELAYGOTO 8192 @连杀归零
+BREAK
+#IF
+equal N$连杀数 2
+#ACT
+MOV N$连杀数 3
+CLEARDELAYGOTO
+PLAYSOUND Wav\杀3.mp3 1 0
+MOV N501 122
+GOTO @连杀脚本_结束
+ChangeHumAbility 1 - <$STR(N$加防御)>
+ChangeHumAbility 2 - <$STR(N$加防御)>
+ChangeHumAbility 3 - <$STR(N$加攻击)>
+ChangeHumAbility 4 - <$STR(N$加攻击)>
+ChangeHumAbility 5 - <$STR(N$加攻击)>
+ChangeHumAbility 6 - <$STR(N$加攻击)>
+ChangeHumAbility 7 - <$STR(N$加攻击)>
+ChangeHumAbility 8 - <$STR(N$加攻击)>
+ChangeHumAbility 9 - <$STR(N$加攻击)>
+ChangeHumAbility 10 - <$STR(N$加攻击)>
+MOV N$加防御 12
+MOV N$加攻击 12
+ChangeHumAbility 1 + <$STR(N$加防御)>
+ChangeHumAbility 2 + <$STR(N$加防御)>
+ChangeHumAbility 3 + <$STR(N$加攻击)>
+ChangeHumAbility 4 + <$STR(N$加攻击)>
+ChangeHumAbility 5 + <$STR(N$加攻击)>
+ChangeHumAbility 6 + <$STR(N$加攻击)>
+ChangeHumAbility 7 + <$STR(N$加攻击)>
+ChangeHumAbility 8 + <$STR(N$加攻击)>
+ChangeHumAbility 9 + <$STR(N$加攻击)>
+ChangeHumAbility 10 + <$STR(N$加攻击)>
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+DELAYGOTO 8192 @连杀归零
+BREAK
+#IF
+equal N$连杀数 3
+#ACT
+MOV N$连杀数 4
+CLEARDELAYGOTO
+PLAYSOUND Wav\杀4.mp3 1 0
+MOV N501 123
+GOTO @连杀脚本_结束
+ChangeHumAbility 1 - <$STR(N$加防御)>
+ChangeHumAbility 2 - <$STR(N$加防御)>
+ChangeHumAbility 3 - <$STR(N$加攻击)>
+ChangeHumAbility 4 - <$STR(N$加攻击)>
+ChangeHumAbility 5 - <$STR(N$加攻击)>
+ChangeHumAbility 6 - <$STR(N$加攻击)>
+ChangeHumAbility 7 - <$STR(N$加攻击)>
+ChangeHumAbility 8 - <$STR(N$加攻击)>
+ChangeHumAbility 9 - <$STR(N$加攻击)>
+ChangeHumAbility 10 - <$STR(N$加攻击)>
+MOV N$加防御 8
+MOV N$加攻击 8
+ChangeHumAbility 1 + <$STR(N$加防御)>
+ChangeHumAbility 2 + <$STR(N$加防御)>
+ChangeHumAbility 3 + <$STR(N$加攻击)>
+ChangeHumAbility 4 + <$STR(N$加攻击)>
+ChangeHumAbility 5 + <$STR(N$加攻击)>
+ChangeHumAbility 6 + <$STR(N$加攻击)>
+ChangeHumAbility 7 + <$STR(N$加攻击)>
+ChangeHumAbility 8 + <$STR(N$加攻击)>
+ChangeHumAbility 9 + <$STR(N$加攻击)>
+ChangeHumAbility 10 + <$STR(N$加攻击)>
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+DELAYGOTO 8192 @连杀归零
+BREAK
+#IF
+equal N$连杀数 4
+#ACT
+MOV N$连杀数 5
+CLEARDELAYGOTO
+PLAYSOUND Wav\杀5.mp3 1 0
+MOV N501 124
+GOTO @连杀脚本_结束
+ChangeHumAbility 1 - <$STR(N$加防御)>
+ChangeHumAbility 2 - <$STR(N$加防御)>
+ChangeHumAbility 3 - <$STR(N$加攻击)>
+ChangeHumAbility 4 - <$STR(N$加攻击)>
+ChangeHumAbility 5 - <$STR(N$加攻击)>
+ChangeHumAbility 6 - <$STR(N$加攻击)>
+ChangeHumAbility 7 - <$STR(N$加攻击)>
+ChangeHumAbility 8 - <$STR(N$加攻击)>
+ChangeHumAbility 9 - <$STR(N$加攻击)>
+ChangeHumAbility 10 - <$STR(N$加攻击)>
+MOV N$加防御 20
+MOV N$加攻击 20
+ChangeHumAbility 1 + <$STR(N$加防御)>
+ChangeHumAbility 2 + <$STR(N$加防御)>
+ChangeHumAbility 3 + <$STR(N$加攻击)>
+ChangeHumAbility 4 + <$STR(N$加攻击)>
+ChangeHumAbility 5 + <$STR(N$加攻击)>
+ChangeHumAbility 6 + <$STR(N$加攻击)>
+ChangeHumAbility 7 + <$STR(N$加攻击)>
+ChangeHumAbility 8 + <$STR(N$加攻击)>
+ChangeHumAbility 9 + <$STR(N$加攻击)>
+ChangeHumAbility 10 + <$STR(N$加攻击)>
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+DELAYGOTO 8192 @连杀归零
+BREAK
+#IF
+equal N$连杀数 5
+#ACT
+MOV N$连杀数 6
+CLEARDELAYGOTO
+PLAYSOUND Wav\杀6.mp3 1 0
+MOV N501 125
+GOTO @连杀脚本_结束
+ChangeHumAbility 1 - <$STR(N$加防御)>
+ChangeHumAbility 2 - <$STR(N$加防御)>
+ChangeHumAbility 3 - <$STR(N$加攻击)>
+ChangeHumAbility 4 - <$STR(N$加攻击)>
+ChangeHumAbility 5 - <$STR(N$加攻击)>
+ChangeHumAbility 6 - <$STR(N$加攻击)>
+ChangeHumAbility 7 - <$STR(N$加攻击)>
+ChangeHumAbility 8 - <$STR(N$加攻击)>
+ChangeHumAbility 9 - <$STR(N$加攻击)>
+ChangeHumAbility 10 - <$STR(N$加攻击)>
+MOV N$加防御 24
+MOV N$加攻击 24
+ChangeHumAbility 1 + <$STR(N$加防御)>
+ChangeHumAbility 2 + <$STR(N$加防御)>
+ChangeHumAbility 3 + <$STR(N$加攻击)>
+ChangeHumAbility 4 + <$STR(N$加攻击)>
+ChangeHumAbility 5 + <$STR(N$加攻击)>
+ChangeHumAbility 6 + <$STR(N$加攻击)>
+ChangeHumAbility 7 + <$STR(N$加攻击)>
+ChangeHumAbility 8 + <$STR(N$加攻击)>
+ChangeHumAbility 9 + <$STR(N$加攻击)>
+ChangeHumAbility 10 + <$STR(N$加攻击)>
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+DELAYGOTO 8192 @连杀归零
+BREAK
+#IF
+equal N$连杀数 6
+#ACT
+MOV N$连杀数 7
+CLEARDELAYGOTO
+PLAYSOUND Wav\杀7.mp3 1 0
+MOV N501 126
+GOTO @连杀脚本_结束
+ChangeHumAbility 1 - <$STR(N$加防御)>
+ChangeHumAbility 2 - <$STR(N$加防御)>
+ChangeHumAbility 3 - <$STR(N$加攻击)>
+ChangeHumAbility 4 - <$STR(N$加攻击)>
+ChangeHumAbility 5 - <$STR(N$加攻击)>
+ChangeHumAbility 6 - <$STR(N$加攻击)>
+ChangeHumAbility 7 - <$STR(N$加攻击)>
+ChangeHumAbility 8 - <$STR(N$加攻击)>
+ChangeHumAbility 9 - <$STR(N$加攻击)>
+ChangeHumAbility 10 - <$STR(N$攻击)>
+MOV N$加防御 28
+MOV N$加攻击 28
+ChangeHumAbility 1 + <$STR(N$加防御)>
+ChangeHumAbility 2 + <$STR(N$加防御)>
+ChangeHumAbility 3 + <$STR(N$加攻击)>
+ChangeHumAbility 4 + <$STR(N$加攻击)>
+ChangeHumAbility 5 + <$STR(N$加攻击)>
+ChangeHumAbility 6 + <$STR(N$加攻击)>
+ChangeHumAbility 7 + <$STR(N$加攻击)>
+ChangeHumAbility 8 + <$STR(N$加攻击)>
+ChangeHumAbility 9 + <$STR(N$加攻击)>
+ChangeHumAbility 10 + <$STR(N$加攻击)>
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+DELAYGOTO 8192 @连杀归零
+BREAK
+#IF
+equal N$连杀数 7
+#ACT
+MOV N$连杀数 8
+CLEARDELAYGOTO
+PLAYSOUND Wav\杀8.mp3 1 0
+MOV N501 127
+GOTO @连杀脚本_结束
+ChangeHumAbility 1 - <$STR(N$加防御)>
+ChangeHumAbility 2 - <$STR(N$加防御)>
+ChangeHumAbility 3 - <$STR(N$加攻击)>
+ChangeHumAbility 4 - <$STR(N$加攻击)>
+ChangeHumAbility 5 - <$STR(N$加攻击)>
+ChangeHumAbility 6 - <$STR(N$加攻击)>
+ChangeHumAbility 7 - <$STR(N$加攻击)>
+ChangeHumAbility 8 - <$STR(N$加攻击)>
+ChangeHumAbility 9 - <$STR(N$加攻击)>
+ChangeHumAbility 10 - <$STR(N$加攻击)>
+MOV N$加防御 32
+MOV N$加攻击 32
+ChangeHumAbility 1 + <$STR(N$加防御)>
+ChangeHumAbility 2 + <$STR(N$加防御)>
+ChangeHumAbility 3 + <$STR(N$加攻击)>
+ChangeHumAbility 4 + <$STR(N$加攻击)>
+ChangeHumAbility 5 + <$STR(N$加攻击)>
+ChangeHumAbility 6 + <$STR(N$加攻击)>
+ChangeHumAbility 7 + <$STR(N$加攻击)>
+ChangeHumAbility 8 + <$STR(N$加攻击)>
+ChangeHumAbility 9 + <$STR(N$加攻击)>
+ChangeHumAbility 10 + <$STR(N$加攻击)>
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+SENDMSG 7 提示信息:连杀一人,全属性提高[4]点,8秒内再杀一人属性将会再次提升,8秒内未击杀任何玩家属性归零。 251 0
+DELAYGOTO 8192 @连杀归零
+BREAK
+
+
+
+
+
+[@连杀脚本_结束]
+#IF
+	CheckClientWidth = 1024
+	CheckClientHeight = 768
+#ACT
+	SCREENEFFECT 540 300 100 <$STR(N501)> 1 1 1000 1 0
+#IF
+	CheckClientWidth = 800
+	CheckClientHeight = 600
+#ACT
+	SCREENEFFECT 400 300 100 <$STR(N501)> 1 1 1000 1 0
+#IF
+	CheckClientWidth = 900
+	CheckClientHeight = 600
+#ACT
+	SCREENEFFECT 450 300 100 <$STR(N501)> 1 1 1000 1 0
+#IF
+	CheckClientWidth = 1024
+	CheckClientHeight = 600
+#ACT
+	SCREENEFFECT 540 300 100 <$STR(N501)> 1 1 1000 1 0
+
+[@连杀归零]
+#IF
+#ACT
+ChangeHumAbility 1 - <$STR(N$加防御)>
+ChangeHumAbility 2 - <$STR(N$加防御)>
+ChangeHumAbility 3 - <$STR(N$加攻击)>
+ChangeHumAbility 4 - <$STR(N$加攻击)>
+ChangeHumAbility 5 - <$STR(N$加攻击)>
+ChangeHumAbility 6 - <$STR(N$加攻击)>
+ChangeHumAbility 7 - <$STR(N$加攻击)>
+ChangeHumAbility 8 - <$STR(N$加攻击)>
+ChangeHumAbility 9 - <$STR(N$加攻击)>
+ChangeHumAbility 10 - <$STR(N$加攻击)>
+MOV N$连杀数 0
+MOV N$加防御 0
+MOV N$加攻击 0
+SENDMSG 5 提示信息:连杀属性已归零。 249 0
+SENDMSG 5 提示信息:连杀属性已归零。 249 0
+SENDMSG 5 提示信息:连杀属性已归零。 249 0
+SENDMSG 5 提示信息:连杀属性已归零。 249 0
+SENDMSG 5 提示信息:连杀属性已归零。 249 0
+break
+}

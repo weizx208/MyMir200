@@ -1,0 +1,45 @@
+[@经验倍数]
+{
+#IF
+#ACT
+mov N$经验倍数 100
+
+#or
+checkitemw 木剑 1
+checkitemw 布衣(男) 1
+checkitemw 布衣(女) 1
+#ACT
+inc N$经验倍数 20
+
+#or
+CheckContainsText <$RING_R> 魅力戒指
+CheckContainsText <$RING_L> 魅力戒指
+#ACT
+inc N$经验倍数 15
+
+#IF
+check [800] 1
+#ACT
+inc N$经验倍数 50
+
+#IF
+equal <$STR(N$经验倍数)> <$STR(N$新经验倍数)>
+#ACT
+break
+
+#IF
+#ACT
+mov N$新经验倍数 <$STR(N$经验倍数)>
+mov N$经验个位 <$STR(N$经验倍数)>
+div N$经验个位 100
+mov N$经验传递 <$STR(N$经验个位)>
+mul N$经验传递 10
+mov N$经验分位 <$STR(N$经验倍数)>
+div N$经验分位 10
+dec N$经验分位 <$STR(N$经验传递)>
+KILLMONEXPRATE <$STR(N$经验倍数)> 0
+SetClientBuff 102 1 0 -1 <$STR(N$分辨率宽4)> <$STR(N$分辨率高4)> {经验倍数：<$STR(N$经验个位)>.<$STR(N$经验分位)>倍|253} (开启)
+ShowClientBuff 1 1
+}
+
+

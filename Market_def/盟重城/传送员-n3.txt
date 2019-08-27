@@ -1,0 +1,3 @@
+[@MAIN]
+#ACT
+#CALL [城市NPC\传送员.txt] @大地图传送

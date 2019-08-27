@@ -1,0 +1,772 @@
+[@杂货商人]
+#IF
+#ACT
+goto @重置变量
+goto @物品列表
+OPENMERCHANTBIGDLG 13 50 0 0 0 0 1 518 22 1
+
+[@物品列表]
+#ACT
+Mov N$当前页数 1
+Mov N$最大页数 3
+Mov S$ItemList1 金创药(小量)
+Mov S$ItemList2 魔法药(小量)
+Mov S$ItemList3 金创药(小)包
+Mov S$ItemList4 魔法药(小)包
+Mov S$ItemList5 金创药(中量)
+Mov S$ItemList6 魔法药(中量)
+Mov S$ItemList7 金创药(中)包
+Mov S$ItemList8 魔法药(中)包
+Mov S$ItemList9 强效金创药
+Mov S$ItemList10 强效魔法药
+Mov S$ItemList11 超级金创药
+Mov S$ItemList12 超级魔法药
+Mov S$ItemList13 太阳水
+Mov S$ItemList14 回城卷
+Mov S$ItemList15 随机传送卷包
+Mov S$ItemList16 灰色药粉(大量)
+Mov S$ItemList17 黄色药粉(大量)
+Mov S$ItemList18 护身符(大)
+Mov S$ItemList19 鸡蛋
+Mov S$ItemList20 修复神水
+Mov S$ItemList21 超级护身符
+Mov S$ItemList22 超级灰色药粉
+Mov S$ItemList23 超级黄色药粉
+Mov S$ItemList24 鸡肉
+Mov S$ItemList25 碎肉
+Mov S$ItemList26 肉
+Mov S$ItemList27 鲜肉
+Mov S$ItemList28 铜矿
+Mov S$ItemList29 铁矿
+Mov S$ItemList30 银矿
+
+goto @读取物品Id
+goto @读取物品价格
+goto @设置当前买卖物品
+
+[@说话]
+#IF
+not Equal N$临时ItemListPrice1 0
+#ACT
+Mov N$页数坐标Y 281
+#SAY
+<ItemShow:<$STR(N$临时ItemListId1)>:0:174:82:1/@购买物品1>\
+<text:<$STR(S$临时ItemList1)>:225:66:{AUTOCOLOR=250}>\
+<text:价格：:225:76:{AUTOCOLOR=254}>\
+<text:<$STR(N$临时ItemListPrice1)>:260:60:{AUTOCOLOR=251}>\
+<text:金币:300:44:{AUTOCOLOR=245}>\
+
+#IF
+not Equal N$临时ItemListPrice2 0
+#ACT
+Mov N$页数坐标Y 201
+#SAY
+<ItemShow:<$STR(N$临时ItemListId2)>:0:344:2:1/@购买物品2>\
+<text:<$STR(S$临时ItemList2)>:396:-13:{AUTOCOLOR=250}>\
+<text:价格：:396:-3:{AUTOCOLOR=254}>\
+<text:<$STR(N$临时ItemListPrice2)>:431:-19:{AUTOCOLOR=251}>\
+<text:金币:471:-35:{AUTOCOLOR=245}>\
+
+#IF
+not Equal N$临时ItemListPrice3 0
+#ACT
+Mov N$页数坐标Y 121
+#SAY
+<ItemShow:<$STR(N$临时ItemListId3)>:0:174:-24:1/@购买物品3>\
+<text:<$STR(S$临时ItemList3)>:225:-41:{AUTOCOLOR=250}>\
+<text:价格：:225:-31:{AUTOCOLOR=254}>\
+<text:<$STR(N$临时ItemListPrice3)>:260:-47:{AUTOCOLOR=251}>\
+<text:金币:300:-63:{AUTOCOLOR=245}>\
+
+#IF
+not Equal N$临时ItemListPrice4 0
+#ACT
+Mov N$页数坐标Y 41
+#SAY
+<ItemShow:<$STR(N$临时ItemListId4)>:0:344:-104:1/@购买物品4>\
+<text:<$STR(S$临时ItemList4)>:396:-119:{AUTOCOLOR=250}>\
+<text:价格：:396:-110:{AUTOCOLOR=254}>\
+<text:<$STR(N$临时ItemListPrice4)>:431:-126:{AUTOCOLOR=251}>\
+<text:金币:471:-142:{AUTOCOLOR=245}>\
+
+#IF
+not Equal N$临时ItemListPrice5 0
+#ACT
+Mov N$页数坐标Y -39
+#SAY
+<ItemShow:<$STR(N$临时ItemListId5)>:0:174:-131:1/@购买物品5>\
+<text:<$STR(S$临时ItemList5)>:225:-146:{AUTOCOLOR=250}>\
+<text:价格：:225:-136:{AUTOCOLOR=254}>\
+<text:<$STR(N$临时ItemListPrice5)>:260:-152:{AUTOCOLOR=251}>\
+<text:金币:300:-168:{AUTOCOLOR=245}>\
+
+#IF
+not Equal N$临时ItemListPrice6 0
+#ACT
+Mov N$页数坐标Y -119
+#SAY
+<ItemShow:<$STR(N$临时ItemListId6)>:0:345:-211:1/@购买物品6>\
+<text:<$STR(S$临时ItemList6)>:396:-226:{AUTOCOLOR=250}>\
+<text:价格：:396:-217:{AUTOCOLOR=254}>\
+<text:<$STR(N$临时ItemListPrice6)>:431:-233:{AUTOCOLOR=251}>\
+<text:金币:471:-249:{AUTOCOLOR=245}>\
+
+#IF
+not Equal N$临时ItemListPrice7 0
+#ACT
+Mov N$页数坐标Y -199
+#SAY
+<ItemShow:<$STR(N$临时ItemListId7)>:0:174:-238:1/@购买物品7>\
+<text:<$STR(S$临时ItemList7)>:225:-253:{AUTOCOLOR=250}>\
+<text:价格：:225:-243:{AUTOCOLOR=254}>\
+<text:<$STR(N$临时ItemListPrice7)>:260:-259:{AUTOCOLOR=251}>\
+<text:金币:300:-275:{AUTOCOLOR=245}>\
+
+#IF
+not Equal N$临时ItemListPrice8 0
+#ACT
+Mov N$页数坐标Y -279
+#SAY
+<ItemShow:<$STR(N$临时ItemListId8)>:0:345:-318:1/@购买物品8>\
+<text:<$STR(S$临时ItemList8)>:396:-333:{AUTOCOLOR=250}>\
+<text:价格：:396:-324:{AUTOCOLOR=254}>\
+<text:<$STR(N$临时ItemListPrice8)>:431:-340:{AUTOCOLOR=251}>\
+<text:金币:471:-356:{AUTOCOLOR=245}>\
+
+#IF
+not Equal N$临时ItemListPrice9 0
+#ACT
+Mov N$页数坐标Y -359
+#SAY
+<ItemShow:<$STR(N$临时ItemListId9)>:0:174:-345:1/@购买物品9>\
+<text:<$STR(S$临时ItemList9)>:225:-360:{AUTOCOLOR=250}>\
+<text:价格：:225:-350:{AUTOCOLOR=254}>\
+<text:<$STR(N$临时ItemListPrice9)>:260:-366:{AUTOCOLOR=251}>\
+<text:金币:300:-382:{AUTOCOLOR=245}>\
+
+#IF
+not Equal N$临时ItemListPrice10 0
+#ACT
+Mov N$页数坐标Y -439
+#SAY
+<ItemShow:<$STR(N$临时ItemListId10)>:0:345:-425:1/@购买物品10>\
+<text:<$STR(S$临时ItemList10)>:396:-440:{AUTOCOLOR=250}>\
+<text:价格：:396:-431:{AUTOCOLOR=254}>\
+<text:<$STR(N$临时ItemListPrice10)>:431:-447:{AUTOCOLOR=251}>\
+<text:金币:471:-463:{AUTOCOLOR=245}>\
+
+#IF
+#ACT
+;请修改你的Wil序号与图片ID
+#SAY
+<ImgEx:13:57:58:59:235:<$STR(N$页数坐标Y)>/@sell><ImgEx:13:51:52:53:260:<$STR(N$页数坐标Y)>/@上一页><ImgEx:13:54:55:56:285:<$STR(N$页数坐标Y)>/@下一页>\
+
+#IF
+#ACT
+GetDBItemFieldValue 鸡蛋 idx <$STR(N11)>
+GetDBItemFieldValue 太阳水 idx <$STR(N22)>
+GetDBItemFieldValue 鸡蛋 Price <$STR(N33)>
+GetDBItemFieldValue 太阳水 Price <$STR(N44)>
+DIV N33 2
+DIV N44 2
+
+#IF
+#SAY
+<PlayImgEx:44:220:10:200:0:52:-685:1>\
+<Text:今日特价:50:-624{FCOLOR=251}>\
+<ItemShow:<$STR(N11)>:0:5:-600:1/@特价物品1>\
+<text:鸡蛋:50:-615:{AUTOCOLOR=250}>\
+<text:价格：:50:-606:{AUTOCOLOR=254}>\
+<text:<$STR(N33)>:85:-622:{AUTOCOLOR=251}>\
+<text:金币:115:-639:{AUTOCOLOR=245}>\
+<ItemShow:<$STR(N22)>:0:5:-610:1/@特价物品2>\
+<text:太阳水:50:-625:{AUTOCOLOR=250}>\
+<text:价格：:50:-616:{AUTOCOLOR=254}>\
+<text:<$STR(N44)>:85:-632:{AUTOCOLOR=251}>\
+<text:金币:115:-649:{AUTOCOLOR=245}>\
+
+[@特价物品1]
+#IF
+NOT SMALL <$GOLDCOUNT> <$STR(N33)>
+#ACT
+take 金币 <$STR(N33)>
+GIVE 鸡蛋 1
+#elseact
+messagebox 金币不足。
+
+[@特价物品2]
+#IF
+NOT SMALL <$GOLDCOUNT> <$STR(N44)>
+#ACT
+take 金币 <$STR(N44)>
+GIVE 太阳水 1
+#elseact
+messagebox 金币不足。
+
+[@购买物品1]
+#IF
+checkgold <$STR(N$临时ItemListPrice1)>
+#ACT
+take 金币 <$STR(N$临时ItemListPrice1)>
+give <$STR(S$临时ItemList1)> 1
+#ELSEACT
+MESSAGEBOX 对不起，您的金币不足！
+
+[@购买物品2]
+#IF
+checkgold <$STR(N$临时ItemListPrice2)>
+#ACT
+take 金币 <$STR(N$临时ItemListPrice2)>
+give <$STR(S$临时ItemList2)> 1
+#ELSEACT
+MESSAGEBOX 对不起，您的金币不足！
+
+
+[@购买物品3]
+#IF
+checkgold <$STR(N$临时ItemListPrice3)>
+#ACT
+take 金币 <$STR(N$临时ItemListPrice3)>
+give <$STR(S$临时ItemList3)> 1
+#ELSEACT
+MESSAGEBOX 对不起，您的金币不足！
+
+
+[@购买物品4]
+#IF
+checkgold <$STR(N$临时ItemListPrice4)>
+#ACT
+take 金币 <$STR(N$临时ItemListPrice4)>
+give <$STR(S$临时ItemList4)> 1
+#ELSEACT
+MESSAGEBOX 对不起，您的金币不足！
+
+
+[@购买物品5]
+#IF
+checkgold <$STR(N$临时ItemListPrice5)>
+#ACT
+take 金币 <$STR(N$临时ItemListPrice5)>
+give <$STR(S$临时ItemList5)> 1
+#ELSEACT
+MESSAGEBOX 对不起，您的金币不足！
+
+
+[@购买物品6]
+#IF
+checkgold <$STR(N$临时ItemListPrice6)>
+#ACT
+take 金币 <$STR(N$临时ItemListPrice6)>
+give <$STR(S$临时ItemList6)> 1
+#ELSEACT
+MESSAGEBOX 对不起，您的金币不足！
+
+
+[@购买物品7]
+#IF
+checkgold <$STR(N$临时ItemListPrice7)>
+#ACT
+take 金币 <$STR(N$临时ItemListPrice7)>
+give <$STR(S$临时ItemList7)> 1
+#ELSEACT
+MESSAGEBOX 对不起，您的金币不足！
+
+
+[@购买物品8]
+#IF
+checkgold <$STR(N$临时ItemListPrice8)>
+#ACT
+take 金币 <$STR(N$临时ItemListPrice8)>
+give <$STR(S$临时ItemList8)> 1
+#ELSEACT
+MESSAGEBOX 对不起，您的金币不足！
+
+
+[@购买物品9]
+#IF
+checkgold <$STR(N$临时ItemListPrice9)>
+#ACT
+take 金币 <$STR(N$临时ItemListPrice9)>
+give <$STR(S$临时ItemList9)> 1
+#ELSEACT
+MESSAGEBOX 对不起，您的金币不足！
+
+
+[@购买物品10]
+#IF
+checkgold <$STR(N$临时ItemListPrice10)>
+#ACT
+take 金币 <$STR(N$临时ItemListPrice10)>
+give <$STR(S$临时ItemList10)> 1
+#ELSEACT
+MESSAGEBOX 对不起，您的金币不足！
+
+[@上一页]
+#IF
+LARGE N$当前页数 1
+#ACT
+Dec N$当前页数 1
+
+#IF
+#ACT
+goto @设置当前买卖物品
+
+[@下一页]
+#IF
+SMALL N$当前页数 <$STR(N$最大页数)>
+#ACT
+Inc N$当前页数 1
+
+#IF
+#ACT
+goto @设置当前买卖物品
+
+[@设置当前买卖物品]
+#IF
+Equal N$当前页数 1
+#ACT
+Mov S$临时ItemList1 <$STR(S$ItemList1)>
+Mov S$临时ItemList2 <$STR(S$ItemList2)>
+Mov S$临时ItemList3 <$STR(S$ItemList3)>
+Mov S$临时ItemList4 <$STR(S$ItemList4)>
+Mov S$临时ItemList5 <$STR(S$ItemList5)>
+Mov S$临时ItemList6 <$STR(S$ItemList6)>
+Mov S$临时ItemList7 <$STR(S$ItemList7)>
+Mov S$临时ItemList8 <$STR(S$ItemList8)>
+Mov S$临时ItemList9 <$STR(S$ItemList9)>
+Mov S$临时ItemList10 <$STR(S$ItemList10)>
+Mov N$临时ItemListId1 <$STR(N$ItemListId1)>
+Mov N$临时ItemListId2 <$STR(N$ItemListId2)>
+Mov N$临时ItemListId3 <$STR(N$ItemListId3)>
+Mov N$临时ItemListId4 <$STR(N$ItemListId4)>
+Mov N$临时ItemListId5 <$STR(N$ItemListId5)>
+Mov N$临时ItemListId6 <$STR(N$ItemListId6)>
+Mov N$临时ItemListId7 <$STR(N$ItemListId7)>
+Mov N$临时ItemListId8 <$STR(N$ItemListId8)>
+Mov N$临时ItemListId9 <$STR(N$ItemListId9)>
+Mov N$临时ItemListId10 <$STR(N$ItemListId10)>
+Mov N$临时ItemListPrice1 <$STR(N$ItemListPrice1)>
+Mov N$临时ItemListPrice2 <$STR(N$ItemListPrice2)>
+Mov N$临时ItemListPrice3 <$STR(N$ItemListPrice3)>
+Mov N$临时ItemListPrice4 <$STR(N$ItemListPrice4)>
+Mov N$临时ItemListPrice5 <$STR(N$ItemListPrice5)>
+Mov N$临时ItemListPrice6 <$STR(N$ItemListPrice6)>
+Mov N$临时ItemListPrice7 <$STR(N$ItemListPrice7)>
+Mov N$临时ItemListPrice8 <$STR(N$ItemListPrice8)>
+Mov N$临时ItemListPrice9 <$STR(N$ItemListPrice9)>
+Mov N$临时ItemListPrice10 <$STR(N$ItemListPrice10)>
+
+#IF
+Equal N$当前页数 2
+#ACT
+Mov S$临时ItemList1 <$STR(S$ItemList11)>
+Mov S$临时ItemList2 <$STR(S$ItemList12)>
+Mov S$临时ItemList3 <$STR(S$ItemList13)>
+Mov S$临时ItemList4 <$STR(S$ItemList14)>
+Mov S$临时ItemList5 <$STR(S$ItemList15)>
+Mov S$临时ItemList6 <$STR(S$ItemList16)>
+Mov S$临时ItemList7 <$STR(S$ItemList17)>
+Mov S$临时ItemList8 <$STR(S$ItemList18)>
+Mov S$临时ItemList9 <$STR(S$ItemList19)>
+Mov S$临时ItemList10 <$STR(S$ItemList20)>
+Mov N$临时ItemListId1 <$STR(N$ItemListId11)>
+Mov N$临时ItemListId2 <$STR(N$ItemListId12)>
+Mov N$临时ItemListId3 <$STR(N$ItemListId13)>
+Mov N$临时ItemListId4 <$STR(N$ItemListId14)>
+Mov N$临时ItemListId5 <$STR(N$ItemListId15)>
+Mov N$临时ItemListId6 <$STR(N$ItemListId16)>
+Mov N$临时ItemListId7 <$STR(N$ItemListId17)>
+Mov N$临时ItemListId8 <$STR(N$ItemListId18)>
+Mov N$临时ItemListId9 <$STR(N$ItemListId19)>
+Mov N$临时ItemListId10 <$STR(N$ItemListId20)>
+Mov N$临时ItemListPrice1 <$STR(N$ItemListPrice11)>
+Mov N$临时ItemListPrice2 <$STR(N$ItemListPrice12)>
+Mov N$临时ItemListPrice3 <$STR(N$ItemListPrice13)>
+Mov N$临时ItemListPrice4 <$STR(N$ItemListPrice14)>
+Mov N$临时ItemListPrice5 <$STR(N$ItemListPrice15)>
+Mov N$临时ItemListPrice6 <$STR(N$ItemListPrice16)>
+Mov N$临时ItemListPrice7 <$STR(N$ItemListPrice17)>
+Mov N$临时ItemListPrice8 <$STR(N$ItemListPrice18)>
+Mov N$临时ItemListPrice9 <$STR(N$ItemListPrice19)>
+Mov N$临时ItemListPrice10 <$STR(N$ItemListPrice20)>
+
+#IF
+Equal N$当前页数 3
+#ACT
+Mov S$临时ItemList1 <$STR(S$ItemList21)>
+Mov S$临时ItemList2 <$STR(S$ItemList22)>
+Mov S$临时ItemList3 <$STR(S$ItemList23)>
+Mov S$临时ItemList4 <$STR(S$ItemList24)>
+Mov S$临时ItemList5 <$STR(S$ItemList25)>
+Mov S$临时ItemList6 <$STR(S$ItemList26)>
+Mov S$临时ItemList7 <$STR(S$ItemList27)>
+Mov S$临时ItemList8 <$STR(S$ItemList28)>
+Mov S$临时ItemList9 <$STR(S$ItemList29)>
+Mov S$临时ItemList10 <$STR(S$ItemList30)>
+Mov N$临时ItemListId1 <$STR(N$ItemListId21)>
+Mov N$临时ItemListId2 <$STR(N$ItemListId22)>
+Mov N$临时ItemListId3 <$STR(N$ItemListId23)>
+Mov N$临时ItemListId4 <$STR(N$ItemListId24)>
+Mov N$临时ItemListId5 <$STR(N$ItemListId25)>
+Mov N$临时ItemListId6 <$STR(N$ItemListId26)>
+Mov N$临时ItemListId7 <$STR(N$ItemListId27)>
+Mov N$临时ItemListId8 <$STR(N$ItemListId28)>
+Mov N$临时ItemListId9 <$STR(N$ItemListId29)>
+Mov N$临时ItemListId10 <$STR(N$ItemListId30)>
+Mov N$临时ItemListPrice1 <$STR(N$ItemListPrice21)>
+Mov N$临时ItemListPrice2 <$STR(N$ItemListPrice22)>
+Mov N$临时ItemListPrice3 <$STR(N$ItemListPrice23)>
+Mov N$临时ItemListPrice4 <$STR(N$ItemListPrice24)>
+Mov N$临时ItemListPrice5 <$STR(N$ItemListPrice25)>
+Mov N$临时ItemListPrice6 <$STR(N$ItemListPrice26)>
+Mov N$临时ItemListPrice7 <$STR(N$ItemListPrice27)>
+Mov N$临时ItemListPrice8 <$STR(N$ItemListPrice28)>
+Mov N$临时ItemListPrice9 <$STR(N$ItemListPrice29)>
+Mov N$临时ItemListPrice10 <$STR(N$ItemListPrice30)>
+
+#IF
+#ACT
+goto @说话
+
+[@读取物品Id]
+;读取物品Id
+#IF
+not Equal S$ItemList1 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList1)> idx N$ItemListId1
+
+#IF
+not Equal S$ItemList2 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList2)> idx N$ItemListId2
+
+#IF
+not Equal S$ItemList3 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList3)> idx N$ItemListId3
+
+#IF
+not Equal S$ItemList4 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList4)> idx N$ItemListId4
+
+#IF
+not Equal S$ItemList5 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList5)> idx N$ItemListId5
+
+#IF
+not Equal S$ItemList6 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList6)> idx N$ItemListId6
+
+#IF
+not Equal S$ItemList7 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList7)> idx N$ItemListId7
+
+#IF
+not Equal S$ItemList8 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList8)> idx N$ItemListId8
+
+#IF
+not Equal S$ItemList9 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList9)> idx N$ItemListId9
+
+#IF
+not Equal S$ItemList10
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList10)> idx N$ItemListId10
+
+#IF
+not Equal S$ItemList11
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList11)> idx N$ItemListId11
+
+#IF
+not Equal S$ItemList12 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList12)> idx N$ItemListId12
+
+#IF
+not Equal S$ItemList13 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList13)> idx N$ItemListId13
+
+#IF
+not Equal S$ItemList14 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList14)> idx N$ItemListId14
+
+#IF
+not Equal S$ItemList15 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList15)> idx N$ItemListId15
+
+#IF
+not Equal S$ItemList16 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList16)> idx N$ItemListId16
+
+#IF
+not Equal S$ItemList17 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList17)> idx N$ItemListId17
+
+#IF
+not Equal S$ItemList18 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList18)> idx N$ItemListId18
+
+#IF
+not Equal S$ItemList19 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList19)> idx N$ItemListId19
+
+#IF
+not Equal S$ItemList20 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList20)> idx N$ItemListId20
+
+#IF
+not Equal S$ItemList21 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList21)> idx N$ItemListId21
+
+#IF
+not Equal S$ItemList22 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList22)> idx N$ItemListId22
+
+#IF
+not Equal S$ItemList23 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList23)> idx N$ItemListId23
+
+#IF
+not Equal S$ItemList24 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList24)> idx N$ItemListId24
+
+#IF
+not Equal S$ItemList25 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList25)> idx N$ItemListId25
+
+#IF
+not Equal S$ItemList26 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList26)> idx N$ItemListId26
+
+#IF
+not Equal S$ItemList27 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList27)> idx N$ItemListId27
+
+#IF
+not Equal S$ItemList28 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList28)> idx N$ItemListId28
+
+#IF
+not Equal S$ItemList29 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList29)> idx N$ItemListId29
+
+#IF
+not Equal S$ItemList30 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList30)> idx N$ItemListId30
+
+
+[@读取物品价格]
+#IF
+not Equal S$ItemList1 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList1)> Price N$ItemListPrice1
+
+#IF
+not Equal S$ItemList2 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList2)> Price N$ItemListPrice2
+
+#IF
+not Equal S$ItemList3 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList3)> Price N$ItemListPrice3
+
+#IF
+not Equal S$ItemList4 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList4)> Price N$ItemListPrice4
+
+#IF
+not Equal S$ItemList5 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList5)> Price N$ItemListPrice5
+
+#IF
+not Equal S$ItemList6 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList6)> Price N$ItemListPrice6
+
+#IF
+not Equal S$ItemList7 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList7)> Price N$ItemListPrice7
+
+#IF
+not Equal S$ItemList8 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList8)> Price N$ItemListPrice8
+
+#IF
+not Equal S$ItemList9 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList9)> Price N$ItemListPrice9
+
+#IF
+not Equal S$ItemList10 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList10)> Price N$ItemListPrice10
+
+#IF
+not Equal S$ItemList11 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList11)> Price N$ItemListPrice11
+
+#IF
+not Equal S$ItemList12 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList12)> Price N$ItemListPrice12
+
+#IF
+not Equal S$ItemList13 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList13)> Price N$ItemListPrice13
+
+#IF
+not Equal S$ItemList14 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList14)> Price N$ItemListPrice14
+
+#IF
+not Equal S$ItemList15 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList15)> Price N$ItemListPrice15
+
+#IF
+not Equal S$ItemList16 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList16)> Price N$ItemListPrice16
+
+#IF
+not Equal S$ItemList17 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList17)> Price N$ItemListPrice17
+
+#IF
+not Equal S$ItemList18 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList18)> Price N$ItemListPrice18
+
+#IF
+not Equal S$ItemList19 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList19)> Price N$ItemListPrice19
+
+#IF
+not Equal S$ItemList20 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList20)> Price N$ItemListPrice20
+
+#IF
+not Equal S$ItemList21 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList21)> Price N$ItemListPrice21
+
+#IF
+not Equal S$ItemList22 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList22)> Price N$ItemListPrice22
+
+#IF
+not Equal S$ItemList23 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList23)> Price N$ItemListPrice23
+
+#IF
+not Equal S$ItemList24 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList24)> Price N$ItemListPrice24
+
+#IF
+not Equal S$ItemList25 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList25)> Price N$ItemListPrice25
+
+#IF
+not Equal S$ItemList26 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList26)> Price N$ItemListPrice26
+
+#IF
+not Equal S$ItemList27 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList27)> Price N$ItemListPrice27
+
+#IF
+not Equal S$ItemList28 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList28)> Price N$ItemListPrice28
+
+#IF
+not Equal S$ItemList29 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList29)> Price N$ItemListPrice29
+
+#IF
+not Equal S$ItemList30 
+#ACT
+GetDBItemFieldValue <$STR(S$ItemList30)> Price N$ItemListPrice30
+
+
+
+[@重置变量]
+#IF
+#ACT
+Mov N$ItemListPrice1 0
+Mov N$ItemListPrice2 0
+Mov N$ItemListPrice3 0
+Mov N$ItemListPrice4 0
+Mov N$ItemListPrice5 0
+Mov N$ItemListPrice6 0
+Mov N$ItemListPrice7 0
+Mov N$ItemListPrice8 0
+Mov N$ItemListPrice9 0
+Mov N$ItemListPrice10 0
+Mov N$ItemListPrice11 0
+Mov N$ItemListPrice12 0
+Mov N$ItemListPrice13 0
+Mov N$ItemListPrice14 0
+Mov N$ItemListPrice15 0
+Mov N$ItemListPrice16 0
+Mov N$ItemListPrice17 0
+Mov N$ItemListPrice18 0
+Mov N$ItemListPrice19 0
+Mov N$ItemListPrice20 0
+Mov N$ItemListPrice21 0
+Mov N$ItemListPrice22 0
+Mov N$ItemListPrice23 0
+Mov N$ItemListPrice24 0
+Mov N$ItemListPrice25 0
+Mov N$ItemListPrice26 0
+Mov N$ItemListPrice27 0
+Mov N$ItemListPrice28 0
+Mov N$ItemListPrice29 0
+Mov N$ItemListPrice30 0
+
+[@sell]
+}

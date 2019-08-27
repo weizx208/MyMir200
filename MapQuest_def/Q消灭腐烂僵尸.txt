@@ -1,0 +1,32 @@
+[@MAIN]
+#IF
+check [006] 1
+#ACT
+goto @回去复命
+break
+#IF
+LARGE M2 8
+#ACT
+SET [006] 1
+MOV M2 0
+give 聚灵珠(小) 1
+DelayCall 5000 @回去复命
+SENDMSG 6 你已经消灭10个腐烂僵尸了，赶快回去找任务使者。
+SendCenterMsg 254 255 任务使者：恭喜【<$USERNAME>】消灭了10个腐烂僵尸. 4 7
+break
+#SAY
+\ \ \
+恭喜你完成任务。\ \ \
+<Img:101><马上回去复命/@回去复命>
+#IF
+small M2 10
+#ACT
+INC M2 1
+GuildNoticeMsg 255 233 提示：当前已经击杀[腐烂僵尸]：(<$STR(M2)>/10)只。
+break
+[@回去复命]
+#IF
+#ACT
+SENDMSG 7 恭喜你完成任务，找任务使者交付任务吧。
+mapmove D401 92 57
+break

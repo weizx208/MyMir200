@@ -1,0 +1,35 @@
+[@变量申明]
+{
+#IF
+#ACT
+VAR Integer HUMAN 苍天霸血
+VAR Integer HUMAN 洗红次数
+VAR Integer HUMAN 总战斗力
+LOADVAR HUMAN 总战斗力 ..\QuestDiary\数据文件\战力排行\战力变量.txt
+
+LOADVAR HUMAN 苍天霸血 ..\QuestDiary\每日清零\每日游戏数据.txt
+LOADVAR HUMAN 洗红次数 ..\QuestDiary\每日清零\每日游戏数据.txt
+
+VAR Integer HUMAN JN1
+VAR Integer HUMAN JN2
+VAR Integer HUMAN JN3
+VAR Integer HUMAN JN4
+VAR Integer HUMAN JN5
+VAR Integer HUMAN JN6
+VAR Integer HUMAN JN7
+VAR Integer HUMAN JN8
+VAR Integer HUMAN JN9
+
+LOADVAR HUMAN JN1 ..\QuestDiary\变量文件\转职技能.txt
+LOADVAR HUMAN JN2 ..\QuestDiary\变量文件\转职技能.txt
+LOADVAR HUMAN JN3 ..\QuestDiary\变量文件\转职技能.txt
+LOADVAR HUMAN JN4 ..\QuestDiary\变量文件\转职技能.txt
+LOADVAR HUMAN JN5 ..\QuestDiary\变量文件\转职技能.txt
+LOADVAR HUMAN JN6 ..\QuestDiary\变量文件\转职技能.txt
+LOADVAR HUMAN JN7 ..\QuestDiary\变量文件\转职技能.txt
+LOADVAR HUMAN JN8 ..\QuestDiary\变量文件\转职技能.txt
+LOADVAR HUMAN JN9 ..\QuestDiary\变量文件\转职技能.txt
+
+
+
+}

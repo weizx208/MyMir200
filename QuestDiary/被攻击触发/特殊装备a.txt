@@ -1,0 +1,77 @@
+[@特殊装备a]
+{
+#if
+checkitemw 铁意头盔
+random 100
+EQUAL N$铁意头盔 0
+#act
+ChangeHumAbility 2 + 2 5
+sendmsg 6 {[铁意头盔]|253:0:0}效果触发:防御增加2点，效果持续5秒。 168 250
+MOV N$铁意头盔 1
+DELAYGOTO 5000 @铁意头盔
+
+#if
+checkitemw 黑铁头盔
+random 12
+EQUAL N$黑铁 0
+#act
+MOV N$黑铁 1
+AddHumNewValue 2 + 10 10
+AddHumNewValue 3 + 10 10
+AddHumNewValue 5 + 30 10
+sendmsg 6 {[黑铁头盔]|253:0:0}效果触发:收到的伤害减少10%并反弹30%伤害，效果持续10秒。 168 250
+DELAYGOTO 15000 @黑铁头盔
+
+#if
+checkitemw 炼狱
+checkitemw 幽灵项链
+checkitemw 幽灵手套
+checkitemw 龙之戒指
+EQUAL N$沃玛战套 0
+random 12
+#act
+releasemagic 护盾 0 0 2
+AddHumNewValue 2 + 20 15
+AddHumNewValue 3 + 20 15
+MOV N$沃玛战套 1
+DELAYGOTO 15000 @沃玛战
+
+#if
+checkitemw 圣战头盔
+checkitemw 圣战项链
+checkitemw 圣战手镯
+checkitemw 圣战戒指
+EQUAL N$圣战战套 0
+random 12
+#act
+MOV N$圣战战套 1
+PLAYEFFECT 17 400 9 1 100 0 0 0 0
+PLAYEFFECT 18 2980 20 12 100 0 0 0 0
+SHOWPHANTOM 50 30
+RangeHarm <$X> <$Y> 3 <$MAXHP> 1 5
+ChangeHumAbility 2 + <$MAXAC> 30
+ChangeHumAbility 4 + <$MAXMAC> 30
+ChangeHumAbility 6 + <$MAXDC> 30
+DELAYGOTO 60000 @圣战战
+
+[@黑铁头盔]
+#act
+MOV N$黑铁 0
+
+[@沃玛战]
+#act
+MOV N$沃玛战套 0
+
+[@铁意头盔]
+#act
+MOV N$铁意头盔 0
+
+[@圣战战]
+#act
+MOV N$圣战战套 0
+
+
+
+
+
+}

@@ -1,0 +1,270 @@
+[@道士封号]
+{
+#IF
+CheckVar GLOBAL 男道名字 = <$USERNAME>
+#ACT
+INC <$STR(S$称号显示)> \╰★╮　天下第一　╭★╯\╰☆╮男道士╭☆╯
+SENDMSG 0 天下第一男道士 %s 在%M(%x:%y)上线...
+#IF
+CheckVar GLOBAL 女道名字 = <$USERNAME>
+#ACT
+INC <$STR(S$称号显示)> \╰★╮　天下第一　╭★╯\╰☆╮女道士╭☆╯
+SENDMSG 0 天下第一女道士 %s 在%M(%x:%y)上线...
+#IF
+check [800] 1
+#ACT
+INC <$STR(S$称号显示)> \╰╮VIP会员╭╯
+SETICON 0 100 240 -30 10 6 0 0 200
+goto @会员检测三
+break
+[@会员检测三]
+#IF
+gender WOMAN
+checkrenewlevel > 9
+#ACT
+INC <$STR(S$称号显示)> \鳳·傲天元法道神
+#IF
+gender WOMAN
+checkrenewlevel = 9
+#ACT
+INC <$STR(S$称号显示)> \鳳·傲天元法天尊
+#IF
+gender WOMAN
+checkrenewlevel = 8
+#ACT
+INC <$STR(S$称号显示)> \鳳·昊天玄道天尊
+#IF
+gender WOMAN
+checkrenewlevel = 7
+#ACT
+INC <$STR(S$称号显示)> \鳳·鸿天显法天尊
+#IF
+gender WOMAN
+checkrenewlevel = 6
+#ACT
+INC <$STR(S$称号显示)> \鳳·镇天聚法天尊
+#IF
+gender WOMAN
+checkrenewlevel = 5
+#ACT
+INC <$STR(S$称号显示)> \鳳·混天广法天尊
+#IF
+gender WOMAN
+checkrenewlevel = 4
+#ACT
+INC <$STR(S$称号显示)> \鳳·玄天妙法天尊
+#IF
+gender WOMAN
+checkrenewlevel = 3
+#ACT
+INC <$STR(S$称号显示)> \鳳·玄天妙法道尊
+#IF
+gender WOMAN
+checkrenewlevel = 2
+#ACT
+INC <$STR(S$称号显示)> \鳳·玄天妙法真人
+#IF
+gender WOMAN
+checkrenewlevel = 1
+#ACT
+INC <$STR(S$称号显示)> \鳳·玄天妙法道玄
+#IF
+gender man
+checkrenewlevel > 9
+#ACT
+INC <$STR(S$称号显示)> \龍·傲天元法道神
+#IF
+gender man
+checkrenewlevel = 9
+#ACT
+INC <$STR(S$称号显示)> \龍·傲天元法天尊
+#IF
+gender man
+checkrenewlevel = 8
+#ACT
+INC <$STR(S$称号显示)> \龍·昊天玄道天尊
+#IF
+gender man
+checkrenewlevel = 7
+#ACT
+INC <$STR(S$称号显示)> \龍·鸿天显法天尊
+#IF
+gender man
+checkrenewlevel = 6
+#ACT
+INC <$STR(S$称号显示)> \龍·镇天聚法天尊
+#IF
+gender man
+checkrenewlevel = 5
+#ACT
+INC <$STR(S$称号显示)> \龍·混天广法天尊
+#IF
+gender man
+checkrenewlevel = 4
+#ACT
+INC <$STR(S$称号显示)> \龍·玄天妙法天尊
+#IF
+gender man
+checkrenewlevel = 3
+#ACT
+INC <$STR(S$称号显示)> \龍·玄天妙法道尊
+#IF
+gender MAN
+checkrenewlevel = 2
+#ACT
+INC <$STR(S$称号显示)> \龍·玄天妙法真人
+#IF
+gender man
+checkrenewlevel = 1
+#ACT
+INC <$STR(S$称号显示)> \龍·玄天妙法道玄
+#IF
+CHECKLEVELEX > 200
+#ACT
+INC <$STR(S$称号显示)> \无量天尊
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 180
+#ACT
+INC <$STR(S$称号显示)> \无量道尊
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 170
+#ACT
+INC <$STR(S$称号显示)> \无量道宗
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 160
+#ACT
+INC <$STR(S$称号显示)> \无量真人
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 150
+#ACT
+INC <$STR(S$称号显示)> \无量散人
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 140
+#ACT
+INC <$STR(S$称号显示)> \无量道玄
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 135
+#ACT
+INC <$STR(S$称号显示)> \罗天天尊
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 130
+#ACT
+INC <$STR(S$称号显示)> \罗天道尊
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 125
+#ACT
+INC <$STR(S$称号显示)> \罗天道宗
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 120
+#ACT
+INC <$STR(S$称号显示)> \罗天真人
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 115
+#ACT
+INC <$STR(S$称号显示)> \罗天散人
+GOTO @显示封号
+#IF
+CHECKLEVELEX > 110
+#ACT
+INC <$STR(S$称号显示)> \罗天道玄
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 105
+#ACT
+INC <$STR(S$称号显示)> \都天天尊
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 100
+#ACT
+INC <$STR(S$称号显示)> \都天道尊
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 95
+#ACT
+INC <$STR(S$称号显示)> \都天道宗
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 90
+#ACT
+INC <$STR(S$称号显示)> \都天真人
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 85
+#ACT
+INC <$STR(S$称号显示)> \都天散人
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 80
+#ACT
+INC <$STR(S$称号显示)> \都天道玄
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 75
+#ACT
+INC <$STR(S$称号显示)> \天尊
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 70
+#ACT
+INC <$STR(S$称号显示)> \道尊
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 65
+#ACT
+INC <$STR(S$称号显示)> \道宗
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 60
+#ACT
+INC <$STR(S$称号显示)> \真人
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 55
+#ACT
+INC <$STR(S$称号显示)> \散人
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 40
+#ACT
+INC <$STR(S$称号显示)> \道玄
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 10
+#ACT
+INC <$STR(S$称号显示)> \小道士
+GOTO @显示封号
+break
+}

@@ -1,0 +1,35 @@
+[@套装杀怪]
+{
+#IF
+checkitemw 死灵之刃
+checkitemw 死灵项链
+checkitemw 死灵手镯
+checkitemw 死灵戒指
+CHECKSLAVECOUNT < 5
+random 10
+#act
+goto @控骨术
+
+#IF
+CheckKillMonName 沃玛教主
+EQUAL <$MAP> D024
+CHECKRANGEMONCOUNTEX D024 沃玛魔神 50 50 500 < 1
+random 5
+#ACT
+MONGENEX D024 50 50 沃玛魔神 1 1 249
+SuperMoveMsg 0 243 0 15 100 2 <$USERNAME>在<$MapTitle><$KILLMONX>,<$KILLMONY>处击杀了<$KILLMONNAME>,||沃玛魔神即将降临，一定时间后魔神将会消失，勇士们速去击杀。
+
+[@控骨术]
+#IF
+CHECKTEXTLIST ..\QuestDiary\怪物分类\骷髅类.txt <$KILLMONNAME>
+#act
+RECALLMOB <$KILLMONNAME> 1 0 0
+SendCenterMsg 249 251 控骨术触发:召唤出<$KILLMONNAME>。 0 5
+
+
+
+
+
+
+
+}

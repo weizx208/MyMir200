@@ -1,0 +1,282 @@
+[@战士封号]
+{
+#IF
+CheckVar GLOBAL 男战名字 = <$USERNAME>
+#ACT
+INC <$STR(S$称号显示)> \╰★╮　天下第一　╭★╯\╰☆╮男战士╭☆╯
+SENDMSG 0 天下第一男战士 『<$USERNAME>』 在%M(%x:%y)上线...
+#IF
+CheckVar GLOBAL 女战名字 = <$USERNAME>
+#ACT
+INC <$STR(S$称号显示)> \╰★╮　天下第一　╭★╯\╰☆╮女战士╭☆╯
+SENDMSG 0 天下第一女战士 『<$USERNAME>』 在%M(%x:%y)上线...
+#IF
+check [800] 1
+#ACT
+INC <$STR(S$称号显示)> \╰╮VIP会员╭╯
+SETICON 0 100 240 -30 10 6 0 0 200
+goto @会员检测一
+break
+[@会员检测一]
+#IF
+gender WOMAN
+checkrenewlevel > 9
+#ACT
+INC <$STR(S$称号显示)> \鳳·至尊傲天战神
+#IF
+gender WOMAN
+checkrenewlevel = 9
+#ACT
+INC <$STR(S$称号显示)> \鳳·至尊傲天战圣
+#IF
+gender WOMAN
+checkrenewlevel = 8
+#ACT
+INC <$STR(S$称号显示)> \鳳·神威亢天战圣
+#IF
+gender WOMAN
+checkrenewlevel = 7
+#ACT
+INC <$STR(S$称号显示)> \鳳·尊武凌天战圣
+#IF
+gender WOMAN
+checkrenewlevel = 6
+#ACT
+INC <$STR(S$称号显示)> \鳳·雄武驰天战圣
+#IF
+gender WOMAN
+checkrenewlevel = 5
+#ACT
+INC <$STR(S$称号显示)> \鳳·洪武行天战圣
+#IF
+gender WOMAN
+checkrenewlevel = 4
+#ACT
+INC <$STR(S$称号显示)> \鳳·威武极天战圣
+#IF
+gender WOMAN
+checkrenewlevel = 3
+#ACT
+INC <$STR(S$称号显示)> \鳳·威武极天宗师
+#IF
+gender WOMAN
+checkrenewlevel = 2
+#ACT
+INC <$STR(S$称号显示)> \鳳·威武极天战神
+#IF
+gender WOMAN
+checkrenewlevel = 1
+#ACT
+INC <$STR(S$称号显示)> \鳳·威武极天战士
+#IF
+gender man
+checkrenewlevel > 9
+#ACT
+INC <$STR(S$称号显示)> \龍·至尊傲天战神
+#IF
+gender man
+checkrenewlevel = 9
+#ACT
+INC <$STR(S$称号显示)> \龍·至尊傲天战圣
+#IF
+gender man
+checkrenewlevel = 8
+#ACT
+INC <$STR(S$称号显示)> \龍·神威亢天战圣
+#IF
+gender man
+checkrenewlevel = 7
+#ACT
+INC <$STR(S$称号显示)> \龍·尊武凌天战圣
+#IF
+gender man
+checkrenewlevel = 6
+#ACT
+INC <$STR(S$称号显示)> \龍·雄武驰天战圣
+#IF
+gender man
+checkrenewlevel = 5
+#ACT
+INC <$STR(S$称号显示)> \龍·洪武行天战圣
+#IF
+gender man
+checkrenewlevel = 4
+#ACT
+INC <$STR(S$称号显示)> \龍·威武极天战圣
+#IF
+gender man
+checkrenewlevel = 3
+#ACT
+INC <$STR(S$称号显示)> \龍·威武极天宗师
+#IF
+gender man
+checkrenewlevel = 2
+#ACT
+INC <$STR(S$称号显示)> \龍·威武极天战神
+#IF
+gender man
+checkrenewlevel = 1
+#ACT
+INC <$STR(S$称号显示)> \龍·威武极天战士
+#IF
+CHECKLEVELEX > 200
+#ACT
+INC <$STR(S$称号显示)> \圣武战圣
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 180
+#ACT
+INC <$STR(S$称号显示)> \圣武宗师
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 170
+#ACT
+INC <$STR(S$称号显示)> \圣武战神
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 160
+#ACT
+INC <$STR(S$称号显示)> \圣武王
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 150
+#ACT
+INC <$STR(S$称号显示)> \圣武战狂
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 140
+#ACT
+INC <$STR(S$称号显示)> \圣武战将
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 135
+#ACT
+INC <$STR(S$称号显示)> \圣武战士
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 130
+#ACT
+INC <$STR(S$称号显示)> \圣武者
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 125
+#ACT
+INC <$STR(S$称号显示)> \神武战圣
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 120
+#ACT
+INC <$STR(S$称号显示)> \神武宗师
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 115
+#ACT
+INC <$STR(S$称号显示)> \神武战神
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 110
+#ACT
+INC <$STR(S$称号显示)> \神武王
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 105
+#ACT
+INC <$STR(S$称号显示)> \神武战狂
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 100
+#ACT
+INC <$STR(S$称号显示)> \神武战将
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 95
+#ACT
+INC <$STR(S$称号显示)> \神武战士
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 90
+#ACT
+INC <$STR(S$称号显示)> \神武者
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 85
+#ACT
+INC <$STR(S$称号显示)> \天武战圣
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 80
+#ACT
+INC <$STR(S$称号显示)> \天武宗师
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 75
+#ACT
+INC <$STR(S$称号显示)> \战神
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 70
+#ACT
+INC <$STR(S$称号显示)> \战王
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 65
+#ACT
+INC <$STR(S$称号显示)> \战狂
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 60
+#ACT
+INC <$STR(S$称号显示)> \战将
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 55
+#ACT
+INC <$STR(S$称号显示)> \武战
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 40
+#ACT
+INC <$STR(S$称号显示)> \武者
+GOTO @显示封号
+break
+#IF
+CHECKLEVELEX > 10
+#ACT
+INC <$STR(S$称号显示)> \小战士
+GOTO @显示封号
+break
+[@显示封号]
+#IF
+ISADMIN
+#ACT
+INC <$STR(S$称号显示)> \游戏管理员
+#IF
+CheckPKPoint 6
+#ACT
+MOV <$STR(S$称号显示)> %s\╔┄╗\─★狂徒★─\╚┄╝
+SENDMSG 0 **狂徒『<$USERNAME>』现身在[%M(%x:%y)].
+break
+}

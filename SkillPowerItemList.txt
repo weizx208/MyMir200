@@ -1,0 +1,15 @@
+[古代炼狱]
+Attack7=10
+
+[古代魔杖]
+Attack11=10
+
+[古代银蛇]
+Attack13=10
+
+[火焰戒指]
+Attack13=5
+Attack26=5
+Attack45=5
+Attack58=5
+

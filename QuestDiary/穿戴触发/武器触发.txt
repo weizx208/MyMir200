@@ -1,0 +1,63 @@
+[@武器触发]
+{
+#IF
+checkitemw 开天
+#act
+ADDSKILL 剑气诀
+AddHumNewValue 4 + 100 65535
+
+#IF
+checkitemw 幽灵魔杖
+CheckJob Wizard
+#act
+ADDSKILL 亡灵诀
+
+#IF
+checkitemw 镇天
+#act
+ADDSKILL 天降雷
+
+#IF
+checkitemw 霸者之刃
+#act
+SetOnTimer 11 30
+}
+
+[@武器触发1]
+{
+#IF
+checkitemw 幽灵魔杖
+#act
+#elseact
+DELSKILL 亡灵诀
+
+#IF
+checkitemw 开天
+#act
+#elseact
+DELSKILL 剑气诀
+AddHumNewValue 4 - 100 65535
+
+#IF
+checkitemw 镇天
+#act
+#elseact
+DELSKILL 天降雷
+
+#IF
+checkitemw 逍遥扇
+#act
+#elseact
+KILLCALLMOB 变异骷髅1 2 1
+KILLCALLMOB 强化骷髅1 2 1
+KILLCALLMOB 大刀骷髅1 2 1
+KILLCALLMOB 巨斧骷髅1 2 1
+KILLCALLMOB 神兽8 2 1
+KILLCALLMOB 神兽22 1 1
+KILLCALLMOB 神兽33 1 1
+KILLCALLMOB 神兽44 1 1
+KILLCALLMOB 月灵1 1 1
+KILLCALLMOB 月灵王1 1 1
+KILLCALLMOB 月灵神1 1 1
+
+}

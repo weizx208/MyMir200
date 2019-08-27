@@ -1,0 +1,17 @@
+[@сдаИ]
+{
+#IF
+checkitemw сдаИд╖ух
+EQUAL N$сдаИ 0
+#ACT
+MOV N$сдаИ 1
+ChangeModeEx 2 10
+Gmexecute TestStatus 8 10
+AddHumNewValue 1 + 100 10
+DELAYGOTO 15000 @бЧ╡╫
+
+[@бЧ╡╫]
+#act
+MOV N$сдаИ 0
+
+}

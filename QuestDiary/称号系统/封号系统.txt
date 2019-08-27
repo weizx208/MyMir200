@@ -1,0 +1,32 @@
+;-----------------------------------------------------------------------------------
+[@封号检测]
+{
+#IF
+CHECKLEVELEX > 0
+#ACT
+MOV S$称号显示 %s
+
+
+#IF
+#ACT
+INC <$STR(S$称号显示)> \╰╮　梵天战神录1.76　╭╯
+goto @继续封号处理
+break
+
+[@继续封号处理]
+#IF
+checkjob warrior
+#ACT
+#CALL [\称号系统\战士封号.txt] @战士封号
+break
+#IF
+checkjob wizard
+#ACT
+#CALL [\称号系统\法师封号.txt] @法师封号
+break
+#IF
+checkjob taoist
+#ACT
+#CALL [\称号系统\道士封号.txt] @道士封号
+break
+}

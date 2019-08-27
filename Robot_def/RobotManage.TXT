@@ -1,0 +1,56 @@
+[@副本重置]
+#if
+#act
+CLEARNAMELIST ..\QuestDiary\副本名单.txt
+
+[@清除陵墓]
+#IF
+#ACT
+RandomKillMon DM002 变异骷髅 255 1
+
+[@清除沃玛魔神]
+#IF
+#ACT
+RandomKillMon D024 沃玛魔神 1 1
+
+[@天气系统]
+#IF
+RANDOM 5
+#ACT
+SETWEATHEREFFECT n3 2 300 0
+break
+
+#IF
+RANDOM 5
+#ACT
+SETWEATHEREFFECT n3 2 300 1
+break
+
+#IF
+RANDOM 5
+#ACT
+SETWEATHEREFFECT n3 4 300 1
+break
+
+#IF
+RANDOM 5
+#ACT
+SETWEATHEREFFECT n3 4 300 0
+break
+
+#IF
+RANDOM 5
+#ACT
+SETWEATHEREFFECT n3 5 300 1
+break
+
+#IF
+RANDOM 5
+#ACT
+SETWEATHEREFFECT n3 5 300 0
+break
+
+#IF
+#ACT
+SETWEATHEREFFECT D10062 4 3600 0
+

@@ -1,0 +1,23 @@
+[@项链触发]
+{
+
+
+
+
+}
+
+
+
+[@项链触发1]
+{
+#IF
+checkitemw 白色虎齿项链
+#ACT
+#ELSEACT
+KILLCALLMOB 白虎幼崽 1 1
+
+
+
+
+
+}

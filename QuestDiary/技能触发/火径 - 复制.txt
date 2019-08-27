@@ -1,0 +1,207 @@
+[@火径]
+{
+#IF
+EQUAL N500 0
+#ACT
+break
+
+#IF
+CHECKSKILL 烈焰之径 = 0
+#ACT
+MOV N$火径资源编号 21
+MOV N$火径编号 1630
+MOV N$火径播放数量 6
+MOV N$火径时间 10
+MOV N$火径耗蓝 5
+MOV N$火径威力 <$MC>
+INC N$火径威力 <$MAXMC>
+MOVR N$火径威力系数 2 4
+DIV N$火径威力 <$STR(N$火径威力系数)>
+
+#IF
+CHECKSKILL 烈焰之径 = 1
+#ACT
+MOV N$火径资源编号 21
+MOV N$火径编号 1630
+MOV N$火径播放数量 6
+MOV N$火径时间 15
+MOV N$火径耗蓝 10
+MOV N$火径威力 <$MC>
+INC N$火径威力 <$MAXMC>
+MOVR N$火径威力系数 2 4
+DIV N$火径威力 <$STR(N$火径威力系数)>
+INC N$火径威力 10
+
+#IF
+CHECKSKILL 烈焰之径 = 2
+#ACT
+MOV N$火径资源编号 32
+MOV N$火径编号 1940
+MOV N$火径播放数量 8
+MOV N$火径时间 20
+MOV N$火径耗蓝 15
+MOV N$火径威力 <$MC>
+INC N$火径威力 <$MAXMC>
+MOVR N$火径威力系数 2 4
+DIV N$火径威力 <$STR(N$火径威力系数)>
+INC N$火径威力 20
+
+#IF
+CHECKSKILL 烈焰之径 = 3
+#ACT
+MOV N$火径资源编号 32
+MOV N$火径编号 1950
+MOV N$火径播放数量 8
+MOV N$火径时间 25
+MOV N$火径耗蓝 20
+MOV N$火径威力 <$MC>
+INC N$火径威力 <$MAXMC>
+MOVR N$火径威力系数 2 4
+DIV N$火径威力 <$STR(N$火径威力系数)>
+INC N$火径威力 35
+
+#IF
+LARGE <$MP> <$STR(N$火径耗蓝)>
+#ACT
+HumanMP - <$STR(N$火径耗蓝)>
+MAPEFFECT <$MAP> <$X> <$Y> <$STR(N$火径资源编号)> <$STR(N$火径编号)> <$STR(N$火径播放数量)> <$STR(N$火径时间)> 100 1 1
+mobfireburn <$MAP> <$X> <$Y> 100 <$STR(N$火径时间)> <$STR(N$火径威力)>
+#ELSEACT
+MOV N500 0
+sendmsg 5 MP不足，关闭烈焰之径。
+
+}
+
+[@火径跑步]
+{
+
+#IF
+EQUAL N500 0
+#ACT
+break
+
+#IF
+CHECKSKILL 烈焰之径 = 0
+#ACT
+MOV N$火径资源编号 21
+MOV N$火径编号 1630
+MOV N$火径播放数量 6
+MOV N$火径时间 10
+MOV N$火径耗蓝 5
+MOV N$火径威力 <$MC>
+INC N$火径威力 <$MAXMC>
+MOVR N$火径威力系数 2 4
+DIV N$火径威力 <$STR(N$火径威力系数)>
+
+#IF
+CHECKSKILL 烈焰之径 = 1
+#ACT
+MOV N$火径资源编号 21
+MOV N$火径编号 1630
+MOV N$火径播放数量 6
+MOV N$火径时间 15
+MOV N$火径耗蓝 10
+MOV N$火径威力 <$MC>
+INC N$火径威力 <$MAXMC>
+MOVR N$火径威力系数 2 4
+DIV N$火径威力 <$STR(N$火径威力系数)>
+INC N$火径威力 10
+
+#IF
+CHECKSKILL 烈焰之径 = 2
+#ACT
+MOV N$火径资源编号 32
+MOV N$火径编号 1940
+MOV N$火径播放数量 8
+MOV N$火径时间 20
+MOV N$火径耗蓝 15
+MOV N$火径威力 <$MC>
+INC N$火径威力 <$MAXMC>
+MOVR N$火径威力系数 2 4
+DIV N$火径威力 <$STR(N$火径威力系数)>
+INC N$火径威力 20
+
+#IF
+CHECKSKILL 烈焰之径 = 3
+#ACT
+MOV N$火径资源编号 32
+MOV N$火径编号 1950
+MOV N$火径播放数量 8
+MOV N$火径时间 25
+MOV N$火径耗蓝 20
+MOV N$火径威力 <$MC>
+INC N$火径威力 <$MAXMC>
+MOVR N$火径威力系数 2 4
+DIV N$火径威力 <$STR(N$火径威力系数)>
+INC N$火径威力 35
+
+#IF
+LARGE <$MP> <$STR(N$火径耗蓝)>
+#ACT
+HumanMP - <$STR(N$火径耗蓝)>
+MAPEFFECT <$MAP> <$X> <$Y> <$STR(N$火径资源编号)> <$STR(N$火径编号)> <$STR(N$火径播放数量)> <$STR(N$火径时间)> 100 1 1
+mobfireburn <$MAP> <$X> <$Y> 100 <$STR(N$火径时间)> <$STR(N$火径威力)>
+#ELSEACT
+MOV N500 0
+sendmsg 5 MP不足，关闭烈焰之径。
+break
+
+#IF
+#ACT
+GetPlayInfo Dir N1
+
+#IF
+#ACT
+MOV N$Q <$X>
+MOV N$W <$Y>
+
+#IF
+EQUAL N1 0
+#ACT
+INC N$W 1
+
+#IF
+EQUAL N1 1
+#ACT
+DEC N$Q 1
+INC N$W 1
+
+#IF
+EQUAL N1 2
+#ACT
+DEC N$Q 1
+
+#IF
+EQUAL N1 3
+#ACT
+DEC N$Q 1
+DEC N$W 1
+
+#IF
+EQUAL N1 4
+#ACT
+INC N$W 1
+
+#IF
+EQUAL N1 5
+#ACT
+INC N$Q 1
+DEC N$W 1
+
+#IF
+EQUAL N1 6
+#ACT
+INC N$Q 1
+
+#IF
+EQUAL N1 7
+#ACT
+INC N$Q 1
+INC N$W 1
+
+#IF
+#ACT
+MAPEFFECT <$MAP> <$STR(N$Q)> <$STR(N$W)> <$STR(N$火径资源编号)> <$STR(N$火径编号)> <$STR(N$火径播放数量)> <$STR(N$火径时间)> 100 1 1
+mobfireburn <$MAP> <$STR(N$Q)> <$STR(N$W)> 100 <$STR(N$火径时间)> <$STR(N$火径威力)>
+
+}

@@ -1,0 +1,167 @@
+[@副本通关]
+{
+#IF
+EQUAL <$FBMAPNAME> 玛法农场
+CheckMapMonCount <$FBMAP> < 1 1
+#act
+goto @农场名单
+
+#IF
+EQUAL <$FBMAPNAME> 骷髅洞穴
+CheckMapMonCount <$FBMAP> < 1 1
+#act
+goto @骷髅名单
+
+#IF
+EQUAL N$僵尸副本 0
+EQUAL <$FBMAPNAME> 僵尸洞穴
+CheckMapMonCount <$FBMAP> < 1 1
+#act
+MOV N$僵尸副本 1
+goto @僵尸名单
+
+#IF
+EQUAL <$FBMAPNAME> 沃玛神庙
+CheckMapMonCount <$FBMAP> < 1 1
+#act
+goto @沃玛名单
+
+#IF
+EQUAL <$FBMAPNAME> 恶虫之窟
+CheckMapMonCount <$FBMAP> < 1 1
+#act
+goto @蜈蚣名单
+
+#IF
+EQUAL <$FBMAPNAME> 野猪巢穴
+CheckMapMonCount <$FBMAP> < 1 1
+#act
+goto @野猪名单
+
+#IF
+EQUAL <$FBMAPNAME> 祖玛神庙
+CheckMapMonCount <$FBMAP> < 1 1
+#act
+goto @祖玛名单
+
+#IF
+EQUAL <$FBMAPNAME> 牛魔神庙
+CheckMapMonCount <$FBMAP> < 1 1
+#act
+goto @牛魔名单
+
+#IF
+EQUAL <$FBMAPNAME> 万恶之源
+CheckMapMonCount <$FBMAP> < 1 1
+#act
+goto @赤月名单
+
+#IF
+EQUAL <$FBMAPNAME> 魔龙领域
+CheckMapMonCount <$FBMAP> < 1 1
+#act
+goto @魔龙名单
+
+[@农场名单]
+#IF
+CHECKTEXTLIST ..\QuestDiary\关卡副本\玛法农场名单.txt <$USERNAME>
+#act
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+#elseact
+ADDNAMELIST ..\QuestDiary\关卡副本\玛法农场名单.txt
+SuperMoveMsg 1 251 168 12 100 1 恭喜您已成功通过玛法农场副本。 0 20
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+
+[@骷髅名单]
+#IF
+CHECKTEXTLIST ..\QuestDiary\关卡副本\骷髅洞穴名单.txt <$USERNAME>
+#act
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+#elseact
+ADDNAMELIST ..\QuestDiary\关卡副本\骷髅洞穴名单.txt
+SuperMoveMsg 1 251 168 12 100 1 恭喜您已成功通过骷髅洞穴副本。 0 20
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+
+[@僵尸名单]
+#IF
+CHECKTEXTLIST ..\QuestDiary\关卡副本\僵尸洞穴名单.txt <$USERNAME>
+#act
+MOV N$僵尸副本 0
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+#elseact
+ADDNAMELIST ..\QuestDiary\关卡副本\僵尸洞穴名单.txt
+SuperMoveMsg 1 251 168 12 100 1 恭喜您已成功通过僵尸洞穴副本。 0 20
+MOV N$僵尸副本 0
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+
+[@沃玛名单]
+#IF
+CHECKTEXTLIST ..\QuestDiary\关卡副本\沃玛神庙名单.txt <$USERNAME>
+#act
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+#elseact
+ADDNAMELIST ..\QuestDiary\关卡副本\沃玛神庙名单.txt
+SuperMoveMsg 1 251 168 12 100 1 恭喜您已成功通过沃玛神庙副本。 0 20
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+
+[@蜈蚣名单]
+#IF
+CHECKTEXTLIST ..\QuestDiary\关卡副本\蜈蚣洞名单.txt <$USERNAME>
+#act
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+#elseact
+ADDNAMELIST ..\QuestDiary\关卡副本\蜈蚣洞名单.txt
+SuperMoveMsg 1 251 168 12 100 1 恭喜您已成功通过恶虫之窟副本。 0 20
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+
+[@野猪名单]
+#IF
+CHECKTEXTLIST ..\QuestDiary\关卡副本\野猪巢穴名单.txt <$USERNAME>
+#act
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+#elseact
+ADDNAMELIST ..\QuestDiary\关卡副本\野猪巢穴名单.txt
+SuperMoveMsg 1 251 168 12 100 1 恭喜您已成功通过野猪巢穴副本。 0 20
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+
+[@祖玛名单]
+#IF
+CHECKTEXTLIST ..\QuestDiary\关卡副本\祖玛神庙名单.txt <$USERNAME>
+#act
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+#elseact
+ADDNAMELIST ..\QuestDiary\关卡副本\祖玛神庙名单.txt
+SuperMoveMsg 1 251 168 12 100 1 恭喜您已成功通过祖玛神庙副本。 0 20
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+
+[@牛魔名单]
+#IF
+CHECKTEXTLIST ..\QuestDiary\关卡副本\牛魔领地名单.txt <$USERNAME>
+#act
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+#elseact
+ADDNAMELIST ..\QuestDiary\关卡副本\牛魔领地名单.txt
+SuperMoveMsg 1 251 168 12 100 1 恭喜您已成功通过牛魔领地副本。 0 20
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+
+[@赤月名单]
+#IF
+CHECKTEXTLIST ..\QuestDiary\关卡副本\万恶之源名单.txt <$USERNAME>
+#act
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+#elseact
+ADDNAMELIST ..\QuestDiary\关卡副本\万恶之源名单.txt
+SuperMoveMsg 1 251 168 12 100 1 恭喜您已成功通过万恶之源副本。 0 20
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+
+[@魔龙名单]
+#IF
+CHECKTEXTLIST ..\QuestDiary\关卡副本\魔龙领域名单.txt <$USERNAME>
+#act
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+#elseact
+ADDNAMELIST ..\QuestDiary\关卡副本\魔龙领域名单.txt
+SuperMoveMsg 1 251 168 12 100 1 恭喜您已成功通过魔龙领域副本。 0 20
+SendCenterMsg 180 251 剩余%d退出副本。 0 30 @退出副本
+
+}

@@ -1,0 +1,30 @@
+[@控制台]
+{
+#SAY
+1.跟踪人物。 <输入名称/@@InPutString99>\
+2.召唤某人。 <输入名称/@@InPutString98>\
+3.天气开关。<一/@tq1>
+
+[@InPutString99]
+#IF
+CheckOnline <$STR(S99)>
+#ACT
+GMEXECUTE regoto <$STR(S99)>
+#ELSEACT
+messagebox 该玩家不在线。
+
+[@InPutString98]
+#IF
+CheckOnline <$STR(S98)>
+#ACT
+GMEXECUTE zr <$STR(S98)>
+#ELSEACT
+messagebox 该玩家不在线。
+
+[@tq1]
+#IF
+#ACT
+SETWEATHEREFFECT N3 2 300 0
+break
+
+}

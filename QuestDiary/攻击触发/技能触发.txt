@@ -1,0 +1,21 @@
+[@技能触发]
+{
+#IF
+EQUAL <$CURRRUSEMAGICID> 13
+#act
+MOV N$等级 <$LEVEL>
+MOV N$道力 <$SC>
+MUL N$等级 <$STR(N$道力)>
+GOTO @降魔
+
+[@降魔]
+#IF
+CHECKTEXTLIST ..\QuestDiary\怪物分类\死灵类.txt <$ATTACKMONSTER_NAME>
+checkitemw 降魔
+LARGE N$等级 <$ATTACKMONSTER_HP>
+random 4
+#act
+M.PLAYEFFECT 11 450 10 1 100 0 0 0 0
+M.HumanHP - <$ATTACKMONSTER_HP>
+
+}

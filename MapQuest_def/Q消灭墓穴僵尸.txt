@@ -1,0 +1,28 @@
+[@MAIN]
+#IF
+check [010] 1
+#ACT
+goto @回去复命
+break
+#IF
+LARGE M2 3
+#ACT
+SET [010] 1
+MOV M2 0
+DelayCall 5000 @回去复命
+SENDMSG 6 你已经消灭5个墓穴僵尸了，赶快回去找任务使者。
+SendCenterMsg 254 255 任务使者：恭喜【<$USERNAME>】消灭了5个墓穴僵尸. 4 7
+#SAY
+\ \ \
+恭喜你完成任务。\ \ \
+<Img:101><马上回去复命/@回去复命>
+#ELSEACT
+INC M2 1
+GuildNoticeMsg 255 233 提示：当前已经击杀[墓穴僵尸]：(<$STR(M2)>/5)只。
+break
+[@回去复命]
+#IF
+#ACT
+SENDMSG 7 你已经消灭5个墓穴僵尸了，赶快回去找任务使者。
+mapmove D401 92 57
+break

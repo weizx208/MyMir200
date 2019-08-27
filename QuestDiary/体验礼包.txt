@@ -1,0 +1,511 @@
+[@体验礼包]
+{
+#IF
+#ACT
+give 双倍卷轴 2
+give 攻击神水 2
+give 扫荡卷 10
+
+#IF
+#ACT
+GiveStateItem 攻击宝石 0 1 0 0 1 1 1
+give 神秘剑 1
+LINKGIVEITEM
+ChangeItemNameColor -1 229
+SETFLUTECOUNT -1 2
+goto @送武器鉴定
+
+#IF
+gender man
+#act
+GiveStateItem 防御宝石 0 1 0 0 1 1 1
+give 神秘甲 1
+LINKGIVEITEM
+ChangeItemNameColor -1 229
+SETFLUTECOUNT -1 2
+goto @送衣服鉴定
+#elseact
+GiveStateItem 防御宝石 0 1 0 0 1 1 1
+Give 神秘衣 1
+SETFLUTECOUNT -1 2
+goto @送衣服鉴定
+
+#IF
+#ACT
+GiveStateItem 魔御宝石 0 1 0 0 1 1 1
+GIVE 神秘头盔 1
+LINKGIVEITEM
+ChangeItemNameColor -1 229
+SETFLUTECOUNT -1 2
+goto @送头盔鉴定
+
+#IF
+#ACT
+GiveStateItem 治愈宝石 0 1 0 0 1 1 1
+GIVE 神秘手镯 1
+LINKGIVEITEM
+ChangeItemNameColor -1 229
+SETFLUTECOUNT -1 2
+goto @送手镯鉴定
+
+#IF
+#ACT
+GiveStateItem 幸运宝石 0 1 0 0 1 1 1
+give 神秘戒指 1
+LINKGIVEITEM
+ChangeItemNameColor -1 229
+SETFLUTECOUNT -1 2
+goto @送戒指鉴定
+
+[@送戒指鉴定]
+#if
+SMALL N999 33
+#ACT
+CHANGEITEMADDVALUE -1 2 + 1
+
+#if
+LARGE N999 32
+SMALL N999 77
+#ACT
+CHANGEITEMADDVALUE -1 3 + 1
+
+#if
+LARGE N999 76
+SMALL N999 101
+#ACT
+CHANGEITEMADDVALUE -1 4 + 1
+
+#IF
+LARGE N999 100
+SMALL N999 131
+#ACT
+MOVR N999 0 1
+MOVR N998 0 1
+MOVR N997 0 1
+CHANGEITEMADDVALUE -1 2 + <$STR(N999)>
+CHANGEITEMADDVALUE -1 3 + <$STR(N998)>
+CHANGEITEMADDVALUE -1 4 + <$STR(N997)>
+
+#if
+SMALL N998 20
+#ACT
+CHANGEITEMADDVALUE -1 0 + 1
+
+#if
+LARGE N998 19
+SMALL N998 70
+#ACT
+CHANGEITEMADDVALUE -1 1 + 1
+
+#if
+LARGE N998 69
+SMALL N998 101
+#ACT
+CHANGEITEMADDVALUE -1 14 + 3
+
+#IF
+LARGE N998 100
+SMALL N998 131
+#ACT
+MOVR N999 0 1
+MOVR N998 0 1
+MOVR N997 0 5
+CHANGEITEMADDVALUE -1 0 + <$STR(N999)>
+CHANGEITEMADDVALUE -1 1 + <$STR(N998)>
+CHANGEITEMADDVALUE -1 14 + <$STR(N997)>
+
+#IF
+#ACT
+SetCustomItemProgressbar -1 1 0 1
+SetCustomItemProgressbar -1 1 1 修炼值: %p-%m
+SetCustomItemProgressbarValue -1 1 0 = 100
+SetCustomItemProgressbar -1 1 3 1
+SetCustomItemProgressbar -1 1 4 1
+SetCustomItemProgressbar -1 1 2 245
+SetCustomItemAbil -1 1 2 0
+SetCustomItemText -1 品质:<Img:25:13:35:-1>
+SetCustomItemTextColor -1 154
+
+#IF
+#ACT
+updateitem -1
+clearLinkItem
+GiveStateItem 怒意宝石 0 1 0 0 1 1 1
+give 神秘项链 1
+LINKGIVEITEM
+ChangeItemNameColor -1 229
+SETFLUTECOUNT -1 2
+goto @送项链鉴定
+
+[@送项链鉴定]
+#if
+SMALL N999 33
+#ACT
+CHANGEITEMADDVALUE -1 2 + 1
+
+#if
+LARGE N999 32
+SMALL N999 77
+#ACT
+CHANGEITEMADDVALUE -1 3 + 1
+
+#if
+LARGE N999 76
+SMALL N999 101
+#ACT
+CHANGEITEMADDVALUE -1 4 + 1
+
+#IF
+LARGE N999 100
+SMALL N999 131
+#ACT
+MOVR N999 0 1
+MOVR N998 0 1
+MOVR N997 0 1
+CHANGEITEMADDVALUE -1 2 + <$STR(N999)>
+CHANGEITEMADDVALUE -1 3 + <$STR(N998)>
+CHANGEITEMADDVALUE -1 4 + <$STR(N997)>
+
+#if
+SMALL N998 20
+#ACT
+CHANGEITEMADDVALUE -1 0 + 1
+
+#if
+LARGE N998 19
+SMALL N998 70
+#ACT
+CHANGEITEMADDVALUE -1 1 + 1
+
+#if
+LARGE N998 69
+SMALL N998 101
+#ACT
+CHANGEITEMADDVALUE -1 14 + 3
+
+#IF
+LARGE N998 100
+SMALL N998 131
+#ACT
+MOVR N999 0 1
+MOVR N998 0 1
+MOVR N997 0 5
+CHANGEITEMADDVALUE -1 0 + <$STR(N999)>
+CHANGEITEMADDVALUE -1 1 + <$STR(N998)>
+CHANGEITEMADDVALUE -1 14 + <$STR(N997)>
+
+#IF
+#ACT
+SetCustomItemProgressbar -1 1 0 1
+SetCustomItemProgressbar -1 1 1 修炼值: %p-%m
+SetCustomItemProgressbarValue -1 1 0 = 100
+SetCustomItemProgressbar -1 1 3 1
+SetCustomItemProgressbar -1 1 4 1
+SetCustomItemProgressbar -1 1 2 245
+SetCustomItemAbil -1 1 2 0
+SetCustomItemText -1 品质:<Img:25:13:35:-1>
+SetCustomItemTextColor -1 154
+
+#IF
+#ACT
+updateitem -1
+clearLinkItem
+
+[@送手镯鉴定]
+#if
+SMALL N999 33
+#ACT
+CHANGEITEMADDVALUE -1 2 + 1
+
+#if
+LARGE N999 32
+SMALL N999 77
+#ACT
+CHANGEITEMADDVALUE -1 3 + 1
+
+#if
+LARGE N999 76
+SMALL N999 101
+#ACT
+CHANGEITEMADDVALUE -1 4 + 1
+
+#IF
+LARGE N999 100
+SMALL N999 131
+#ACT
+MOVR N999 0 1
+MOVR N998 0 1
+MOVR N997 0 1
+CHANGEITEMADDVALUE -1 2 + <$STR(N999)>
+CHANGEITEMADDVALUE -1 3 + <$STR(N998)>
+CHANGEITEMADDVALUE -1 4 + <$STR(N997)>
+
+#if
+SMALL N998 20
+#ACT
+CHANGEITEMADDVALUE -1 0 + 1
+
+#if
+LARGE N998 19
+SMALL N998 70
+#ACT
+CHANGEITEMADDVALUE -1 1 + 1
+
+#if
+LARGE N998 69
+SMALL N998 101
+#ACT
+CHANGEITEMADDVALUE -1 14 + 3
+
+#IF
+LARGE N998 100
+SMALL N998 131
+#ACT
+MOVR N999 0 1
+MOVR N998 0 1
+MOVR N997 0 5
+CHANGEITEMADDVALUE -1 0 + <$STR(N999)>
+CHANGEITEMADDVALUE -1 1 + <$STR(N998)>
+CHANGEITEMADDVALUE -1 14 + <$STR(N997)>
+
+#IF
+#ACT
+SetCustomItemProgressbar -1 1 0 1
+SetCustomItemProgressbar -1 1 1 修炼值: %p-%m
+SetCustomItemProgressbarValue -1 1 0 = 100
+SetCustomItemProgressbar -1 1 3 1
+SetCustomItemProgressbar -1 1 4 1
+SetCustomItemProgressbar -1 1 2 245
+SetCustomItemAbil -1 1 2 0
+SetCustomItemText -1 品质:<Img:25:13:35:-1>
+SetCustomItemTextColor -1 154
+
+#IF
+#ACT
+updateitem -1
+clearLinkItem
+
+[@送头盔鉴定]
+#if
+SMALL N999 33
+#ACT
+CHANGEITEMADDVALUE -1 2 + 1
+
+#if
+LARGE N999 32
+SMALL N999 77
+#ACT
+CHANGEITEMADDVALUE -1 3 + 1
+
+#if
+LARGE N999 76
+SMALL N999 101
+#ACT
+CHANGEITEMADDVALUE -1 4 + 1
+
+#IF
+LARGE N999 100
+SMALL N999 131
+#ACT
+MOVR N999 0 1
+MOVR N998 0 1
+MOVR N997 0 1
+CHANGEITEMADDVALUE -1 2 + <$STR(N999)>
+CHANGEITEMADDVALUE -1 3 + <$STR(N998)>
+CHANGEITEMADDVALUE -1 4 + <$STR(N997)>
+
+#if
+SMALL N998 20
+#ACT
+CHANGEITEMADDVALUE -1 0 + 1
+
+#if
+LARGE N998 19
+SMALL N998 70
+#ACT
+CHANGEITEMADDVALUE -1 1 + 1
+
+#if
+LARGE N998 69
+SMALL N998 101
+#ACT
+CHANGEITEMADDVALUE -1 14 + 3
+
+#IF
+LARGE N998 100
+SMALL N998 131
+#ACT
+MOVR N999 0 1
+MOVR N998 0 1
+MOVR N997 0 5
+CHANGEITEMADDVALUE -1 0 + <$STR(N999)>
+CHANGEITEMADDVALUE -1 1 + <$STR(N998)>
+CHANGEITEMADDVALUE -1 14 + <$STR(N997)>
+
+#IF
+#ACT
+SetCustomItemProgressbar -1 1 0 1
+SetCustomItemProgressbar -1 1 1 修炼值: %p-%m
+SetCustomItemProgressbarValue -1 1 0 = 100
+SetCustomItemProgressbar -1 1 3 1
+SetCustomItemProgressbar -1 1 4 1
+SetCustomItemProgressbar -1 1 2 245
+SetCustomItemAbil -1 1 2 0
+SetCustomItemText -1 品质:<Img:25:13:35:-1>
+SetCustomItemTextColor -1 154
+
+#IF
+#ACT
+updateitem -1
+clearLinkItem
+
+[@送衣服鉴定]
+#if
+SMALL N999 33
+#ACT
+CHANGEITEMADDVALUE -1 2 + 1
+
+#if
+LARGE N999 32
+SMALL N999 77
+#ACT
+CHANGEITEMADDVALUE -1 3 + 1
+
+#if
+LARGE N999 76
+SMALL N999 101
+#ACT
+CHANGEITEMADDVALUE -1 4 + 1
+
+#IF
+LARGE N999 100
+SMALL N999 131
+#ACT
+MOVR N999 0 1
+MOVR N998 0 1
+MOVR N997 0 1
+CHANGEITEMADDVALUE -1 2 + <$STR(N999)>
+CHANGEITEMADDVALUE -1 3 + <$STR(N998)>
+CHANGEITEMADDVALUE -1 4 + <$STR(N997)>
+
+#if
+SMALL N998 20
+#ACT
+CHANGEITEMADDVALUE -1 0 + 1
+
+#if
+LARGE N998 19
+SMALL N998 70
+#ACT
+CHANGEITEMADDVALUE -1 1 + 1
+
+#if
+LARGE N998 69
+SMALL N998 101
+#ACT
+CHANGEITEMADDVALUE -1 14 + 3
+
+#IF
+LARGE N998 100
+SMALL N998 131
+#ACT
+MOVR N999 0 1
+MOVR N998 0 1
+MOVR N997 0 5
+CHANGEITEMADDVALUE -1 0 + <$STR(N999)>
+CHANGEITEMADDVALUE -1 1 + <$STR(N998)>
+CHANGEITEMADDVALUE -1 14 + <$STR(N997)>
+
+#IF
+#ACT
+SetCustomItemProgressbar -1 1 0 1
+SetCustomItemProgressbar -1 1 1 修炼值: %p-%m
+SetCustomItemProgressbarValue -1 1 0 = 100
+SetCustomItemProgressbar -1 1 3 1
+SetCustomItemProgressbar -1 1 4 1
+SetCustomItemProgressbar -1 1 2 245
+SetCustomItemAbil -1 1 2 0
+SetCustomItemText -1 品质:<Img:25:13:35:-1>
+SetCustomItemTextColor -1 154
+
+#IF
+#ACT
+updateitem -1
+clearLinkItem
+
+[@送武器鉴定]
+#if
+SMALL N999 33
+#ACT
+CHANGEITEMADDVALUE -1 0 + 1
+
+#if
+LARGE N999 32
+SMALL N999 77
+#ACT
+CHANGEITEMADDVALUE -1 1 + 1
+
+#if
+LARGE N999 76
+SMALL N999 101
+#ACT
+CHANGEITEMADDVALUE -1 2 + 1
+
+#IF
+LARGE N999 100
+SMALL N999 131
+#ACT
+MOVR N999 0 1
+MOVR N998 0 1
+MOVR N997 0 1
+CHANGEITEMADDVALUE -1 0 + <$STR(N999)>
+CHANGEITEMADDVALUE -1 1 + <$STR(N998)>
+CHANGEITEMADDVALUE -1 2 + <$STR(N997)>
+
+#if
+SMALL N998 20
+#ACT
+CHANGEITEMADDVALUE -1 5 + 1
+
+#if
+LARGE N998 19
+SMALL N998 70
+#ACT
+CHANGEITEMADDVALUE -1 3 + 1
+
+#if
+LARGE N998 69
+SMALL N998 101
+#ACT
+CHANGEITEMADDVALUE -1 14 + 3
+
+#IF
+LARGE N998 100
+SMALL N998 131
+#ACT
+MOVR N999 0 1
+MOVR N998 0 1
+MOVR N997 0 5
+CHANGEITEMADDVALUE -1 5 + <$STR(N999)>
+CHANGEITEMADDVALUE -1 3 + <$STR(N998)>
+CHANGEITEMADDVALUE -1 14 + <$STR(N997)>
+
+#IF
+#ACT
+SetCustomItemProgressbar -1 1 0 1
+SetCustomItemProgressbar -1 1 1 修炼值: %p-%m
+SetCustomItemProgressbarValue -1 1 0 = 100
+SetCustomItemProgressbar -1 1 3 1
+SetCustomItemProgressbar -1 1 4 1
+SetCustomItemProgressbar -1 1 2 245
+SetCustomItemAbil -1 1 2 0
+SetCustomItemText -1 品质:<Img:25:13:35:-1>
+SetCustomItemTextColor -1 154
+
+#IF
+#ACT
+updateitem -1
+clearLinkItem
+
+
+}

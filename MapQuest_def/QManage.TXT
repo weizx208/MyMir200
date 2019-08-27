@@ -1,0 +1,321 @@
+[@Startup]
+
+[@Login]
+#IF
+#ACT
+#CALL [\游戏登陆\个人变量.txt] @变量申明
+#CALL [\游戏登陆\检测窗口.txt] @检测窗口
+#CALL [\游戏登陆\登陆脚本.txt] @登陆设置
+#CALL [\游戏登陆\按钮检测.txt] @开始按钮检测
+#CALL [\游戏登陆\按钮检测.txt] @广播按钮
+#CALL [\称号系统\封号系统.txt] @封号检测
+#CALL [\游戏登陆\经验倍数.txt] @经验倍数
+#CALL [\游戏登陆\战力计算.txt] @开始战力排名
+
+
+[@OnTimer0]
+#ACT
+MOV N$虎卫 0
+MOV N$骷髅头盔 0
+
+[@OnTimer1]
+#IF
+EQUAL <$MapTitle> 盟重省
+SMALL U88 28790
+#act
+INC U88 10
+MOV N$疲劳 <$STR(U88)>
+DIV N$疲劳 288
+ADDBUTTON 85 33 <$STR(N$疲劳)> <$STR(N$疲劳)> <$STR(N$疲劳)> <$STR(N$分辨率宽3)> <$STR(N$分辨率高3)> 7 -1 251#剩余内力值:<$STR(N$疲劳)>点。\250#当内力值为0时击杀怪物将不会获得经验。\253#(在城镇区域活动会逐渐恢复内力值)\剩余时间为:<$STR(U88)>秒。
+break
+
+#IF
+SMALL U88 28800
+LARGE U88 28790
+EQUAL <$MapTitle> 盟重省
+#ACT
+MOV U88 28800
+
+#IF
+LARGE U88 28800
+#ACT
+ADDBUTTON 85 33 100 100 100 <$STR(N$分辨率宽3)> <$STR(N$分辨率高3)> 7 -1 251#剩余内力值:<$STR(N$疲劳)>点。\250#当内力值为0时击杀怪物将不会获得经验。\253#(在城镇区域活动会逐渐恢复内力值)\剩余时间为:<$STR(U88)>秒。
+
+#IF
+NOT EQUAL <$MapTitle> 盟重省
+LARGE U88 0
+#act
+DEC U88 1
+MOV N$疲劳 <$STR(U88)>
+DIV N$疲劳 288
+ADDBUTTON 85 33 <$STR(N$疲劳)> <$STR(N$疲劳)> <$STR(N$疲劳)> <$STR(N$分辨率宽3)> <$STR(N$分辨率高3)> 7 -1 251#剩余内力值:<$STR(N$疲劳)>点。\250#当内力值为0时击杀怪物将不会获得经验。\253#(在城镇区域活动会逐渐恢复内力值)\剩余时间为:<$STR(U88)>秒。
+
+#IF
+EQUAL U88 0
+#ACT
+sendmsg 6 温馨提示:内力值已经用完，保护视力，切勿沉溺游戏哦~
+
+[@OnTimer2]
+#IF
+checkitemw 海魂
+#act
+#elseact
+SetOffTimer 2
+break
+
+#IF
+LARGE N$潮汐值 8
+#ACT
+SetOnTimer 3 1 10
+SetOffTimer 2
+#ELSEACT
+INC N$潮汐值 1
+
+[@OnTimer3]
+#IF
+checkitemw 海魂
+EQUAL N$潮汐值 0
+#ACT
+SetOnTimer 2 1 10
+
+#IF
+LARGE N$潮汐值 0
+#ACT
+DEC N$潮汐值 1
+
+[@OnTimer4]
+#act
+PLAYSOUND Wav\M6-3.wav 1 4 0
+PLAYEFFECT 8 190 6 1 100 0 0 0 0
+RangeHarm <$X> <$Y> 1 15 0 0
+
+[@OnTimer5]
+#act
+RangeHarm <$STR(N$漩涡X)> <$STR(N$漩涡Y)> 2 <$MAXMC> 0 0
+
+[@OnTimer6]
+#act
+MOV N$血咒 0
+
+[@OnTimer7]
+#IF
+#ACT
+RangeHarm <$X> <$Y> 2 <$MAXDC> 4 <$MAXDC>
+
+[@OnTimer8]
+#IF
+#ACT
+MOV N$龙牙伤害 <$MAXMC>
+MUL N$龙牙伤害 2
+INC N$龙牙伤害 18
+RangeHarm <$STR(N$LY)> <$STR(N$LY1)> 7 <$STR(N$龙牙伤害)> 0 0
+
+[@OnTimer10]
+#ACT
+RangeHarm <$STR(N$坐标X)> <$STR(N$坐标Y)> 4 <$MAXMC> 3 1
+
+[@OnTimer11]
+#IF
+checkitemw 霸者之刃
+#act
+AddHumNewValue 2 + 50 20
+AddHumNewValue 3 + 50 20
+PLAYEFFECT 25 670 7 22 100 0 0 0 0
+DELAYGOTO 20000 @霸者反伤
+#ELSEACT
+SetOffTimer 11
+
+[@OnTimer12]
+#IF
+EQUAL S$沙尘地图 <$MAP>
+#ACT
+MOV N$沙尘伤害 <$LEVEL>
+INC N$沙尘伤害 <$MAXMC>
+INC N$沙尘伤害 50
+RangeHarm <$X> <$Y> 20 <$STR(N$沙尘伤害)> 1 1
+#ELSEACT
+SetOffTimer 12
+
+[@OnTimer14]
+#IF
+EQUAL S$天灾地图 <$MAP>
+#ACT
+MOV N$天灾伤害 <$LEVEL>
+INC N$天灾伤害 <$MAXSC>
+RangeHarm <$X> <$Y> 10 <$STR(N$天灾伤害)> 3 1
+#ELSEACT
+SetOffTimer 14
+
+
+[@霸者反伤]
+#IF
+CheckJob Warrior
+#ACT
+MOV N$霸者吸收 <$MAXDC>
+
+#IF
+CheckJob Wizard
+#ACT
+MOV N$霸者吸收 <$MAXMC>
+
+#IF
+CheckJob Taoist
+#ACT
+MOV N$霸者吸收 <$MAXSC>
+
+#IF
+#ACT
+INC N$霸者吸收 <$LEVEL>
+PLAYEFFECT 18 590 10 1 150 0 0 0 0
+RangeHarm <$X> <$Y> 3 <$STR(N$霸者吸收)> 1 2
+
+[@OnTimer100]
+#IF
+LARGE U1 0
+#ACT
+DEC U1 1
+
+#IF
+EQUAL U1 0
+#ACT
+SetOffTimer 100
+SENDMSG 6 [挂机]：挂机时间已不足1分钟了，无法进行挂机了！您可以在商城购买挂机点卷增加挂机时间！
+break
+
+
+[@OnTimer101]
+#IF
+CHECKVAR HUMAN 苍天霸血 > 0
+#ACT
+CALCVAR HUMAN 苍天霸血 - 1
+SAVEVAR HUMAN 苍天霸血 ..\QuestDiary\每日清零\每日游戏数据.txt
+BREAK
+
+#IF
+CHECKVAR HUMAN 苍天霸血 < 1
+#ACT
+ChangeHumAbility 2 - <$STR(N$人物防御波动值)>
+ChangeHumAbility 4 - <$STR(N$人物魔御波动值)>
+MOV N$人物最大生命值 0
+MOV N$人物最大魔法值 0
+MOV N$人物防御波动值 0
+MOV N$人物魔御波动值 0
+SetOffTimer 101
+sendmsg 6 〖提示〗苍天霸血护体已结束.
+BREAK
+
+[@结束1-1霸血]
+#if
+#act
+ChangeHumAbility 2 - <$STR(N303)>
+ChangeHumAbility 4 - <$STR(N304)>
+SetOffTimer 101
+SETICON 1 -1
+sendmsg 6 〖提示〗苍天霸血护体已结束.
+MOV N301 0
+MOV N302 0
+MOV N303 0
+MOV N304 0
+MOV D1 0
+MOV D2 0
+MOV D3 0
+MOV D4 0
+BREAK
+
+
+[@战力复位]
+#IF
+#act
+MOV N$总战斗力 0
+MOV N$体力值上限 <$MAXHP>
+MOV N$魔力值上限 <$MAXHP>
+MOV N$防御力上限 <$MAXAC>
+MOV N$防御力下限 <$AC>
+MOV N$魔防力上限 <$MAXMAC>
+MOV N$魔防力下限 <$MAC>
+MOV N$攻击力上限 <$MAXDC>
+MOV N$攻击力下限 <$DC>
+MOV N$魔法力上限 <$MAXMC>
+MOV N$魔法力下限 <$MC>
+MOV N$道术力上限 <$MAXSC>
+MOV N$道术力下限 <$SC>
+MOV N$准确 <$HIT> 
+MOV N$敏捷 <$SPD> 
+MOV N$攻速 <$HITSPD>
+MOV N$神力倍数 <$POWERRATE>
+MOV N$人物等级 <$LEVEL>
+
+MOV N$暴击几率 <$ELEMENT>
+MOV N$攻击伤害 <$ELEMENT1>
+MOV N$物理减伤 <$ELEMENT2>
+MOV N$魔法减伤 <$ELEMENT3>
+MOV N$忽视防御 <$ELEMENT4>
+MOV N$伤害反弹 <$ELEMENT5>
+MOV N$人物爆率 <$ELEMENT6>
+MOV N$体力增加 <$ELEMENT7>
+MOV N$魔力增加 <$ELEMENT8>
+
+
+DIV N$体力值上限 5
+DIV N$魔力值上限 4
+MUL N$防御力上限 3
+MUL N$防御力下限 2
+MUL N$魔防力上限 2
+MUL N$魔防力下限 1
+MUL N$攻击力上限 8
+MUL N$攻击力下限 6
+MUL N$魔法力上限 7
+MUL N$魔法力下限 5
+MUL N$道术力上限 7
+MUL N$道术力下限 5
+MUL N$准确 30
+MUL N$敏捷 20
+MUL N$攻速 80
+MUL N$神力倍数 80
+MUL N$人物等级 10
+
+MUL N$暴击几率 80
+MUL N$攻击伤害 30
+MUL N$物理减伤 12
+MUL N$魔法减伤 5
+MUL N$忽视防御 8
+MUL N$伤害反弹 8
+MUL N$人物爆率 5
+MUL N$体力增加 3
+MUL N$魔力增加 1
+
+INC N$总战斗力 <$STR(N$体力值上限)>
+INC N$总战斗力 <$STR(N$魔力值上限)>
+INC N$总战斗力 <$STR(N$防御力上限)>
+INC N$总战斗力 <$STR(N$防御力下限)>
+INC N$总战斗力 <$STR(N$魔防力上限)>
+INC N$总战斗力 <$STR(N$魔防力下限)>
+INC N$总战斗力 <$STR(N$攻击力上限)>
+INC N$总战斗力 <$STR(N$攻击力下限)>
+INC N$总战斗力 <$STR(N$魔法力上限)>
+INC N$总战斗力 <$STR(N$魔法力下限)>
+INC N$总战斗力 <$STR(N$道术力上限)>
+INC N$总战斗力 <$STR(N$道术力下限)>
+INC N$总战斗力 <$STR(N$准确)>
+INC N$总战斗力 <$STR(N$敏捷)>
+INC N$总战斗力 <$STR(N$攻速)>
+INC N$总战斗力 <$STR(N$神力倍数)>
+INC N$总战斗力 <$STR(N$人物等级)>
+
+INC N$总战斗力 <$STR(N$暴击几率)>
+INC N$总战斗力 <$STR(N$攻击伤害)>
+INC N$总战斗力 <$STR(N$物理减伤)>
+INC N$总战斗力 <$STR(N$魔法减伤)>
+INC N$总战斗力 <$STR(N$忽视防御)>
+INC N$总战斗力 <$STR(N$伤害反弹)>
+INC N$总战斗力 <$STR(N$人物爆率)>
+INC N$总战斗力 <$STR(N$体力增加)>
+INC N$总战斗力 <$STR(N$魔力增加)>
+CALCVAR HUMAN 总战斗力 = <$STR(N$总战斗力)>
+SAVEVAR HUMAN 总战斗力 ..\QuestDiary\数据文件\战力排行\战力变量.txt
+SortVarToList 总战斗力 ..\QuestDiary\数据文件\战力排行\战力变量.txt ..\QuestDiary\数据文件\战力排行\战力排序.txt 0 1
+GetStringPos ..\QuestDiary\数据文件\战力排行\战力排序.txt <$USERNAME>:<$STR(N$总战斗力)>
+INC N0 1
+setranklevelname <$STR(S$称号显示)>\【战力:<$STR(N$总战斗力)>点‖第<$STR(N0)>名】\
+
+

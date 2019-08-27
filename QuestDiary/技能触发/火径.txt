@@ -1,0 +1,86 @@
+[@»ð¾¶]
+{
+#IF
+EQUAL N500 0
+#ACT
+break
+
+#IF
+#ACT
+MOV N$»ð¾¶ÍþÁ¦ <$MAXMC>
+MAPEFFECT <$MAP> <$X> <$Y> 16 1950 8 50 100 1 1
+mobfireburn <$MAP> <$X> <$Y> 100 50 <$STR(N$»ð¾¶ÍþÁ¦)>
+
+}
+
+[@»ð¾¶ÅÜ²½]
+{
+#IF
+EQUAL N500 0
+#ACT
+break
+
+#IF
+#ACT
+MOV N$»ð¾¶ÍþÁ¦ <$MAXMC>
+MAPEFFECT <$MAP> <$X> <$Y> 16 1950 8 50 100 1 1
+mobfireburn <$MAP> <$X> <$Y> 100 50 <$STR(N$»ð¾¶ÍþÁ¦)>
+
+#IF
+#ACT
+GetPlayInfo Dir N1
+
+#IF
+#ACT
+MOV N$Q <$X>
+MOV N$W <$Y>
+
+#IF
+EQUAL N1 0
+#ACT
+INC N$W 1
+
+#IF
+EQUAL N1 1
+#ACT
+DEC N$Q 1
+INC N$W 1
+
+#IF
+EQUAL N1 2
+#ACT
+DEC N$Q 1
+
+#IF
+EQUAL N1 3
+#ACT
+DEC N$Q 1
+DEC N$W 1
+
+#IF
+EQUAL N1 4
+#ACT
+INC N$W 1
+
+#IF
+EQUAL N1 5
+#ACT
+INC N$Q 1
+DEC N$W 1
+
+#IF
+EQUAL N1 6
+#ACT
+INC N$Q 1
+
+#IF
+EQUAL N1 7
+#ACT
+INC N$Q 1
+INC N$W 1
+
+#IF
+#ACT
+MAPEFFECT <$MAP> <$STR(N$Q)> <$STR(N$W)> 16 1950 8 50 100 1 1
+mobfireburn <$MAP> <$STR(N$Q)> <$STR(N$W)> 100 50 <$STR(N$»ð¾¶ÍþÁ¦)>
+}

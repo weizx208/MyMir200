@@ -1,0 +1,203 @@
+[@检测窗口]
+{
+
+#IF
+CheckClientWidth = 800
+#ACT
+MOV N$分辨率宽1 670
+MOV N$分辨率宽2 590
+MOV N$分辨率宽3 670
+MOV N$分辨率宽4 590
+
+
+#IF
+CheckClientWidth = 900
+#ACT
+MOV N$分辨率宽1 800
+MOV N$分辨率宽2 720
+MOV N$分辨率宽3 800
+MOV N$分辨率宽4 700
+
+;==========================
+#IF
+CheckClientWidth = 1024
+#ACT
+MOV N$分辨率宽1 -276
+MOV N$分辨率宽2 -317
+MOV N$分辨率宽3 -273
+MOV N$分辨率宽4 680
+
+;=========================
+
+#IF
+CheckClientWidth = 1152
+#ACT
+MOV N$分辨率宽1 -164
+MOV N$分辨率宽2 -205
+MOV N$分辨率宽3 -161
+MOV N$分辨率宽4 792
+
+#IF
+CheckClientWidth = 1280
+#ACT
+MOV N$分辨率宽1 -354
+MOV N$分辨率宽2 -395
+MOV N$分辨率宽3 -351
+MOV N$分辨率宽4 892
+
+#IF
+CheckClientWidth = 1360
+#ACT
+MOV N$分辨率宽1 -14
+MOV N$分辨率宽2 -55
+MOV N$分辨率宽3 -11
+MOV N$分辨率宽4 942
+
+
+#IF
+CheckClientWidth = 1366
+#ACT
+MOV N$分辨率宽1 -14
+MOV N$分辨率宽2 -55
+MOV N$分辨率宽3 -11
+MOV N$分辨率宽4 942
+
+#IF
+CheckClientWidth = 1440
+#ACT
+MOV N$分辨率宽1 66
+MOV N$分辨率宽2 25
+MOV N$分辨率宽3 69
+MOV N$分辨率宽4 1022
+
+
+#IF
+CheckClientWidth = 1600
+#ACT
+MOV N$分辨率宽1 186
+MOV N$分辨率宽2 145
+MOV N$分辨率宽3 189
+MOV N$分辨率宽4 1142
+
+#IF
+CheckClientWidth = 1680
+#ACT
+MOV N$分辨率宽1 186
+MOV N$分辨率宽2 503
+MOV N$分辨率宽3 189
+MOV N$分辨率宽4 1142
+
+#IF
+CheckClientWidth = 1920
+#ACT
+MOV N$分辨率宽1 366
+MOV N$分辨率宽2 325
+MOV N$分辨率宽3 369
+MOV N$分辨率宽4 1322
+
+;=================================================
+
+
+#IF
+CheckClientHeight = 600
+#ACT
+MOV N$分辨率高1 387
+MOV N$分辨率高2 358
+MOV N$分辨率高3 308
+MOV N$分辨率高4 258
+
+
+#IF
+CheckClientHeight = 720
+#ACT
+MOV N$分辨率高1 531
+MOV N$分辨率高2 502
+MOV N$分辨率高3 452
+MOV N$分辨率高4 402
+
+
+;=========================
+
+#IF
+CheckClientHeight = 768
+#ACT
+MOV N$分辨率高1 80
+MOV N$分辨率高2 80
+MOV N$分辨率高3 83
+MOV N$分辨率高4 590
+
+;=========================
+
+#IF
+CheckClientHeight = 800
+#ACT
+MOV N$分辨率高1 123
+MOV N$分辨率高2 123
+MOV N$分辨率高3 126
+MOV N$分辨率高4 633
+
+
+#IF
+CheckClientHeight = 864
+#ACT
+MOV N$分辨率高1 178
+MOV N$分辨率高2 178
+MOV N$分辨率高3 181
+MOV N$分辨率高4 688
+
+
+#IF
+CheckClientHeight = 900
+#ACT
+MOV N$分辨率高1 223
+MOV N$分辨率高2 223
+MOV N$分辨率高3 226
+MOV N$分辨率高4 733
+
+
+#IF
+CheckClientHeight = 960
+#ACT
+MOV N$分辨率高1 283
+MOV N$分辨率高2 283
+MOV N$分辨率高3 286
+MOV N$分辨率高4 793
+
+
+#IF
+CheckClientHeight = 1024
+#ACT
+MOV N$分辨率高1 348
+MOV N$分辨率高2 348
+MOV N$分辨率高3 351
+MOV N$分辨率高4 858
+
+
+#IF
+CheckClientHeight = 1050
+#ACT
+MOV N$分辨率高1 373
+MOV N$分辨率高2 373
+MOV N$分辨率高3 376
+MOV N$分辨率高4 883
+
+
+
+#IF
+CheckClientHeight = 1080
+#ACT
+MOV N$分辨率高1 403
+MOV N$分辨率高2 403
+MOV N$分辨率高3 406
+MOV N$分辨率高4 913
+
+
+
+
+
+
+
+
+
+
+}

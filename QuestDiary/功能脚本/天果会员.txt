@@ -1,0 +1,252 @@
+(@storage @getback )
+[@会员命令]
+{
+#IF
+CHECK [800] 1
+#ACT
+OPENMERCHANTBIGDLG 0 24 1 0 50 30 1 297 28
+#SAY
+<><Img:25:0:-6:18>\
+<>\
+<> <尊敬的/SCOLOR=21><"Vip会员"/SCOLOR=254><请问您需要以下哪种特权服务?/SCOLOR=21>\
+<><Img:22:0:-5:18><Img:22:0:-5:18><Img:22:0:-5:18><Img:22:0:-8:18>\
+<>\
+< ><每日工资|250#[VIP特权1]:^ ^254#每日会员的福利/@会员福利>   <每日药品|250#[VIP特权2]:^ ^254#每日会员的药品/@会员赠药>   <随身仓库|250#[VIP特权3]:^ ^254#会员的随身仓库/@storage>    <打宝地图|250#[VIP特权4]:^ ^254#每日会员的福利/@会员打宝>\
+<><Img:22:0:-5:4><Img:22:0:-5:4><Img:22:0:-5:4><Img:22:0:-8:4>\
+< ><苍天霸血|250#[VIP特权5]:^ ^254#会员每日可有一次^254#使用苍天霸血护体的机会/@霸血发动>   <清洗红名|250#[VIP特权6]:^ ^254#一天3次清洗人物PK值/@会员洗红名>   <一键特修|250#[VIP特权7]:^ ^254#直接特修全身装备/@一键特修>    <清理背包|250#[VIP特权8]:^ ^254#清理整个背包/@清背包>\
+<><Img:22:0:-5:3><Img:22:0:-5:3><Img:22:0:-5:3><Img:22:0:-8:3>\
+<><提示：欢迎来到『焚天战神录1.76』./SCOLOR=222>\
+<><Img:26:0:60:-90><Img:26:0:120:-90><Img:26:0:182:-90>\
+<><Img:23:0:60:-76><Img:23:0:120:-76><Img:23:0:182:-76>\
+#ELSEACT
+MESSAGEBOX  【提示】:\\您还不是本服会员,\\请在商城购买「VIP会员证」,方可使用本功能！
+break
+
+[@会员福利]
+#if
+dayofweek sun
+#act
+goto @guo2-1
+break
+#if
+dayofweek mon
+#act
+goto @guo2-2
+break
+#if
+dayofweek tue
+#act
+goto @guo2-3
+break
+#if
+dayofweek wed
+#act
+goto @guo2-4
+break
+#if
+dayofweek thu
+#act
+goto @guo2-5
+break
+#if
+dayofweek fri
+#act
+goto @guo2-6
+break
+#if
+dayofweek sat
+#act
+goto @guo2-7
+break
+[@guo2-1]
+#IF
+dayofweek sun
+check [791] 0
+#act
+reset [791] 7
+set [791] 1
+give 金币 200000
+GAMEGOLD + 10
+SENDMSG 4 恭喜『<$USERNAME>』领取了10元宝。
+MESSAGEBOX <星期天>嘻嘻！礼品翻倍啊！发达啦！<[金币+20万]>
+goto @会员命令
+#ELSEACT
+MESSAGEBOX 您好象今天已经领过了啊，怎么，还想再领？
+goto @会员命令
+[@guo2-2]
+#IF
+dayofweek mon
+check [792] 0
+#act
+reset [791] 7
+set [792] 1
+give 金币 50000
+MESSAGEBOX <星期一>新的开始哟！<[金币+5万]>
+goto @会员命令
+#ELSEACT
+MESSAGEBOX 您好象今天已经领过了啊，怎么，还想再领？
+goto @会员命令
+[@guo2-3]
+#IF
+dayofweek tue
+check [793] 0
+#act
+reset [791] 7
+set [793] 1
+give 金币 50000
+MESSAGEBOX <星期二>要好好努力呀！<[金币+5万]>
+goto @会员命令
+#ELSEACT
+MESSAGEBOX 您好象今天已经领过了啊，怎么，还想再领？
+goto @会员命令
+[@guo2-4]
+#IF
+dayofweek wed
+check [794] 0
+#act
+reset [791] 7
+set [794] 1
+give 金币 50000
+MESSAGEBOX <星期三>好好关心您另一半呀！<[金币+5万]>
+goto @会员命令
+#ELSEACT
+MESSAGEBOX 您好象今天已经领过了啊，怎么，还想再领？
+goto @会员命令
+[@guo2-5]
+#IF
+dayofweek thu
+check [795] 0
+#act
+reset [791] 7
+set [795] 1
+give 金币 50000
+MESSAGEBOX <星期四>今天小心点，怪物很厉害的！<[金币+5万]>
+goto @会员命令
+#ELSEACT
+MESSAGEBOX 您好象今天已经领过了啊，怎么，还想再领？
+goto @会员命令
+[@guo2-6]
+#IF
+dayofweek fri
+check [796] 0
+#act
+reset [791] 7
+set [796] 1
+give 金币 50000
+MESSAGEBOX <星期五>今天您约会了吗？<[金币+5万]>
+goto @会员命令
+#ELSEACT
+MESSAGEBOX 您好象今天已经领过了啊，怎么，还想再领？
+goto @会员命令
+[@guo2-7]
+#IF
+dayofweek sat
+check [797] 0
+#act
+reset [791] 7
+set [797] 1
+give 金币 100000
+GAMEGOLD + 5
+SENDMSG 4 恭喜『<$USERNAME>』领取了5元宝。
+MESSAGEBOX <星期六>晚上去哪里宵夜？<[金币+100万]>
+goto @会员命令
+#ELSEACT
+MESSAGEBOX 您好象今天已经领过了啊，怎么，还想再领？
+goto @会员命令
+;-------------------------------------------------------------------
+
+[@会员赠药]
+#IF
+CHECKNAMELIST ..\QuestDiary\每日清零\会员药品.txt
+#ACT
+MESSAGEBOX \\您已经领取过了太阳药水包了,请明天再来!
+BREAK
+
+#IF
+#ACT
+GIVE 强效太阳水包 3
+messagebox \\[会员服务]：恭喜您领取了每日药品个“太阳药水包”3个
+AddNAMELIST ..\QuestDiary\每日清零\会员药品.txt
+BREAK
+
+;-------------------------------------------------------------------
+
+[@霸血发动]
+#IF
+CHECKLEVELEX > 0
+#ACT
+#CALL [\功能脚本\苍天霸血.txt] @霸血激发
+break
+
+;-------------------------------------------------------------------
+
+[@一键特修]
+#ACT
+MessageBox 【提示:】\　\使用【1】个元宝，便可特修身上的所有装备。\　\此操作不可逆向，造成损失自负！ @特修开始 @取消
+break
+
+[@特修开始]
+#IF
+CHECKGAMEGOLD > 0
+#ACT
+GAMEGOLD - 1
+ACTREPAIRALL
+SENDMSG 7 『<$USERNAME>』，你身上的所有装备己修补完毕。
+CLOSEBIGDIALOGBOX
+CLOSE
+BREAK
+#ELSEACT
+MESSAGEBOX 【提示:】\　\一键特修失败，缺少3个元宝的手续费！
+
+;-------------------------------------------------------------------
+
+[@清背包]
+#ACT
+MessageBox 【提示:】\　\使用【1】个元宝，便可清理包裹里的所有物品。\　\此操作不可逆向，造成损失自负！ @确认清理包裹 @取消
+break
+
+[@确认清理包裹]
+#IF
+CHECKGAMEGOLD > 0
+#ACT
+GAMEGOLD - 1
+GmexEcute 清理背包 <$USERNAME>
+SENDMSG 7 『<$USERNAME>』，你的背包己清理完毕。
+CLOSEBIGDIALOGBOX
+CLOSE
+BREAK
+#ELSEACT
+MESSAGEBOX 清理失败，缺少1个元宝的手续费！
+
+;-------------------------------------------------------------------
+
+[@会员洗红名]
+#IF
+CHECKVAR HUMAN 洗红次数 < 3 
+#ACT
+goto @洗红名1
+break
+#ELSEACT
+MESSAGEBOX 【提示:】\　\今天的3天免费洗红次数己用完!
+break
+
+
+[@洗红名1]
+#IF
+CHECKPKPOINTEX  > 0
+#act
+CALCVAR HUMAN 洗红次数 + 1
+SAVEVAR HUMAN 洗红次数 ..\QuestDiary\每日清零\每日游戏数据.txt
+CHANGEPKPOINT = 0
+messagebox 【提示:】\　\你的PK值已经被清空!
+#ELSEACT
+messagebox 【提示:】\　\没有PK值,不需要洗红名!
+
+;-------------------------------------------------------------------
+
+[@会员打宝]
+
+
+
+
+}

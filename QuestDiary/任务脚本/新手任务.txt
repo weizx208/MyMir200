@@ -1,0 +1,461 @@
+[@新人任务触发]
+{
+#IF
+CHECK [001] 0
+#ACT
+MOV S$新手侠客 可接受
+
+#IF
+CHECK [001] 1
+#ACT
+MOV S$新手侠客 进行中
+
+#IF
+CHECK [002] 1
+#ACT
+MOV S$新手侠客 己完成
+
+#IF
+CHECKLEVELEX < 15
+#ACT
+CloseBigDialogBox
+break
+#SAY
+欢迎来到这个<世界/SCOLOR=168>。在你面前的将是一个陌生的、新奇的全新世界。\
+在这个世界中历险需要的是你的<智慧/SCOLOR=253>与<胆量/SCOLOR=251>。\
+不过不到35级的你在经历这些乐趣之前，必须要拥有强健的体魄！\ \
+　　去 <一号训练地/@一号训练地>　　　　　　去 <二号训练地/@二号训练地>\
+　　去 <三号训练地/@三号训练地>　　　　　　去 <四号训练地/@四号训练地>\
+　　去 <五号训练地/@五号训练地>　　　　　　去 <六号训练地/@六号训练地>\
+　　去 <七号训练地/@七号训练地>　　　　　　去 <八号训练地/@八号训练地>\
+　　<新手任务/SCOLOR=254><如何成为玛法侠客/@玛法侠客>〖<$STR(S$新手侠客)>〗
+
+#IF
+CHECKLEVELEX < 35
+#ACT
+CloseBigDialogBox
+break
+#SAY
+欢迎来到这个<世界/SCOLOR=168>。在你面前的将是一个陌生的、新奇的全新世界。\
+在这个世界中历险需要的是你的<智慧/SCOLOR=253>与<胆量/SCOLOR=251>。\
+不过在经历这些乐趣之前，你必须要拥有强健的体魄！\ \
+<前往比奇矿区/@比奇矿区>  <矿区任务奖励丰厚/SCOLOR=250>\
+<前往比奇小村/@比奇小村>\
+<前往银杏山谷/@银杏山谷>\
+<前往比奇大城/@比齐大城>\
+<新手任务/SCOLOR=254><如何成为玛法侠客/@玛法侠客>〖<$STR(S$新手侠客)>〗    <拜师学艺/@拜师>    <离开/@exit>\
+#ELSEACT
+CloseBigDialogBox
+#ELSESAY
+欢迎来到这个<世界/SCOLOR=168>。在你面前的将是一个陌生的、新奇的全新世界。\
+在这个世界中历险需要的是你的<智慧/SCOLOR=253>与<胆量/SCOLOR=251>。\
+不过在经历这些乐趣之前，你必须要拥有强健的体魄！\
+<前往比奇矿区/@比奇矿区>  <矿区任务奖励丰厚/SCOLOR=250>\
+<前往比奇小村/@比奇小村>\
+<前往银杏山谷/@银杏山谷>\
+<前往比奇大城/@比齐大城>\
+<前往盟重大城/@盟重大城>\
+<新手任务/SCOLOR=254><如何成为玛法侠客/@玛法侠客>〖<$STR(S$新手侠客)>〗    <拜师学艺/@拜师>    <离开/@exit>\
+
+;---------------------------------------------------
+
+[@一号训练地]
+#IF
+CHECKLEVELEX > 0
+#ACT
+mongenEX n0 256 654 稻草人 10 10 255
+give 回城卷 1
+mapmove n0 256 654
+GuildNoticeMsg 151 5 %d：修炼到15级就可以去比奇矿区冒险了. 
+break
+[@二号训练地]
+#IF
+CHECKLEVELEX > 0
+#ACT
+mongenEX n0 190 434 稻草人 10 10 255
+give 回城卷 1
+mapmove n0 190 434
+GuildNoticeMsg 151 5 %d：修炼到15级就可以去比奇矿区冒险了. 
+break
+[@三号训练地]
+#IF
+CHECKLEVELEX > 0
+#ACT
+mongenEX n0 333 580 稻草人 10 10 255
+give 回城卷 1
+mapmove n0 333 580
+GuildNoticeMsg 151 5 %d：修炼到15级就可以去比奇矿区冒险了. 
+break
+[@四号训练地]
+#IF
+CHECKLEVELEX > 0
+#ACT
+mongenEX n0 318 532 稻草人 10 10 255
+give 回城卷 1
+mapmove n0 318 532
+GuildNoticeMsg 151 5 %d：修炼到15级就可以去比奇矿区冒险了. 
+break
+[@五号训练地]
+#IF
+CHECKLEVELEX > 0
+#ACT
+mongenEX n0 578 588 稻草人 10 10 255
+give 回城卷 1
+mapmove n0 578 588
+GuildNoticeMsg 151 5 %d：修炼到15级就可以去比奇矿区冒险了. 
+break
+[@六号训练地]
+#IF
+CHECKLEVELEX > 0
+#ACT
+mongenEX n0 540 567 稻草人 10 10 255
+give 回城卷 1
+mapmove n0 540 567
+GuildNoticeMsg 151 5 %d：修炼到15级就可以去比奇矿区冒险了. 
+break
+[@七号训练地]
+#IF
+CHECKLEVELEX > 0
+#ACT
+mongenEX n0 540 550 稻草人 10 10 255
+give 回城卷 1
+mapmove n0 540 550
+GuildNoticeMsg 151 5 %d：修炼到15级就可以去比奇矿区冒险了. 
+break
+[@八号训练地]
+#IF
+CHECKLEVELEX > 0
+#ACT
+mongenEX n0 606 511 稻草人 10 10 255
+give 回城卷 1
+mapmove n0 606 511
+GuildNoticeMsg 151 5 %d：修炼到15级就可以去比奇矿区冒险了. 
+break
+
+;---------------------------------------------------
+
+[@比奇矿区]
+#IF
+#ACT
+give 回城卷 1
+mapmove D401 92 57
+GuildNoticeMsg 151 5 %d：矿区可以挖出各种稀世矿石，僵尸爆各种35级技能书。 Self
+break
+
+[@比奇小村]
+#IF
+#ACT
+mapmove n0 288 615
+break
+
+[@银杏山谷]
+#IF
+#ACT
+mapmove n0 648 632 
+break
+
+[@比齐大城]
+#ACT
+mapmove n0 333 268 
+break
+
+[@盟重大城]
+#ACT
+mapmove n3 330 330 
+break
+
+;---------------------------------------------------
+[@拜师]
+#IF
+CHECKLEVELEX > 34
+#ACT
+mapmove n3 286 344
+break
+#ELSESAY 
+你的等级不够，请你到35级再来找我！\ \
+<离开/@exit>
+;---------------------------------------------------
+;---------------------------------------------------
+
+[@玛法侠客]
+#IF
+CHECK [002] 1
+#ACT
+MessageBox 【提示】:\\亲爱的『<$USERNAME>』，你已经完成了新手任务。\找新手接待员可以传送到僵尸洞继续修炼。\35级以后就可以到盟重城继续你的传奇之路了。
+break
+
+#IF
+CHECKLEVELEX > 14
+CHECK [001] 1
+CHECK [002] 0
+#ACT
+goto @1步15
+break
+
+#IF
+CHECK [001] 1
+CHECK [002] 0
+#ACT
+goto @1步7
+break
+
+#IF
+#ACT
+break
+#SAY
+欢迎来到玛法大陆，『{<$USERNAME>/FCOLOR=253}』，不要对你眼前的一切感到奇怪，\
+这片<曾经美丽宁静/SCOLOR=154>的大陆，如今已经被一股神秘的黑暗势力\
+所笼罩了，情势十分危急！我们正需要像你这样的勇士。\ \
+<现在我教你练习本职业全套基础技能，相信你以后会感激我的！/SCOLOR=250>\ \
+<我接受（任务）/@1步>
+
+[@1步]
+#IF
+CHECK [001] 1
+#ACT
+goto @完成了等
+break
+
+#IF
+checkjob warrior
+#ACT
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 半月弯刀 3
+ADDSKILL 野蛮冲撞 3
+ADDSKILL 烈火剑法 3
+RECALLMOB 鹰卫 3 30  1
+give 金币 100000
+SET [001] 1
+SENDMSG 1 接待使者：恭喜『<$USERNAME>』学习了基本技能，如果你也想要就来找我吧。
+DelayCall 1000 @完成了等
+break
+
+#IF
+checkjob wizard
+#act
+ADDSKILL 火球术 3
+ADDSKILL 抗拒火环 3
+ADDSKILL 诱惑之光 3
+ADDSKILL 地狱火 3
+ADDSKILL 雷电术 3
+ADDSKILL 瞬息移动 3
+ADDSKILL 大火球 3
+ADDSKILL 爆裂火焰 3
+ADDSKILL 火墙 3
+ADDSKILL 疾光电影 3
+ADDSKILL 地狱雷光 3
+ADDSKILL 魔法盾 3
+ADDSKILL 圣言术 3
+ADDSKILL 冰咆哮 3
+RECALLMOB 鹰卫 3 30  1
+give 金币 100000
+SET [001] 1
+SENDMSG 1 接待使者：恭喜『<$USERNAME>』学习了基本技能，如果你也想要就来找我吧。
+DelayCall 1000 @完成了等
+break
+
+#IF
+checkjob taoist
+#act
+ADDSKILL 治愈术 3
+ADDSKILL 精神力战法 3
+ADDSKILL 施毒术 3
+ADDSKILL 灵魂火符 3
+ADDSKILL 召唤骷髅 3
+ADDSKILL 幽灵盾 3
+ADDSKILL 神圣战甲术 3
+ADDSKILL 困魔咒 3
+ADDSKILL 隐身术 3
+ADDSKILL 集体隐身术 3
+ADDSKILL 心灵启示 3
+ADDSKILL 群体治愈术 3
+ADDSKILL 召唤神兽 3
+RECALLMOB 鹰卫 3 30  1
+give 金币 100000
+SET [001] 1
+SENDMSG 1 接待使者：恭喜『<$USERNAME>』学习了基本技能，如果你也想要就来找我吧。
+DelayCall 1000 @完成了等
+break
+
+[@1步12]
+恭喜，你已学会基本技能，按<F11/SCOLOR=58>键可以设定技能快捷键。\ \
+年轻的朋友，要想成为真正的<『勇士』/SCOLOR=253>必须先要学会如何在这个世界里\
+生存，想要知道如何<成为仙剑侠客/SCOLOR=250>吗？\ \
+<到村子附近升级到15级后再给我100个金币/SCOLOR=58>我就告诉你。\ \
+<我接受（任务）/@1步7>      <如何得到金币/@如何得到金币>\
+
+[@1步15]
+\ \
+<小家伙/SCOLOR=253>，修炼的不错，想要<奖励/SCOLOR=125>吗？嗬嗬嗬……\
+不调戏你了，点下面黄色字领取<奖励/SCOLOR=58>吧。\ \ \
+<(领取前,请保持包裹里至少有两个空位)/FCOLOR=224>\ \
+<我接受（奖励）/@1步7>      <如何得到金币/@如何得到金币>\
+
+[@1步7]
+#IF
+CHECKLEVELEX > 14
+checkgold 100
+#ACT
+goto @升到了15级
+#ELSEACT
+BREAK
+#ELSESAY
+\ \
+你确定人物己升到了<15级/SCOLOR=58>并且带来了 <100金币/SCOLOR=125>？\ \ \
+<如何得到金币/@如何得到金币>
+
+[@升到了15级]
+#IF
+check [002] 1
+#SAY
+对不起，你已经完成过此任务了。\ \
+<离开/@exit>\
+#ELSEACT
+goto @升到了15级领取
+BREAK
+
+[@升到了15级领取]
+#IF
+check [002] 0
+gender man
+checkjob warrior
+#ACT
+ set [002] 1
+ give 八荒 1
+ give 轻型盔甲(男) 1
+ AutoTakeOnItem 八荒 1
+ AutoTakeOnItem 轻型盔甲(男) 0
+ take 布衣(男) 2
+ take 布衣(女) 2
+ take 木剑 2
+ give 超级金创药 5
+ give 超级魔法药 3
+ give 回城卷 1
+ give 金币 10000
+SENDMSG 1 新人助手：『<$USERNAME>』领取了新人装备，如果你也想要就来找我吧。
+close
+break
+
+
+#IF
+ check [002] 0
+ gender woman
+checkjob warrior
+#ACT
+ set [002] 1
+ give 八荒 1
+ give 轻型盔甲(女) 1
+ AutoTakeOnItem 八荒 1
+ AutoTakeOnItem 轻型盔甲(女) 0
+ take 布衣(男) 2
+ take 布衣(女) 2
+ take 木剑 2
+ give 超级金创药 5
+ give 超级魔法药 3
+ give 回城卷 1
+ give 金币 10000
+SENDMSG 1 新人助手：『<$USERNAME>』领取了新人装备，如果你也想要就来找我吧。
+close
+break
+
+#IF
+ check [002] 0
+ gender man
+checkjob wizard
+#ACT
+ set [002] 1
+ give 海魂 1
+ give 轻型盔甲(男) 1
+ AutoTakeOnItem 海魂 1
+ AutoTakeOnItem 轻型盔甲(男) 0
+ take 布衣(男) 2
+ take 布衣(女) 2
+ take 木剑 2
+ give 超级金创药 2
+ give 超级魔法药 6
+ give 回城卷 1
+ give 金币 10000
+SENDMSG 1 新人助手：『<$USERNAME>』领取了新人装备，如果你也想要就来找我吧。
+close
+break
+
+#IF
+ check [002] 0
+ gender woman
+checkjob wizard
+#ACT
+ set [002] 1
+ give 海魂 1
+ give 轻型盔甲(女) 1
+ AutoTakeOnItem 海魂 1
+ AutoTakeOnItem 轻型盔甲(女) 0
+ take 布衣(男) 2
+ take 布衣(女) 2
+ take 木剑 2
+ give 超级金创药 2
+ give 超级魔法药 6
+ give 回城卷 1
+ give 金币 10000
+SENDMSG 1 新人助手：『<$USERNAME>』领取了新人装备，如果你也想要就来找我吧。
+close
+break
+
+#IF
+ check [002] 0
+ gender man
+checkjob taoist
+#ACT
+ set [002] 1
+ give 半月 1
+ give 轻型盔甲(男) 1
+ AutoTakeOnItem 半月 1
+ AutoTakeOnItem 轻型盔甲(男) 0
+ take 布衣(男) 2
+ take 布衣(女) 2
+ take 木剑 2
+ give 超级金创药 4
+ give 超级魔法药 4
+ give 回城卷 1
+ give 金币 10000
+SENDMSG 1 新人助手：『<$USERNAME>』领取了新人装备，如果你也想要就来找我吧。
+close
+break
+
+#IF
+ check [002] 0
+ gender woman
+checkjob taoist
+#ACT
+ set [002] 1
+ give 半月 1
+ give 轻型盔甲(女) 1
+ AutoTakeOnItem 半月 1
+ AutoTakeOnItem 轻型盔甲(女) 0
+ take 布衣(男) 2
+ take 布衣(女) 2
+ take 木剑 2
+ give 超级金创药 4
+ give 超级魔法药 4
+ give 回城卷 1
+ give 金币 10000
+SENDMSG 1 新人助手：『<$USERNAME>』领取了新人装备，如果你也想要就来找我吧。
+close
+break
+
+[@完成了等]
+恭喜，你已学会基本技能，按<F11/SCOLOR=58>键可以设定技能快捷键。\ \
+年轻的朋友，要想成为真正的<『勇士』/SCOLOR=253>必须先要学会如何在这个世界里\
+生存，想要知道如何<成为玛法侠客/SCOLOR=250>吗？\ \
+<到村子附近升级到15级后再给我100个金币/SCOLOR=249>我就告诉你。\ \
+<我接受（任务）/@1步7>      <如何得到金币/@如何得到金币>\
+
+[@如何得到金币]
+很简单，首先打开你的包裹，右键单击武器，即可装备。然后去\
+城外，那里有许多的<鸡/SCOLOR=244>、<羊/SCOLOR=132>、<鹿/SCOLOR=168>。将它们杀死后，通过ALT+左键\
+挖取它们身上的肉，然后卖给屠夫，就能获取<金币/SCOLOR=125>了。\ \
+<你也可以捡取地上掉落的金币噢。/SCOLOR=249>\ \
+<我这就去/@exit>
+
+}

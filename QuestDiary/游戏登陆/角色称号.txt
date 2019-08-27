@@ -1,0 +1,40 @@
+[@角色称号]
+{
+#IF
+#ACT
+MOV S$称号显示 
+
+
+#If
+	ISCASTLEMASTER
+#Act
+	INC S$称号显示 ≡≡≡沙巴克掌门≡≡≡
+	MOV N$行会血量增加 300
+	ChangeHumAbility 12 + <$STR(N$行会血量增加)> 65535
+
+	
+#If
+	ISCASTLEGUILD
+#Act
+	INC S$称号显示 ≡≡≡精英沙巴克成员≡≡≡
+	MOV N$行会血量增加 200
+	ChangeHumAbility 12 + <$STR(N$行会血量增加)> 65535
+
+#If
+
+#Act
+	INC S$称号显示 ≡天下第一≡
+	MOV N$第一血量增加 200
+	ChangeHumAbility 12 + <$STR(N$第一血量增加)> 65535
+
+
+#IF
+#ACT
+	SETRANKLEVELNAME %s\[梵天战神·精品1.76复古]\<$STR(S$称号显示)>\斩杀[<$str(u91)>人]·死亡[<$str(U92)>次]
+
+#IF
+check [800] 1
+#ACT
+SETICON 0 100 240 -30 10 6 0 0 200
+AddHumNewValue 11 + <$STR(N$VIP打怪爆率)> 65535
+}

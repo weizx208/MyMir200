@@ -1,0 +1,55 @@
+[@月灵A]
+{
+#OR
+CHECKSLAVENAME 月灵
+CHECKSLAVENAME 月灵1
+CHECKSLAVENAME 月灵王
+CHECKSLAVENAME 月灵王1
+CHECKSLAVENAME 月灵神
+CHECKSLAVENAME 月灵神1
+#act
+break
+#elseact
+goto @月灵等级
+
+[@月灵等级]
+#IF
+CHECKSKILL 召唤月灵 = 1
+#ACT
+MOV N$月灵等级 3
+
+#IF
+CHECKSKILL 召唤月灵 = 2
+#ACT
+MOV N$月灵等级 5
+
+#IF
+CHECKSKILL 召唤月灵 = 3
+#ACT
+MOV N$月灵等级 7
+
+#IF
+CHECKLEVELEX < 43
+#ACT
+RECALLMOB 月灵 <$STR(N$月灵等级)> 0 0
+
+#IF
+CHECKLEVELEX = 43
+#ACT
+RECALLMOB 月灵王 <$STR(N$月灵等级)> 0 0
+
+#IF
+CHECKLEVELEX > 43
+#ACT
+RECALLMOB 月灵神 <$STR(N$月灵等级)> 0 0
+
+
+
+
+
+
+
+
+
+
+}

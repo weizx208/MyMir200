@@ -1,0 +1,87 @@
+[@精通]
+{
+#IF
+#ACT
+GetAllCustomItemValue 10 N$刀剑 N$刀剑百分比
+GetAllCustomItemValue 11 N$杖类 N$杖类百分比
+GetAllCustomItemValue 12 N$钝器 N$钝器百分比
+GetAllCustomItemValue 14 N$斧类 N$斧类百分比
+
+#IF
+CHECKTEXTLIST ..\QuestDiary\武器分类\刀剑.txt <$WEAPON>
+LARGE N$刀剑 0
+#ACT
+M.HumanHP - <$STR(N$刀剑)>
+
+#IF
+CHECKTEXTLIST ..\QuestDiary\武器分类\杖类.txt <$WEAPON>
+LARGE N$杖类 0
+#ACT
+goto @杖类检测
+
+#IF
+CHECKTEXTLIST ..\QuestDiary\武器分类\钝器.txt <$WEAPON>
+LARGE N$钝器 0
+#ACT
+MOVR N$钝器击晕 0 100
+GOTO @钝器检测
+
+#IF
+CHECKTEXTLIST ..\QuestDiary\武器分类\斧类.txt <$WEAPON>
+LARGE N$斧类 0
+#ACT
+MOVR N$斧类几率 0 100
+goto @斧类检测
+
+[@斧类检测]
+#IF
+SMALL N$斧类几率 <$STR(N$斧类)>
+#ACT
+AddHumNewValue 0 = 100 5
+AddHumNewValue 4 = 100 5
+
+
+[@杖类检测]
+#IF
+RANDOM 6
+EQUAL N$多重开关 0
+#ACT
+ChangeSpeed 3 10 1
+releasemagic <$CURRRUSEMAGICID> 1 <$STR(N$杖类)> 1
+MOV N$多重开关 1
+DELAYGOTO 10000 @多重开关
+
+#IF
+LARGE U16 0
+#ACT
+MOV N$魔能之眼 <$STR(U16)>
+MUL N$魔能之眼 2
+CHANGESPEED 3 <$STR(N$魔能之眼)>
+#ELSEACT
+ChangeSpeed 3 0
+
+[@钝器检测]
+#IF
+SMALL N$钝器击晕 <$STR(N$钝器)>
+#ACT
+M.ChangeState 1 1
+
+[@多重开关]
+#ACT
+MOV N$多重开关 0
+
+}
+
+
+[@精通1]
+{
+#IF
+CHECKTEXTLIST ..\QuestDiary\武器分类\法器.txt <$WEAPON>
+#ACT
+GetAllCustomItemValue 13 N$法器 N$法器百分比
+#ELSEACT
+BREAK
+
+
+
+}

@@ -1,0 +1,52 @@
+[@¼²ÐÐ]
+{
+#IF
+#ACT
+GetPlayInfo Dir N7
+
+#IF
+EQUAL N7 0
+#ACT
+MOV N7 10
+
+#IF
+EQUAL N7 1
+#ACT
+MOV N7 20
+
+#IF
+EQUAL N7 2
+#ACT
+MOV N7 30
+
+#IF
+EQUAL N7 3
+#ACT
+MOV N7 40
+
+#IF
+EQUAL N7 4
+#ACT
+MOV N7 50
+
+#IF
+EQUAL N7 5
+#ACT
+MOV N7 60
+
+#IF
+EQUAL N7 6
+#ACT
+MOV N7 70
+
+#IF
+EQUAL N7 7
+#ACT
+MOV N7 80
+
+#IF
+#ACT
+ClearPlayEffect
+PLAYEFFECT 11 <$STR(N7)> 10 1 40 1 0 0 0
+
+}

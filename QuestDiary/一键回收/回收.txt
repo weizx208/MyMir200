@@ -1,0 +1,1447 @@
+[@回收]
+{
+#ACT
+goto @使普通回收
+
+[@使普通回收]
+#IF
+checkitem 青铜头盔 1
+#ACT
+take 青铜头盔 1
+give 金币 250
+GOTO @使普通回收
+
+#IF
+checkitem 魔法头盔 1
+#ACT
+take 魔法头盔 1
+give 金币 500
+GOTO @使普通回收
+
+#IF
+checkitem 道士头盔 1
+#ACT
+take 道士头盔 1
+give 金币 1250
+GOTO @使普通回收
+
+#IF
+checkitem 骷髅头盔 1
+#ACT
+take 骷髅头盔 1
+give 金币 2000
+GOTO @使普通回收
+
+#IF
+checkitem 金项链 1
+#ACT
+take 金项链 1
+give 金币 125
+GOTO @使普通回收
+
+#IF
+checkitem 传统项链 1
+#ACT
+take 传统项链 1
+give 金币 250
+GOTO @使普通回收
+
+#IF
+checkitem 白金项链 1
+#ACT
+take 白金项链 1
+give 金币 500
+GOTO @使普通回收
+
+#IF
+checkitem 黄色水晶项链 1
+#ACT
+take 黄色水晶项链 1
+give 金币 300
+GOTO @使普通回收
+
+#IF
+checkitem 黑檀项链 1
+#ACT
+take 黑檀项链 1
+give 金币 300
+GOTO @使普通回收
+
+#IF
+checkitem 黑色水晶项链 1
+#ACT
+take 黑色水晶项链 1
+give 金币 350
+GOTO @使普通回收
+
+#IF
+checkitem 白色虎齿项链 1
+#ACT
+take 白色虎齿项链 1
+give 金币 750
+GOTO @使普通回收
+
+#IF
+checkitem 琥珀项链 1
+#ACT
+take 琥珀项链 1
+give 金币 500
+GOTO @使普通回收
+
+#IF
+checkitem 魔鬼项链 1
+#ACT
+take 魔鬼项链 1
+give 金币 600
+GOTO @使普通回收
+
+#IF
+checkitem 凤凰明珠 1
+#ACT
+take 凤凰明珠 1
+give 金币 500
+GOTO @使普通回收
+
+#IF
+checkitem 灯笼项链 1
+#ACT
+take 灯笼项链 1
+give 金币 750
+GOTO @使普通回收
+
+#IF
+checkitem 蓝翡翠项链 1
+#ACT
+take 蓝翡翠项链 1
+give 金币 1500
+GOTO @使普通回收
+
+#IF
+checkitem 竹笛 1
+#ACT
+take 竹笛 1
+give 金币 1500
+GOTO @使普通回收
+
+#IF
+checkitem 放大镜 1
+#ACT
+take 放大镜 1
+give 金币 1500
+GOTO @使普通回收
+
+#IF
+checkitem 铁手镯 1
+#ACT
+take 铁手镯 1
+give 金币 200
+GOTO @使普通回收
+
+#IF
+checkitem 小手镯 1
+#ACT
+take 小手镯 1
+give 金币 100
+GOTO @使普通回收
+
+#IF
+checkitem 银手镯 1
+#ACT
+take 银手镯 1
+give 金币 350
+GOTO @使普通回收
+
+#IF
+checkitem 大手镯 1
+#ACT
+take 大手镯 1
+give 金币 1250
+GOTO @使普通回收
+
+#IF
+checkitem 钢手镯 1
+#ACT
+take 钢手镯 1
+give 金币 500
+GOTO @使普通回收
+
+#IF
+checkitem 皮制手套 1
+#ACT
+take 皮制手套 1
+give 金币 350
+GOTO @使普通回收
+
+#IF
+checkitem 坚固手套 1
+#ACT
+take 坚固手套 1
+give 金币 1500
+GOTO @使普通回收
+
+#IF
+checkitem 魔法手镯 1
+#ACT
+take 魔法手镯 1
+give 金币 1000
+GOTO @使普通回收
+
+#IF
+checkitem 黑檀手镯 1
+#ACT
+take 黑檀手镯 1
+give 金币 1000
+GOTO @使普通回收
+
+#IF
+checkitem 道士手镯 1
+#ACT
+take 道士手镯 1
+give 金币 1000
+GOTO @使普通回收
+
+#IF
+checkitem 死神手套 1
+#ACT
+take 死神手套 1
+give 金币 2000
+GOTO @使普通回收
+
+#IF
+checkitem 金手镯 1
+#ACT
+take 金手镯 1
+give 金币 1750
+GOTO @使普通回收
+
+#IF
+checkitem 古铜戒指 1
+#ACT
+take 古铜戒指 1
+give 金币 125
+GOTO @使普通回收
+
+#IF
+checkitem 六角戒指 1
+#ACT
+take 六角戒指 1
+give 金币 200
+GOTO @使普通回收
+
+#IF
+checkitem 玻璃戒指 1
+#ACT
+take 玻璃戒指 1
+give 金币 200
+GOTO @使普通回收
+
+#IF
+checkitem 牛角戒指 1
+#ACT
+take 牛角戒指 1
+give 金币 250
+GOTO @使普通回收
+
+#IF
+checkitem 生铁戒指 1
+#ACT
+take 生铁戒指 1
+give 金币 750
+GOTO @使普通回收
+
+#IF
+checkitem 蓝色水晶戒指 1
+#ACT
+take 蓝色水晶戒指 1
+give 金币 350
+GOTO @使普通回收
+
+#IF
+checkitem 黑色水晶戒指 1
+#ACT
+take 黑色水晶戒指 1
+give 金币 500
+GOTO @使普通回收
+
+#IF
+checkitem 蛇眼戒指 1
+#ACT
+take 蛇眼戒指 1
+give 金币 500
+GOTO @使普通回收
+
+#IF
+checkitem 珍珠戒指 1
+#ACT
+take 珍珠戒指 1
+give 金币 500
+GOTO @使普通回收
+
+#IF
+checkitem 金戒指 1
+#ACT
+take 金戒指 1
+give 金币 2200
+GOTO @使普通回收
+
+#IF
+checkitem 骷髅戒指 1
+#ACT
+take 骷髅戒指 1
+give 金币 1250
+GOTO @使普通回收
+
+#IF
+checkitem 魅力戒指 1
+#ACT
+take 魅力戒指 1
+give 金币 1000
+GOTO @使普通回收
+
+#IF
+checkitem 道德戒指 1
+#ACT
+take 道德戒指 1
+give 金币 1000
+GOTO @使普通回收
+
+#IF
+checkitem 降妖除魔戒指 1
+#ACT
+take 降妖除魔戒指 1
+give 金币 2500
+GOTO @使普通回收
+
+#IF
+checkitem 珊瑚戒指 1
+#ACT
+take 珊瑚戒指 1
+give 金币 3500
+GOTO @使普通回收
+
+#IF
+checkitem 布衣(男) 1
+#ACT
+take 布衣(男) 1
+give 金币 100
+GOTO @使普通回收
+
+#IF
+checkitem 布衣(女) 1
+#ACT
+take 布衣(女) 1
+give 金币 100
+GOTO @使普通回收
+
+#IF
+checkitem 轻型盔甲(男) 1
+#ACT
+take 轻型盔甲(男) 1
+give 金币 750
+GOTO @使普通回收
+
+#IF
+checkitem 轻型盔甲(女) 1
+#ACT
+take 轻型盔甲(女) 1
+give 金币 1500
+GOTO @使普通回收
+
+#IF
+checkitem 中型盔甲(男) 1
+#ACT
+take 中型盔甲(男) 1
+give 金币 750
+GOTO @使普通回收
+
+#IF
+checkitem 中型盔甲(女) 1
+#ACT
+take 中型盔甲(女) 1
+give 金币 1500
+GOTO @使普通回收
+
+#IF
+checkitem 重盔甲(男) 1
+#ACT
+take 重盔甲(男) 1
+give 金币 3000
+GOTO @使普通回收
+
+#IF
+checkitem 重盔甲(女) 1
+#ACT
+take 重盔甲(女) 1
+give 金币 3000
+GOTO @使普通回收
+
+#IF
+checkitem 魔法长袍(男) 1
+#ACT
+take 魔法长袍(男) 1
+give 金币 3000
+GOTO @使普通回收
+
+#IF
+checkitem 魔法长袍(女) 1
+#ACT
+take 魔法长袍(女) 1
+give 金币 3000
+GOTO @使普通回收
+
+#IF
+checkitem 灵魂战衣(男) 1
+#ACT
+take 灵魂战衣(男) 1
+give 金币 3000
+GOTO @使普通回收
+
+#IF
+checkitem 灵魂战衣(女) 1
+#ACT
+take 灵魂战衣(女) 1
+give 金币 3000
+GOTO @使普通回收
+
+#IF
+checkitem 木剑 1
+#ACT
+take 木剑 1
+give 金币 13
+GOTO @使普通回收
+
+#IF
+checkitem 匕首 1
+#ACT
+take 匕首 1
+give 金币 125
+GOTO @使普通回收
+
+#IF
+checkitem 乌木剑 1
+#ACT
+take 乌木剑 1
+give 金币 1000
+GOTO @使普通回收
+
+#IF
+checkitem 青铜剑 1
+#ACT
+take 青铜剑 1
+give 金币 250
+GOTO @使普通回收
+
+#IF
+checkitem 短剑 1
+#ACT
+take 短剑 1
+give 金币 250
+GOTO @使普通回收
+
+#IF
+checkitem 铁剑 1
+#ACT
+take 铁剑 1
+give 金币 300
+GOTO @使普通回收
+
+#IF
+checkitem 鹤嘴锄 1
+#ACT
+take 鹤嘴锄 1
+give 金币 225
+GOTO @使普通回收
+
+#IF
+checkitem 青铜斧 1
+#ACT
+take 青铜斧 1
+give 金币 320
+GOTO @使普通回收
+
+#IF
+checkitem 八荒 1
+#ACT
+take 八荒 1
+give 金币 1250
+GOTO @使普通回收
+
+#IF
+checkitem 海魂 1
+#ACT
+take 海魂 1
+give 金币 750
+GOTO @使普通回收
+
+#IF
+checkitem 半月 1
+#ACT
+take 半月 1
+give 金币 1000
+GOTO @使普通回收
+
+#IF
+checkitem 凌风 1
+#ACT
+take 凌风 1
+give 金币 1250
+GOTO @使普通回收
+
+#IF
+checkitem 偃月 1
+#ACT
+take 偃月 1
+give 金币 2500
+GOTO @使普通回收
+
+#IF
+checkitem 破魂 1
+#ACT
+take 破魂 1
+give 金币 1250
+GOTO @使普通回收
+
+#IF
+checkitem 降魔 1
+#ACT
+take 降魔 1
+give 金币 2500
+GOTO @使普通回收
+
+#IF
+checkitem 斩马刀 1
+#ACT
+take 斩马刀 1
+give 金币 1500
+GOTO @使普通回收
+
+#IF
+checkitem 修罗 1
+#ACT
+take 修罗 1
+give 金币 2500
+GOTO @使普通回收
+
+#IF
+checkitem 凝霜 1
+#ACT
+take 凝霜 1
+give 金币 2000
+GOTO @使普通回收
+
+#IF
+checkitem 魔力手镯 1
+#ACT
+take 魔力手镯 1
+give 金币 2000
+GOTO @使普通回收
+
+#IF
+checkitem 铜矿 1
+#ACT
+take 铜矿 1
+give 金币 50
+GOTO @使普通回收
+
+#IF
+checkitem 铁矿 1
+#ACT
+take 铁矿 1
+give 金币 100
+GOTO @使普通回收
+
+#IF
+checkitem 银矿 1
+#ACT
+take 银矿 1
+give 金币 250
+GOTO @使普通回收
+
+#IF
+checkitem 金矿 1
+#ACT
+take 金矿 1
+give 金币 3000
+GOTO @使普通回收
+
+#IF
+checkitem 黑铁矿石 1
+#ACT
+take 黑铁矿石 1
+give 金币 1000
+GOTO @使普通回收
+
+
+#IF
+checkitem 鸡蛋 1
+#ACT
+take 鸡蛋 1
+give 金币 10
+GOTO @使普通回收
+
+#IF
+checkitem 肉 1
+#ACT
+take 肉 1
+give 金币 25
+GOTO @使普通回收
+
+#IF
+checkitem 碎肉 1
+#ACT
+take 碎肉 1
+give 金币 25
+GOTO @使普通回收
+
+#IF
+checkitem 鸡肉 1
+#ACT
+take 鸡肉 1
+give 金币 15
+GOTO @使普通回收
+
+#IF
+checkitem 鲜肉 1
+#ACT
+take 鲜肉 1
+give 金币 50
+GOTO @使普通回收
+
+#IF
+checkitem 罗刹 1
+#ACT
+take 罗刹 1
+give 金币 2500
+GOTO @使普通回收
+
+#IF
+checkitem 躲避项链 1
+#ACT
+take 躲避项链 1
+give 金币 6250
+GOTO @使普通回收
+
+#IF
+checkitem 辟邪手镯 1
+#ACT
+take 辟邪手镯 1
+give 金币 5000
+GOTO @使普通回收
+
+#IF
+checkitem 夏普儿手镯 1
+#ACT
+take 夏普儿手镯 1
+give 金币 10000
+GOTO @使普通回收
+
+#IF
+checkitem 魔力手镯 1
+#ACT
+take 魔力手镯 1
+give 金币 2000
+GOTO @使普通回收
+
+#IF
+checkitem 基本剑术 1
+#ACT
+take 基本剑术 1
+give 金币 125
+GOTO @使普通回收
+
+#IF
+checkitem 攻杀剑术 1
+#ACT
+take 攻杀剑术 1
+give 金币 500
+GOTO @使普通回收
+
+#IF
+checkitem 刺杀剑术 1
+#ACT
+take 刺杀剑术 1
+give 金币 1250
+GOTO @使普通回收
+
+#IF
+checkitem 野蛮冲撞 1
+#ACT
+take 野蛮冲撞 1
+give 金币 2000
+GOTO @使普通回收
+
+#IF
+checkitem 半月弯刀 1
+#ACT
+take 半月弯刀 1
+give 金币 3000
+GOTO @使普通回收
+
+#IF
+checkitem 烈火剑法 1
+#ACT
+take 烈火剑法 1
+give 金币 5000
+GOTO @使普通回收
+
+#IF
+checkitem 火球术 1
+#ACT
+take 火球术 1
+give 金币 125
+GOTO @使普通回收
+
+#IF
+checkitem 大火球 1
+#ACT
+take 大火球 1
+give 金币 500
+GOTO @使普通回收
+
+#IF
+checkitem 抗拒火环 1
+#ACT
+take 抗拒火环 1
+give 金币 125
+GOTO @使普通回收
+
+#IF
+checkitem 诱惑之光 1
+#ACT
+take 诱惑之光 1
+give 金币 250
+GOTO @使普通回收
+
+#IF
+checkitem 地狱火 1
+#ACT
+take 地狱火 1
+give 金币 250
+GOTO @使普通回收
+
+#IF
+checkitem 雷电术 1
+#ACT
+take 雷电术 1
+give 金币 250
+GOTO @使普通回收
+
+#IF
+checkitem 瞬息移动 1
+#ACT
+take 瞬息移动 1
+give 金币 1500
+GOTO @使普通回收
+
+#IF
+checkitem 爆裂火焰 1
+#ACT
+take 爆裂火焰 1
+give 金币 1500
+GOTO @使普通回收
+
+#IF
+checkitem 火墙 1
+#ACT
+take 火墙 1
+give 金币 750
+GOTO @使普通回收
+
+#IF
+checkitem 疾光电影 1
+#ACT
+take 疾光电影 1
+give 金币 2500
+GOTO @使普通回收
+
+#IF
+checkitem 地狱雷光 1
+#ACT
+take 地狱雷光 1
+give 金币 3000
+GOTO @使普通回收
+
+#IF
+checkitem 魔法盾 1
+#ACT
+take 魔法盾 1
+give 金币 4000
+GOTO @使普通回收
+
+#IF
+checkitem 圣言术 1
+#ACT
+take 圣言术 1
+give 金币 4000
+GOTO @使普通回收
+
+#IF
+checkitem 冰咆哮 1
+#ACT
+take 冰咆哮 1
+give 金币 5000
+GOTO @使普通回收
+
+#IF
+checkitem 精神力战法 1
+#ACT
+take 精神力战法 1
+give 金币 125
+GOTO @使普通回收
+
+#IF
+checkitem 治愈术 1
+#ACT
+take 治愈术 1
+give 金币 125
+GOTO @使普通回收
+
+#IF
+checkitem 施毒术 1
+#ACT
+take 施毒术 1
+give 金币 250
+GOTO @使普通回收
+
+#IF
+checkitem 灵魂火符 1
+#ACT
+take 灵魂火符 1
+give 金币 250
+GOTO @使普通回收
+
+#IF
+checkitem 召唤骷髅 1
+#ACT
+take 召唤骷髅 1
+give 金币 500
+GOTO @使普通回收
+
+#IF
+checkitem 隐身术 1
+#ACT
+take 隐身术 1
+give 金币 500
+GOTO @使普通回收
+
+#IF
+checkitem 集体隐身术 1
+#ACT
+take 集体隐身术 1
+give 金币 750
+GOTO @使普通回收
+
+#IF
+checkitem 幽灵盾 1
+#ACT
+take 幽灵盾 1
+give 金币 1250
+GOTO @使普通回收
+
+#IF
+checkitem 神圣战甲术 1
+#ACT
+take 神圣战甲术 1
+give 金币 2500
+GOTO @使普通回收
+
+#IF
+checkitem 心灵召唤 1
+#ACT
+take 心灵召唤 1
+give 金币 2250
+GOTO @使普通回收
+
+#IF
+checkitem 困魔咒 1
+#ACT
+take 困魔咒 1
+give 金币 3000
+GOTO @使普通回收
+
+#IF
+checkitem 召唤神兽 1
+#ACT
+take 召唤神兽 1
+give 金币 5000
+GOTO @使普通回收
+
+#IF
+checkitem 群体治愈术 1
+#ACT
+take 群体治愈术 1
+give 金币 4000
+GOTO @使普通回收
+
+#IF
+checkitem 布鞋 1
+#ACT
+take 布鞋 1
+give 金币 250
+GOTO @使普通回收
+
+#IF
+checkitem 兽皮腰带 1
+#ACT
+take 兽皮腰带 1
+give 金币 250
+GOTO @使普通回收
+
+#IF
+checkitem 鹿皮靴 1
+#ACT
+take 鹿皮靴 1
+give 金币 500
+GOTO @使普通回收
+
+#IF
+checkitem 紫绸靴 1
+#ACT
+take 紫绸靴 1
+give 金币 1000
+GOTO @使普通回收
+
+#IF
+checkitem 避魂靴 1
+#ACT
+take 避魂靴 1
+give 金币 2000
+GOTO @使普通回收
+
+#IF
+checkitem 铁腰带 1
+#ACT
+take 铁腰带 1
+give 金币 500
+GOTO @使普通回收
+
+#IF
+checkitem 青铜腰带 1
+#ACT
+take 青铜腰带 1
+give 金币 1000
+GOTO @使普通回收
+
+#IF
+checkitem 钢铁腰带 1
+#ACT
+take 钢铁腰带 1
+give 金币 2000
+GOTO @使普通回收
+
+#IF
+checkitem 幽灵项链 1
+#ACT
+take 幽灵项链 1
+give 金币 5000
+CHANGEEXP + 10000
+GOTO @使普通回收
+
+#IF
+checkitem 幽灵手套 1
+#ACT
+take 幽灵手套 1
+give 金币 5000
+CHANGEEXP + 10000
+GOTO @使普通回收
+
+#IF
+checkitem 龙之戒指 1
+#ACT
+take 龙之戒指 1
+CHANGEEXP + 10000
+give 金币 5000
+GOTO @使普通回收
+
+#IF
+checkitem 生命项链 1
+#ACT
+take 生命项链 1
+give 金币 5000
+CHANGEEXP + 10000
+GOTO @使普通回收
+
+#IF
+checkitem 思贝儿手镯 1
+#ACT
+take 思贝儿手镯 1
+give 金币 5000
+CHANGEEXP + 10000
+GOTO @使普通回收
+
+#IF
+checkitem 红宝石戒指 1
+#ACT
+take 红宝石戒指 1
+give 金币 5000
+CHANGEEXP + 10000
+GOTO @使普通回收
+
+#IF
+checkitem 天珠项链 1
+#ACT
+take 天珠项链 1
+CHANGEEXP + 10000
+give 金币 5000
+GOTO @使普通回收
+
+#IF
+checkitem 心灵手镯 1
+#ACT
+take 心灵手镯 1
+CHANGEEXP + 10000
+give 金币 5000
+GOTO @使普通回收
+
+#IF
+checkitem 铂金戒指 1
+#ACT
+take 铂金戒指 1
+CHANGEEXP + 10000
+give 金币 5000
+GOTO @使普通回收
+
+#IF
+checkitem 炼狱 1
+#ACT
+take 炼狱 1
+CHANGEEXP + 20000
+give 金币 10000
+GOTO @使普通回收
+
+#IF
+checkitem 魔杖 1
+#ACT
+take 魔杖 1
+give 金币 10000
+CHANGEEXP + 20000
+GOTO @使普通回收
+
+#IF
+checkitem 银蛇 1
+#ACT
+take 银蛇 1
+give 金币 10000
+CHANGEEXP + 20000
+GOTO @使普通回收
+
+#IF
+checkitem 战神盔甲(男) 1
+#ACT
+take 战神盔甲(男) 1
+give 金币 5000
+GOTO @使普通回收
+
+#IF
+checkitem 战神盔甲(女) 1
+#ACT
+take 战神盔甲(女) 1
+give 金币 5000
+GOTO @使普通回收
+
+#IF
+checkitem 恶魔长袍(男) 1
+#ACT
+take 恶魔长袍(男) 1
+give 金币 5000
+GOTO @使普通回收
+
+#IF
+checkitem 恶魔长袍(女) 1
+#ACT
+take 恶魔长袍(女) 1
+give 金币 5000
+GOTO @使普通回收
+
+#IF
+checkitem 幽灵战衣(男) 1
+#ACT
+take 幽灵战衣(男) 1
+give 金币 5000
+GOTO @使普通回收
+
+#IF
+checkitem 幽灵战衣(女) 1
+#ACT
+take 幽灵战衣(女) 1
+give 金币 5000
+GOTO @使普通回收
+
+#IF
+checkitem 绿色项链 1
+#ACT
+take 绿色项链 1
+give 金币 10000
+CHANGEEXP + 20000
+GOTO @使普通回收
+
+#IF
+checkitem 骑士手镯 1
+#ACT
+take 骑士手镯 1
+give 金币 10000
+CHANGEEXP + 20000
+GOTO @使普通回收
+
+#IF
+checkitem 力量戒指 1
+#ACT
+take 力量戒指 1
+give 金币 10000
+CHANGEEXP + 20000
+GOTO @使普通回收
+
+#IF
+checkitem 恶魔铃铛 1
+#ACT
+take 恶魔铃铛 1
+give 金币 10000
+CHANGEEXP + 20000
+GOTO @使普通回收
+
+#IF
+checkitem 龙之手镯 1
+#ACT
+take 龙之手镯 1
+give 金币 10000
+CHANGEEXP + 20000
+GOTO @使普通回收
+
+#IF
+checkitem 紫碧螺 1
+#ACT
+take 紫碧螺 1
+give 金币 10000
+CHANGEEXP + 20000
+GOTO @使普通回收
+
+#IF
+checkitem 灵魂项链 1
+#ACT
+take 灵魂项链 1
+give 金币 10000
+CHANGEEXP + 20000
+GOTO @使普通回收
+
+#IF
+checkitem 三眼手镯 1
+#ACT
+take 三眼手镯 1
+give 金币 10000
+CHANGEEXP + 20000
+GOTO @使普通回收
+
+#IF
+checkitem 泰坦戒指 1
+#ACT
+take 泰坦戒指 1
+give 金币 10000
+CHANGEEXP + 20000
+GOTO @使普通回收
+
+#IF
+checkitem 黑铁头盔 1
+#ACT
+take 黑铁头盔 1
+give 金币 10000
+CHANGEEXP + 20000
+GOTO @使普通回收
+
+#IF
+checkitem 阎罗手套 1
+#ACT
+take 阎罗手套 1
+CHANGEEXP + 20000
+give 金币 10000
+GOTO @使普通回收
+
+#IF
+checkitem 井中月 1
+#ACT
+take 井中月 1
+give 金币 10000
+CHANGEEXP + 15000
+GOTO @使普通回收
+
+#IF
+checkitem 无极棍 1
+#ACT
+take 无极棍 1
+give 金币 10000
+CHANGEEXP + 15000
+GOTO @使普通回收
+
+#IF
+checkitem 血饮 1
+#ACT
+take 血饮 1
+give 金币 10000
+CHANGEEXP + 15000
+GOTO @使普通回收
+
+#IF
+checkitem 裁决之杖 1
+#ACT
+take 裁决之杖 1
+give 金币 20000
+CHANGEEXP + 30000
+GOTO @使普通回收
+
+#IF
+checkitem 骨玉权杖 1
+#ACT
+take 骨玉权杖 1
+give 金币 20000
+CHANGEEXP + 30000
+GOTO @使普通回收
+
+#IF
+checkitem 龙纹剑 1
+#ACT
+take 龙纹剑 1
+give 金币 20000
+CHANGEEXP + 30000
+GOTO @使普通回收
+
+#IF
+checkitem 圣战项链 1
+#ACT
+take 圣战项链 1
+give 金币 30000
+CHANGEEXP + 50000
+GAMEGOLD + 2
+GOTO @使普通回收
+
+#IF
+checkitem 圣战手镯 1
+#ACT
+take 圣战手镯 1
+give 金币 30000
+CHANGEEXP + 50000
+GAMEGOLD + 2
+GOTO @使普通回收
+
+#IF
+checkitem 圣战戒指 1
+#ACT
+take 圣战戒指 1
+give 金币 30000
+CHANGEEXP + 50000
+GAMEGOLD + 2
+GOTO @使普通回收
+
+#IF
+checkitem 法神项链 1
+#ACT
+take 法神项链 1
+give 金币 30000
+CHANGEEXP + 50000
+GAMEGOLD + 2
+GOTO @使普通回收
+
+#IF
+checkitem 法神手镯 1
+#ACT
+take 法神手镯 1
+give 金币 30000
+CHANGEEXP + 50000
+GAMEGOLD + 2
+GOTO @使普通回收
+
+#IF
+checkitem 法神戒指 1
+#ACT
+take 法神戒指 1
+give 金币 30000
+CHANGEEXP + 50000
+GAMEGOLD + 2
+GOTO @使普通回收
+
+#IF
+checkitem 天尊项链 1
+#ACT
+take 天尊项链 1
+give 金币 30000
+CHANGEEXP + 50000
+GAMEGOLD + 2
+GOTO @使普通回收
+
+#IF
+checkitem 天尊手镯 1
+#ACT
+take 天尊手镯 1
+give 金币 30000
+CHANGEEXP + 50000
+GAMEGOLD + 2
+GOTO @使普通回收
+
+#IF
+checkitem 天尊戒指 1
+#ACT
+take 天尊戒指 1
+give 金币 30000
+CHANGEEXP + 50000
+GAMEGOLD + 2
+GOTO @使普通回收
+
+#IF
+checkitem 圣战头盔 1
+#ACT
+take 圣战头盔 1
+give 金币 30000
+CHANGEEXP + 50000
+GAMEGOLD + 2
+GOTO @使普通回收
+
+#IF
+checkitem 法神头盔 1
+#ACT
+take 法神头盔 1
+give 金币 30000
+CHANGEEXP + 50000
+GAMEGOLD + 2
+GOTO @使普通回收
+
+#IF
+checkitem 天尊头盔 1
+#ACT
+take 天尊头盔 1
+give 金币 30000
+GOTO @使普通回收
+
+#IF
+checkitem 圣战纹章 1
+#ACT
+take 圣战纹章 1
+give 金币 30000
+CHANGEEXP + 50000
+GAMEGOLD + 2
+GOTO @使普通回收
+
+#IF
+checkitem 法神纹章 1
+#ACT
+take 法神纹章 1
+give 金币 30000
+CHANGEEXP + 50000
+GAMEGOLD + 2
+GOTO @使普通回收
+
+#IF
+checkitem 天尊纹章 1
+#ACT
+take 天尊纹章 1
+give 金币 30000
+CHANGEEXP + 50000
+GAMEGOLD + 2
+GOTO @使普通回收
+
+#IF
+checkitem 怒斩 1
+#ACT
+take 怒斩 1
+give 金币 50000
+CHANGEEXP + 50000
+GAMEGOLD + 2
+GOTO @使普通回收
+
+#IF
+checkitem 龙牙 1
+#ACT
+take 龙牙 1
+give 金币 50000
+CHANGEEXP + 50000
+GAMEGOLD + 2
+GOTO @使普通回收
+
+#IF
+checkitem 逍遥扇 1
+#ACT
+take 逍遥扇 1
+give 金币 50000
+CHANGEEXP + 50000
+GAMEGOLD + 2
+GOTO @使普通回收
+
+#IF
+checkitem 屠龙 1
+#ACT
+take 屠龙 1
+give 金币 80000
+CHANGEEXP + 100000
+GAMEGOLD + 5
+GOTO @使普通回收
+
+#IF
+checkitem 嗜魂法杖 1
+#ACT
+take 嗜魂法杖 1
+give 金币 80000
+CHANGEEXP + 100000
+GAMEGOLD + 5
+GOTO @使普通回收
+
+#IF
+checkitem 霸者之刃 1
+#ACT
+take 霸者之刃 1
+give 金币 80000
+CHANGEEXP + 100000
+GAMEGOLD + 5
+GOTO @使普通回收
+
+#IF
+checkitem 天魔神甲 1
+#ACT
+take 天魔神甲 1
+give 金币 80000
+CHANGEEXP + 100000
+GAMEGOLD + 5
+GOTO @使普通回收
+
+#IF
+checkitem 圣战宝甲 1
+#ACT
+take 圣战宝甲 1
+give 金币 80000
+CHANGEEXP + 100000
+GAMEGOLD + 5
+GOTO @使普通回收
+
+#IF
+checkitem 法神披风 1
+#ACT
+take 法神披风 1
+give 金币 80000
+CHANGEEXP + 100000
+GAMEGOLD + 5
+GOTO @使普通回收
+
+#IF
+checkitem 霓裳羽衣 1
+#ACT
+take 霓裳羽衣 1
+give 金币 80000
+CHANGEEXP + 100000
+GAMEGOLD + 5
+GOTO @使普通回收
+
+#IF
+checkitem 天尊道袍 1
+#ACT
+take 天尊道袍 1
+give 金币 80000
+CHANGEEXP + 100000
+GAMEGOLD + 5
+GOTO @使普通回收
+
+#IF
+checkitem 天师长袍 1
+#ACT
+take 天师长袍 1
+give 金币 80000
+CHANGEEXP + 100000
+GAMEGOLD + 5
+GOTO @使普通回收
+
+}

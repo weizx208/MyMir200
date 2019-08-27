@@ -1,0 +1,50 @@
+[@ÒÂ·ş]
+{
+#OR
+checkitemw ĞÛ¼¦
+checkitemw ´Æ¼¦
+#act
+SETRANKLEVELNAME ¼¦
+
+#OR
+checkitemw °ëÊŞÕ½¼×
+checkitemw °ëÊŞÕ½ÒÂ
+#act
+SETICON 0 13 12 -12 7 1 0 0 100 0
+SETRANKLEVELNAME °ëÊŞÍ³Áì
+
+#OR
+checkitemw ÌúÄ§¼×
+checkitemw ÌúÄ§ÒÂ
+#act
+SETICON 0 13 12 -12 7 1 0 0 100 0
+SETRANKLEVELNAME ÌúÄ§
+
+#OR
+checkitemw Ä§Áú¼×
+checkitemw Ä§ÁúÒÂ
+#act
+SETICON 0 13 12 -12 7 1 0 0 100 0
+SETRANKLEVELNAME Ä§Áú½ÌÖ÷
+
+
+}
+
+[@ÒÂ·ş1]
+{
+#OR
+checkitemw ĞÛ¼¦
+checkitemw ´Æ¼¦
+checkitemw °ëÊŞÕ½¼×
+checkitemw °ëÊŞÕ½ÒÂ
+checkitemw ÌúÄ§¼×
+checkitemw ÌúÄ§ÒÂ
+checkitemw Ä§Áú¼×
+checkitemw Ä§ÁúÒÂ
+#ACT
+#ELSEACT
+SETICON 0 -1
+SETRANKLEVELNAME %s
+
+
+}

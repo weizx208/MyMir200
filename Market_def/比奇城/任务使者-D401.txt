@@ -1,0 +1,396 @@
+(@buy @sell @repair @s_repair)
+%100
++0
++5
++6
++10
++11
++15
++20
++19
++21
++22
++23
++24
++26
++28
++30
++40
++41
++42
++43
++64
+[@main]
+#ACT
+movr M3 2
+CloseBigDialogBox
+#SAY
+你找我有什么事情吗？我现在很忙...\ \
+<勇士的意志-任务使者的烦恼(成长任务)/@任务使者的烦恼>     <新手15-30级任务/SCOLOR=250>\
+<注意：点击黄色文字没有反应，请关闭对话框重新打开点击。/SCOLOR=249>\
+<开采矿石资源(矿石任务)/@开采矿石资源>       <42级挖矿任务/SCOLOR=250>\ \
+<购买物品/@buy>         <出售物品/@sell>\
+<修理物品/@repair>         <关闭/@exit>\
+[@buy]
+你想买点什么物品品？\ \ \
+<物品列表/@BUY>\
+<返 回/@Main>
+[@sell]
+给我看看你的东西。\ \ \
+<返 回/@Main>
+[@repair]
+这里你可以修补物品.\ \ \
+ <返 回/@Main>
+[~@repair]
+这个看上去已经补好了。\ \ \
+ <返 回/@Main>
+[goods]
+鹤嘴锄   	 10 	 10
+回城卷           50      10
+地牢逃脱卷       50      10
+随机传送卷	 100	 20
+护身符(大)	 100	 10
+超级护身符	 100	 10
+灰色药粉(大量)   20      10
+黄色药粉(大量)   20      10
+超级金创药       20      10
+超级魔法药       20      10
+强效太阳水       20      10
+;----------------------------------------------------------------
+[@任务使者的烦恼]
+#IF
+CHECK [004] 1
+CHECK [006] 0
+CHECK [007] 0
+#ACT
+GuildNoticeMsg 249 251 消灭10只的<残肢僵尸>任务你完成了吗?
+break
+#SAY
+找我有什么事吗，我现在很忙。\ \
+<残肢僵尸>你消灭了么？\ \
+<我这就去/@exit>
+#IF
+CHECK [005] 1
+CHECK [006] 0
+CHECK [007] 0
+#ACT
+GuildNoticeMsg 249 251 消灭10只的<腐烂僵尸>任务你完成了吗?
+break
+#SAY
+找我有什么事吗，我现在很忙。\ \
+<腐烂僵尸>你消灭了么？\ \
+<我这就去/@exit>
+;--------------------------------------------------------
+#IF
+CHECK [010] 1
+#SAY
+看来你拥有成为玛法勇士的潜力，\
+闪电僵尸都给你消灭了！\
+这是给你的酬劳！\ \
+已完成：<勇士的意志-恐怖的僵尸(成长任务)>
+#ACT
+mov M4 2
+goto @杀僵尸奖励2
+SET [007] 0
+SET [008] 0
+SET [010] 0
+SET [011] 1
+CHANGEEXP + 15000
+SENDMSG 6 任务完成，经验值增加：15000
+close
+break
+;--------------------------------------------------------
+#IF
+CHECK [006] 0
+CHECK [007] 1
+CHECK [008] 1
+#ACT
+GuildNoticeMsg 249 251 消灭5只的<墓穴僵尸>任务你完成了吗?
+break
+#SAY
+找我有什么事吗，我现在很忙。\ \
+<墓穴僵尸>你消灭了么？\ \
+<我这就去/@exit>
+#IF
+CHECK [006] 0
+CHECK [007] 1
+CHECK [009] 1
+#ACT
+GuildNoticeMsg 249 251 消灭5只的<闪电僵尸>任务你完成了吗?
+break
+#SAY
+找我有什么事吗，我现在很忙。\ \
+<闪电僵尸>你消灭了么？\ \
+<我这就去/@exit>
+;--------------------------------------------------------
+#IF
+EQUAL M3 1
+CHECK [003] 0
+#ACT
+SET [003] 1
+SET [004] 1
+MESSAGEBOX 【矿区任务使者:】\勇气的试炼：\矿洞里有一种残肢僵尸，喜欢葡萄在地上袭击路人，\麻烦你帮我去消灭<10只残肢僵尸>吧！\杀掉10只<残肢僵尸>后来我这里领取到奖励.
+GuildNoticeMsg 151 5 %d：勇气的试炼：麻烦你帮我去消灭<10只残肢僵尸>吧。
+close
+break
+#IF
+CHECK [003] 0
+#ACT
+SET [003] 1
+SET [005] 1
+MESSAGEBOX 【矿区任务使者:】\勇气的试炼：\黑暗势力的侵入对这边造成了极大的影响，\现在矿洞里的僵尸似乎有了自我意识，\会四处游走攻击路人，\麻烦你帮我去消灭<10只腐烂僵尸>好吗？\杀掉10只<腐烂僵尸>后来我这里领取到奖励.
+GuildNoticeMsg 151 5 %d：勇气的试炼：麻烦你帮我去消灭<10只腐烂僵尸>吧。
+close
+break
+;--------------------------------------------------------
+#IF
+CHECK [006] 1
+#ACT
+mov M4 1
+goto @杀僵尸奖励
+SET [004] 0
+SET [005] 0
+SET [006] 0
+SET [007] 1
+;--------------------------------------------------------
+#IF
+EQUAL M3 0
+CHECK [007] 1
+#ACT
+SET [008] 1
+MESSAGEBOX 【矿区任务使者:】\毅力的试炼：\实在是件麻烦事情，矿洞里又出现一种从\地底钻出的墓穴僵尸，\麻烦你帮我消灭<5只墓穴僵尸>好吗？\ \【重要提示】:\尸王有机率爆出聚灵珠(小).
+GuildNoticeMsg 151 5 %d：勇气的试炼：麻烦你帮我去消灭<5只墓穴僵尸>吧。
+close
+break
+#IF
+CHECK [007] 1
+#ACT
+SET [009] 1
+MESSAGEBOX 【矿区任务使者】:\毅力的试炼：\据我的观察，僵尸之所以那么活跃，\其实是僵尸群中的一种闪电僵尸作祟，\这种闪电僵尸似乎有很强的自我意识，\并通过释放点击来伤害路人，\麻烦你去帮我消灭<5只闪电僵尸>吧！\ \【重要提示】:\尸王有机率爆出聚灵珠(小).
+GuildNoticeMsg 151 5 %d：勇气的试炼：麻烦你帮我去消灭<5只闪电僵尸>吧。
+close
+break
+;--------------------------------------------------------
+#IF
+CHECK [011] 1
+#ACT
+break
+#SAY
+你已经完成任务，可以到盟重大城继续仙剑之旅。\ \
+<返回盟重土城/@盟重土城>
+#ELSESAY
+找我有什么事吗，我现在很忙。\ \
+<返回盟重土城/@盟重土城>
+;--------------------------------------------------------
+[@开采矿石资源]
+#IF
+CHECKLEVELEX < 42
+#ACT
+MESSAGEBOX 【矿区任务使者】:\你的等级太低了，42级再来接任务。
+break
+
+#IF
+CHECK [013] 0
+CHECKLEVELEX > 41
+#SAY
+最近，我们在开采矿石资源！麻烦你帮我去挖\
+<5块银矿>、<5块金矿>好吗？\
+在矿区的道路2边，使用鹤嘴锄敲击墙面有几率\
+获得不同种类的矿石。\ \
+<勇士的意志-开采矿石资源(成长任务)/@挖取铁金矿>
+#ACT
+SET [013] 1
+GIVE 鹤嘴锄 1
+break
+
+#IF
+checkitem 银矿 5
+checkitem 金矿 5
+CHECK [013] 1
+#SAY
+太好了，收集矿石的任务终于完成了！谢谢你，\
+这是给你的酬劳！\ \
+<我接受(成长任务)/@exit>
+#ACT
+TAKE 银矿 5
+TAKE 金矿 5
+GIVE 紫水晶矿石 10
+SendCenterMsg 255 254 任务使者：恭喜【<$USERNAME>】完成挖矿任务，获得10块紫水晶矿石. 
+break
+
+#IF
+CHECK [013] 1
+#SAY
+此时没有你的历练任务。\ \
+<我知道了/@exit>
+#ACT
+break
+#ELSESAY
+最近，我们在开采矿石资源！麻烦你帮我去挖\
+<5个银矿>、<5个金矿>好吗？\
+在矿区的道路2边，使用鹤嘴锄敲击墙面有几率\
+获得不同种类的矿石。\ \
+<我接受(成长任务)/@挖取铁金矿>
+
+[@挖取铁金矿]
+#ACT
+SendCenterMsg 151 0 本次的任务是挖取5块银矿、5块金矿.
+CloseBigDialogBox
+Close
+
+[@盟重土城]
+#ACT
+MAPMOVE 3 330 330
+CloseBigDialogBox
+Close
+
+[@杀僵尸奖励]
+#IF
+CHECK [006] 1
+equal M4 1
+#ACT
+CHANGEEXP + 100000
+#ELSEACT
+break
+#IF
+checkjob warrior
+#ACT
+ give 骷髅头盔 1
+ give 蓝翡翠项链 1
+ give 死神手套 2
+ give 珊瑚戒指 2
+ AutoTakeOnItem 骷髅头盔 4
+ AutoTakeOnItem 蓝翡翠项链 3
+ AutoTakeOnItem 死神手套 5
+ AutoTakeOnItem 死神手套 6
+ AutoTakeOnItem 珊瑚戒指 7
+ AutoTakeOnItem 珊瑚戒指 8
+SENDMSG 6 任务使者：恭喜你完成任务，获得了新人「战士首饰套」奖励。
+close
+break
+
+#if
+checkjob wizard
+#act
+ give 道士头盔 1
+ give 放大镜 1
+ give 黑檀手镯 2
+ give 魅力戒指 2
+ AutoTakeOnItem 道士头盔 4
+ AutoTakeOnItem 放大镜 3
+ AutoTakeOnItem 黑檀手镯 5
+ AutoTakeOnItem 黑檀手镯 6
+ AutoTakeOnItem 魅力戒指 7
+ AutoTakeOnItem 魅力戒指 8
+SENDMSG 6 任务使者：恭喜你完成任务，获得了新人「法师首饰套」奖励。
+close
+break
+
+#if
+checkjob taoist
+#act
+ give 道士头盔 1
+ give 竹笛 1
+ give 道士手镯 2
+ give 道德戒指 2
+ AutoTakeOnItem 道士头盔 4
+ AutoTakeOnItem 竹笛 3
+ AutoTakeOnItem 道士手镯 5
+ AutoTakeOnItem 道士手镯 6
+ AutoTakeOnItem 道德戒指 7
+ AutoTakeOnItem 道德戒指 8
+SENDMSG 6 任务使者：恭喜你完成任务，获得了新人「道士首饰套」奖励。
+close
+break
+
+[@杀僵尸奖励2]
+#IF
+CHECK [010] 1
+equal M4 2
+#ACT
+CHANGEEXP + 300000
+#ELSEACT
+break
+#IF
+checkjob warrior
+gender man
+#ACT
+ takew 八荒 1
+ takew 轻型盔甲(男) 1
+ give 修罗 1
+ give 重盔甲(男) 1
+ AutoTakeOnItem 修罗 1
+ AutoTakeOnItem 重盔甲(男) 0
+SENDMSG 6 任务使者：恭喜你完成任务，获得了新人「战士武器衣甲」奖励。
+close
+break
+
+#IF
+checkjob warrior
+gender woman
+#ACT
+ takew 八荒 1
+ takew 轻型盔甲(女) 1
+ give 修罗 1
+ give 重盔甲(女) 1
+ AutoTakeOnItem 修罗 1
+ AutoTakeOnItem 重盔甲(女) 0
+SENDMSG 6 任务使者：恭喜你完成任务，获得了新人「战士武器衣甲」奖励。
+close
+break
+
+#IF
+checkjob wizard
+gender man
+#act
+ takew 海魂 1
+ takew 轻型盔甲(男) 1
+ give 偃月 1
+ give 魔法长袍(男) 1
+ AutoTakeOnItem 偃月 1
+ AutoTakeOnItem 魔法长袍(男) 0
+SENDMSG 6 任务使者：恭喜你完成任务，获得了新人「法师武器衣甲」奖励。
+close
+break
+
+#IF
+checkjob wizard
+gender woman
+#act
+ takew 海魂 1
+ takew 轻型盔甲(女) 1
+ give 偃月 1
+ give 魔法长袍(女) 1
+ AutoTakeOnItem 偃月 1
+ AutoTakeOnItem 魔法长袍(女) 0
+SENDMSG 6 任务使者：恭喜你完成任务，获得了新人「法师武器衣甲」奖励。
+close
+break
+
+#IF
+checkjob taoist
+gender man
+#act
+ takew 半月 1
+ takew 轻型盔甲(男) 1
+ give 降魔 1
+ give 灵魂战衣(男) 1
+ AutoTakeOnItem 降魔 1
+ AutoTakeOnItem 灵魂战衣(男) 0
+SENDMSG 6 任务使者：恭喜你完成任务，获得了新人「道士武器衣甲」奖励。
+close
+break
+
+#IF
+checkjob taoist
+gender woman
+#act
+ takew 半月 1
+ takew 轻型盔甲(女) 1
+ give 降魔 1
+ give 灵魂战衣(女) 1
+ AutoTakeOnItem 降魔 1
+ AutoTakeOnItem 灵魂战衣(女) 0
+SENDMSG 6 任务使者：恭喜你完成任务，获得了新人「道士武器衣甲」奖励。
+close
+break

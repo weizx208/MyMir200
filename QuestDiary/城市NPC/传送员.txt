@@ -1,0 +1,524 @@
+[@大地图传送]
+{
+#IF
+#ACT
+OPENMERCHANTBIGDLG 93 20  1  4  0  -80 1 620 13 1
+#say
+
+
+\ \
+　 <危险区域传送/SCOLOR=243><Img:7:93:-79:-11>\
+\ \ \ \
+　　　　　<比 奇 城/SCOLOR=250> 　　　<封 魔 谷/SCOLOR=250>　　　<盟重土城/SCOLOR=250> 　　　<白 日 门/SCOLOR=250>\
+　　<Img:0:92:25:-22/@比奇> 　<Img:0:92:25:-22/@封魔> 　<Img:0:92:25:-22/@土城> 　<Img:0:92:25:-22/@白日>\
+　　　　　<苍 月 岛/SCOLOR=250> 　　　<比奇皇宫/SCOLOR=250>　　　<银杏小村/SCOLOR=250> 　　　<新 手 村/SCOLOR=250>\
+　　<Img:0:92:25:-22/@苍月> 　<Img:0:92:25:-22/@HG>　 <Img:0:92:25:-22/@比奇>　 <Img:0:92:25:-22/@比奇>\
+　　　　　<骷 髅 洞/SCOLOR=245> 　　　<比奇矿区/SCOLOR=245>　　　<沃玛寺庙/SCOLOR=245> 　　　<牛 魔 洞/SCOLOR=245>\
+　　<Img:0:92:25:-22|250#爆宝石的地方/@骷髅洞> 　<Img:0:92:25:-22|250#爆初级技能、还可挖矿/@比奇矿区>　 <Img:0:92:25:-22|250#爆战士装备和强化书籍的地方/@沃玛寺庙>　 <Img:0:92:25:-22|250#爆道士装备和强化书籍的地方/@牛魔洞>\
+　　　　　<未知暗殿/SCOLOR=245> 　　　<祖玛寺庙/SCOLOR=245>　　　<蜈 蚣 洞/SCOLOR=245> 　　　<尸 王 殿/SCOLOR=245>\
+　　<Img:0:92:25:-22|250#各种真假BOSS/@未知暗殿> 　<Img:0:92:25:-22|250#爆法师装备和强化书籍的地方/@祖玛寺庙>　 <Img:0:92:25:-22|250#死亡棺材可打邪恶钳虫/@蜈蚣洞>　 <Img:0:92:25:-22|^250#需要1W金币传送费/@尸王殿>\
+　　　　　<霸者大厅/SCOLOR=245> 　　　<积分活动/SCOLOR=245>　　　<元宝活动/SCOLOR=245> 　　　<宝石活动/SCOLOR=245>\
+　　<Img:0:92:25:-22|250#虹魔教主/@D2008> 　<Img:0:92:25:-22|250#180分钟刷新/@HDJ1>　 <Img:0:92:25:-22|250#180分钟刷新/@HDJ2>　 <Img:0:92:25:-22|^250#180分钟刷新/@HDJ3>\
+　　　　　<祖玛七层/SCOLOR=254> 　　　<石墓六层/SCOLOR=254>　　　<牛魔六层/SCOLOR=254> 　　　<抉择之地/SCOLOR=254>\
+　　<Img:0:92:25:-22|250#进入需要金币1W/@shimuzhen1a> 　<Img:0:92:25:-22|250#进入需要金币1W/@shimuzhen1q>　 <Img:0:92:25:-22|250#进入需要金币1W/@牛魔六层>　 <Img:0:92:25:-22|250#进入需要金币1W/@chiyue11a>\
+　　　　　<钳虫巢穴/SCOLOR=254> 　　　<死亡神殿/SCOLOR=254>　　　<地狱烈焰/SCOLOR=254> 　　　<困惑殿堂/SCOLOR=254>\
+　　<Img:0:92:25:-22|250#进入需要金币1W^250#40级新衣服地图之一/@钳虫巢穴> 　<Img:0:92:25:-22|250#进入需要金币1W^250#40级新衣服地图之一/@死亡神殿>　 <Img:0:92:25:-22|250#进入需要金币1W^250#40级新衣服地图之一/@地狱烈焰>　 <Img:0:92:25:-22|250#进入需要金币1W^250#40级新衣服地图之一/@困惑殿堂>\
+　　　　　<深渊魔域/SCOLOR=254> 　　　<堕落坟场/SCOLOR=254> 　　 <摆摊市场/SCOLOR=46> 　　  <藏 宝 阁/SCOLOR=46>\
+　　<Img:0:92:25:-22|250#进入需要金币1W^250#40级新衣服地图之一/@深渊魔域> 　<Img:0:92:25:-22|250#进入需要金币1W^250#40级新衣服地图之一/@堕落坟场> 　<Img:0:92:25:-22|250#点击直接传送到摆摊区域/@JYSC> 　<Img:0:92:25:-22|250#点击直接传送到藏宝阁/@AMDC>\ \ \
+
+　　　　　　　　　<暂时不想进入/SCOLOR=251>　 　　 　　　<暂时不想进入/SCOLOR=251>\
+　　　　　　<Img:1:92:25:-22/@EXIT>　 　　 　<Img:1:92:25:-22/@EXIT>\
+
+
+[@HDJ3]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MAPMOVE F002 50 50
+GuildNoticeMsg 251 167 ぐ宝石活动：玩家『<$USERNAME>』进入了元宝活动地图，此BOSS必掉落宝石。
+BREAK
+
+[@HDJ2]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MAPMOVE F002 50 50
+GuildNoticeMsg 251 167 ぐ元宝活动：玩家『<$USERNAME>』进入了元宝活动地图，此BOSS必掉落元宝。
+BREAK
+
+[@HDJ1]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MAPMOVE F002 50 50
+GuildNoticeMsg 251 167 ぐ积分活动：玩家『<$USERNAME>』进入了积分活动地图，此BOSS必掉落积分。
+BREAK
+
+[@D2008]
+#IF
+checkgold 20000
+#ACT
+take 金币 20000
+mapmove D2008 11 27
+GuildNoticeMsg 251 167 ぐ玩家『<$USERNAME>』进入了霸者大厅。
+give 回城卷 1
+break
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+
+[@蜈蚣洞]
+#IF
+checkgold 20000
+#ACT
+take 金币 20000
+mapmove D606 11 27
+give 回城卷 1
+break
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+
+[@AMDC]
+#IF
+checkgold 100000
+#ACT
+take 金币 100000
+MAPMOVE H204
+give 回城卷 1
+GuildNoticeMsg 251 167 ぐ拉藏宝阁：玩家『<$USERNAME>』进入了藏宝阁，此地图刷新各类boss。
+BREAK
+#ELSEACT
+MESSAGEBOX 您没有10万金币！！\　\你想去藏宝阁浪是不行的！
+break
+
+[@JYSC]
+#IF
+CHECKLEVELEX > 0
+#ACT
+MAPMOVE n3 318 351
+GuildNoticeMsg 251 167 ぐ交易市场：玩家『<$USERNAME>』进入了交易市场。
+BREAK
+
+[@HG]
+#IF
+CHECKLEVELEX > 0
+#ACT
+give 回城卷 1
+MAPMOVE 0122 26 35
+break
+
+[@牛魔六层]
+#IF
+CHECKITEMS 传奇赞助斗笠
+#ACT
+mapmove D2078 160 164
+SENDMSG 0 {〖系统〗 |249:234}{ぐ游戏提示:|251:234}{玩家|255:234}{『<$USERNAME>』|146:234}{拥有物品|255:234}{『传奇斗笠』|250:234}{免费进入|255:234}{『牛魔六层』|250:234}
+BREAK
+
+#IF 
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove D2078 160 164
+give 回城卷 1
+SENDMSG 0 玩家〖%s〗进入了牛魔六层！
+#ELSEACT
+MESSAGEBOX 您没有1W金币！！
+break
+
+
+[@chiyue11a]
+
+#IF
+CHECKITEMS 传奇赞助斗笠
+#ACT
+mapmove D1004 120 37
+SENDMSG 0 {〖系统〗 |249:234}{ぐ游戏提示:|251:234}{玩家|255:234}{『<$USERNAME>』|146:234}{拥有物品|255:234}{『传奇斗笠』|250:234}{免费进入|255:234}{『抉择之地』|250:234}
+BREAK
+
+#IF 
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove D1004 120 37
+give 回城卷 1
+SENDMSG 0 玩家〖%s〗进入了抉择之地！
+#ELSEACT
+MESSAGEBOX 您没有1W金币！！
+break
+
+[@shimuzhen1a]
+#IF
+CHECKITEMS 传奇赞助斗笠
+#ACT
+mapmove D5071 20 23
+SENDMSG 0 {〖系统〗 |249:234}{ぐ游戏提示:|251:234}{玩家|255:234}{『<$USERNAME>』|146:234}{拥有物品|255:234}{『传奇斗笠』|250:234}{免费进入|255:234}{『祖玛七层』|250:234}
+BREAK
+
+#IF 
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove D5071 20 23
+give 回城卷 1
+SENDMSG 0 玩家〖%s〗进入了祖玛七层！
+#ELSEACT
+MESSAGEBOX 您没有1W金币！！
+break
+
+[@shimuzhen1q]
+#IF
+CHECKITEMS 传奇赞助斗笠
+#ACT
+mapmove D716 20 31
+SENDMSG 0 {〖系统〗 |249:234}{ぐ游戏提示:|251:234}{玩家|255:234}{『<$USERNAME>』|146:234}{拥有物品|255:234}{『传奇斗笠』|250:234}{免费进入|255:234}{『石墓六层』|250:234}
+BREAK
+
+#IF 
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove D716 20 31
+give 回城卷 1
+SENDMSG 0 玩家〖%s〗进入了石墓六层！
+#ELSEACT
+MESSAGEBOX 您没有1W金币！！
+break
+
+[@困惑殿堂]
+#IF
+CHECKITEMS 传奇赞助斗笠
+#ACT
+mapmove T118
+SENDMSG 0 {〖系统〗 |249:234}{ぐ游戏提示:|251:234}{玩家|255:234}{『<$USERNAME>』|146:234}{拥有物品|255:234}{『传奇斗笠』|250:234}{免费进入|255:234}{『困惑殿堂』|250:234}
+BREAK
+
+#IF 
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove T118
+give 回城卷 1
+SENDMSG 0 玩家〖%s〗进入了困惑殿堂！
+#ELSEACT
+MESSAGEBOX 您没有1W金币！！
+break
+
+[@堕落坟场]
+#IF
+CHECKITEMS 传奇赞助斗笠
+#ACT
+mapmove T315
+SENDMSG 0 {〖系统〗 |249:234}{ぐ游戏提示:|251:234}{玩家|255:234}{『<$USERNAME>』|146:234}{拥有物品|255:234}{『传奇斗笠』|250:234}{免费进入|255:234}{『堕落坟场』|250:234}
+BREAK
+
+
+#IF 
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove T315
+give 回城卷 1
+SENDMSG 0 玩家〖%s〗进入了堕落坟场！
+#ELSEACT
+MESSAGEBOX 您没有1W金币！！
+break
+
+[@深渊魔域]
+#IF
+CHECKITEMS 传奇赞助斗笠
+#ACT
+mapmove T219
+SENDMSG 0 {〖系统〗 |249:234}{ぐ游戏提示:|251:234}{玩家|255:234}{『<$USERNAME>』|146:234}{拥有物品|255:234}{『传奇斗笠』|250:234}{免费进入|255:234}{『深渊魔域』|250:234}
+BREAK
+
+#IF 
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove T219
+give 回城卷 1
+SENDMSG 0 玩家〖%s〗进入了深渊魔域！
+#ELSEACT
+MESSAGEBOX 您没有1W金币！！
+break
+
+[@地狱烈焰]
+#IF
+CHECKITEMS 传奇赞助斗笠
+#ACT
+mapmove T339
+SENDMSG 0 {〖系统〗 |249:234}{ぐ游戏提示:|251:234}{玩家|255:234}{『<$USERNAME>』|146:234}{拥有物品|255:234}{『传奇斗笠』|250:234}{免费进入|255:234}{『地狱烈焰』|250:234}
+BREAK
+
+#IF 
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove T339
+give 回城卷 1
+SENDMSG 0 玩家〖%s〗进入了地狱烈焰！
+#ELSEACT
+MESSAGEBOX 您没有1W金币！！
+break
+
+[@死亡神殿]
+#IF
+CHECKITEMS 传奇赞助斗笠
+#ACT
+mapmove T218
+SENDMSG 0 {〖系统〗 |249:234}{ぐ游戏提示:|251:234}{玩家|255:234}{『<$USERNAME>』|146:234}{拥有物品|255:234}{『传奇斗笠』|250:234}{免费进入|255:234}{『死亡神殿』|250:234}
+BREAK
+
+#IF 
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove T218
+give 回城卷 1
+SENDMSG 0 玩家〖%s〗进入了死亡神殿！
+#ELSEACT
+MESSAGEBOX 您没有1W金币！！
+break
+
+[@钳虫巢穴]
+#IF
+CHECKITEMS 传奇赞助斗笠
+#ACT
+mapmove T232
+SENDMSG 0 {〖系统〗 |249:234}{ぐ游戏提示:|251:234}{玩家|255:234}{『<$USERNAME>』|146:234}{拥有物品|255:234}{『传奇斗笠』|250:234}{免费进入|255:234}{『钳虫巢穴』|250:234}
+BREAK
+
+#IF 
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove T232
+give 回城卷 1
+SENDMSG 0 玩家〖%s〗进入了钳虫巢穴！
+#ELSEACT
+MESSAGEBOX 您没有1W金币！！
+break
+   
+[@尸王殿]
+#IF
+CHECKITEMS 传奇赞助斗笠
+#ACT
+mapmove Q004  14 14 
+SENDMSG 0 {〖系统〗 |249:234}{ぐ游戏提示:|251:234}{玩家|255:234}{『<$USERNAME>』|146:234}{拥有物品|255:234}{『传奇斗笠』|250:234}{免费进入|255:234}{『尸王殿』|250:234}
+BREAK
+
+
+#IF
+checkgold 10000
+#ACT
+take 金币 10000
+mapmove Q004  14 14 
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 您没有1万金币！！
+break
+
+
+[@赤月峡谷]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove 12  89 13 
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+[@祖玛寺庙]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove D501 168 214
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+[@沃玛寺庙]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove D022 340 356
+give 回城卷 1
+break
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+[@未知暗殿]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove E603 27 185 
+give 回城卷 1
+break
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+[@封魔矿区]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove D2000 177 106
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+[@比奇矿区]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove n0  654 215
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+[@毒蛇矿区]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove D421 31 373
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+[@猪洞]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove D711 203 201
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+[@骨魔洞]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove n5 545 131
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+[@尸魔洞]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove n5 523 615
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+[@牛魔洞]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove D2070 30 21
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+[@骷髅洞]
+#IF
+checkgold 2000
+#ACT
+take 金币 2000
+mapmove D011 150 365
+give 回城卷 1
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+[@苍月]
+#IF
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove n5 140 335
+break
+#ELSEACT
+MESSAGEBOX 您没有1000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+
+[@白日]
+#IF
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove n11 177 324
+break
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+[@封魔]
+#IF
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove n4 242 202
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+[@毒蛇]
+#IF
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove 2 500 480
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+[@土城]
+#IF
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove n3 332 332
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+
+[@比奇]
+#IF
+checkgold 1000
+#ACT
+take 金币 1000
+mapmove n0 330 270
+#ELSEACT
+MESSAGEBOX 您没有2000金币！！\　\先去新手地图砍砍小鸡儿、小鹿儿吧！
+break
+
+}

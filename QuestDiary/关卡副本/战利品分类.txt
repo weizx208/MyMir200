@@ -1,0 +1,479 @@
+[@玛法农场战利品]
+{
+#IF
+#ACT
+CHANGEEXP + 800
+give 金币 500
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\农场列表.txt <$STR(S1)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\农场列表.txt <$STR(S2)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\农场列表.txt <$STR(S3)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\农场列表.txt <$STR(S4)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\农场列表.txt <$STR(S5)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\农场列表.txt <$STR(S6)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\农场列表.txt <$STR(S7)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\农场列表.txt <$STR(S8)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\农场列表.txt <$STR(S9)>
+MOVR N11 1 3
+MOVR N21 1 3
+MOVR N31 1 3
+MOVR N41 1 3
+MOVR N51 1 3
+MOVR N61 1 3
+MOVR N71 1 3
+MOVR N81 1 3
+MOVR N91 1 3
+GIVE <$STR(S1)> <$STR(N11)>
+GIVE <$STR(S2)> <$STR(N21)>
+GIVE <$STR(S3)> <$STR(N31)>
+GIVE <$STR(S4)> <$STR(N41)>
+GIVE <$STR(S5)> <$STR(N51)>
+GIVE <$STR(S6)> <$STR(N61)>
+GIVE <$STR(S7)> <$STR(N71)>
+GIVE <$STR(S8)> <$STR(N81)>
+GIVE <$STR(S9)> <$STR(N91)>
+GetDBItemFieldValue <$STR(S1)> idx <$STR(N1)>
+GetDBItemFieldValue <$STR(S2)> idx <$STR(N2)>
+GetDBItemFieldValue <$STR(S3)> idx <$STR(N3)>
+GetDBItemFieldValue <$STR(S4)> idx <$STR(N4)>
+GetDBItemFieldValue <$STR(S5)> idx <$STR(N5)>
+GetDBItemFieldValue <$STR(S6)> idx <$STR(N6)>
+GetDBItemFieldValue <$STR(S7)> idx <$STR(N7)>
+GetDBItemFieldValue <$STR(S8)> idx <$STR(N8)>
+GetDBItemFieldValue <$STR(S9)> idx <$STR(N9)>
+#IF
+#ACT
+messagebox 本次扫荡获得:<经验值>x800，<金币>x500。\收获战利品为:\<ItemShow:<$STR(N1)>:<$STR(N11)>:0:0:1><ItemShow:<$STR(N2)>:<$STR(N21)>:0:0:1><ItemShow:<$STR(N3)>:<$STR(N31)>:0:0:1><ItemShow:<$STR(N4)>:<$STR(N41)>:0:0:1><ItemShow:<$STR(N5)>:<$STR(N51)>:0:0:1><ItemShow:<$STR(N6)>:<$STR(N61)>:0:0:1><ItemShow:<$STR(N7)>:<$STR(N71)>:0:0:1><ItemShow:<$STR(N8)>:<$STR(N81)>:0:0:1>\<ItemShow:<$STR(N9)>:<$STR(N91)>:0:25:1>
+
+}
+
+[@骷髅洞穴战利品]
+{
+#IF
+#ACT
+CHANGEEXP + 2000
+GIVE 金币 2000
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\骷髅列表.txt <$STR(S1)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\骷髅列表.txt <$STR(S2)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\骷髅列表.txt <$STR(S3)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\骷髅列表.txt <$STR(S4)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\骷髅列表.txt <$STR(S5)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\骷髅列表.txt <$STR(S6)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\骷髅列表.txt <$STR(S7)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\骷髅列表.txt <$STR(S8)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\骷髅列表.txt <$STR(S9)>
+MOVR N11 1 3
+MOVR N21 1 3
+MOVR N31 1 3
+MOVR N41 1 3
+MOVR N51 1 3
+MOVR N61 1 3
+MOVR N71 1 3
+MOVR N81 1 3
+MOVR N91 1 3
+GIVE <$STR(S1)> <$STR(N11)>
+GIVE <$STR(S2)> <$STR(N21)>
+GIVE <$STR(S3)> <$STR(N31)>
+GIVE <$STR(S4)> <$STR(N41)>
+GIVE <$STR(S5)> <$STR(N51)>
+GIVE <$STR(S6)> <$STR(N61)>
+GIVE <$STR(S7)> <$STR(N71)>
+GIVE <$STR(S8)> <$STR(N81)>
+GIVE <$STR(S9)> <$STR(N91)>
+GetDBItemFieldValue <$STR(S1)> idx <$STR(N1)>
+GetDBItemFieldValue <$STR(S2)> idx <$STR(N2)>
+GetDBItemFieldValue <$STR(S3)> idx <$STR(N3)>
+GetDBItemFieldValue <$STR(S4)> idx <$STR(N4)>
+GetDBItemFieldValue <$STR(S5)> idx <$STR(N5)>
+GetDBItemFieldValue <$STR(S6)> idx <$STR(N6)>
+GetDBItemFieldValue <$STR(S7)> idx <$STR(N7)>
+GetDBItemFieldValue <$STR(S8)> idx <$STR(N8)>
+GetDBItemFieldValue <$STR(S9)> idx <$STR(N9)>
+#IF
+#ACT
+messagebox 本次扫荡获得:<经验值>x2000，<金币>x2000。\收获战利品为:\<ItemShow:<$STR(N1)>:<$STR(N11)>:0:0:1><ItemShow:<$STR(N2)>:<$STR(N21)>:0:0:1><ItemShow:<$STR(N3)>:<$STR(N31)>:0:0:1><ItemShow:<$STR(N4)>:<$STR(N41)>:0:0:1><ItemShow:<$STR(N5)>:<$STR(N51)>:0:0:1><ItemShow:<$STR(N6)>:<$STR(N61)>:0:0:1><ItemShow:<$STR(N7)>:<$STR(N71)>:0:0:1><ItemShow:<$STR(N8)>:<$STR(N81)>:0:0:1>\<ItemShow:<$STR(N9)>:<$STR(N91)>:0:25:1>
+
+}
+
+[@僵尸洞穴战利品]
+{
+#IF
+#ACT
+CHANGEEXP + 4000
+GIVE 金币 4000
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\僵尸列表.txt <$STR(S1)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\僵尸列表.txt <$STR(S2)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\僵尸列表.txt <$STR(S3)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\僵尸列表.txt <$STR(S4)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\僵尸列表.txt <$STR(S5)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\僵尸列表.txt <$STR(S6)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\僵尸列表.txt <$STR(S7)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\僵尸列表.txt <$STR(S8)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\僵尸列表.txt <$STR(S9)>
+MOVR N11 1 3
+MOVR N21 1 3
+MOVR N31 1 3
+MOVR N41 1 3
+MOVR N51 1 3
+MOVR N61 1 3
+MOVR N71 1 3
+MOVR N81 1 3
+MOVR N91 1 3
+GIVE <$STR(S1)> <$STR(N11)>
+GIVE <$STR(S2)> <$STR(N21)>
+GIVE <$STR(S3)> <$STR(N31)>
+GIVE <$STR(S4)> <$STR(N41)>
+GIVE <$STR(S5)> <$STR(N51)>
+GIVE <$STR(S6)> <$STR(N61)>
+GIVE <$STR(S7)> <$STR(N71)>
+GIVE <$STR(S8)> <$STR(N81)>
+GIVE <$STR(S9)> <$STR(N91)>
+GetDBItemFieldValue <$STR(S1)> idx <$STR(N1)>
+GetDBItemFieldValue <$STR(S2)> idx <$STR(N2)>
+GetDBItemFieldValue <$STR(S3)> idx <$STR(N3)>
+GetDBItemFieldValue <$STR(S4)> idx <$STR(N4)>
+GetDBItemFieldValue <$STR(S5)> idx <$STR(N5)>
+GetDBItemFieldValue <$STR(S6)> idx <$STR(N6)>
+GetDBItemFieldValue <$STR(S7)> idx <$STR(N7)>
+GetDBItemFieldValue <$STR(S8)> idx <$STR(N8)>
+GetDBItemFieldValue <$STR(S9)> idx <$STR(N9)>
+#IF
+#ACT
+messagebox 本次扫荡获得:<经验值>x4000，<金币>x4000。\收获战利品为:\<ItemShow:<$STR(N1)>:<$STR(N11)>:0:0:1><ItemShow:<$STR(N2)>:<$STR(N21)>:0:0:1><ItemShow:<$STR(N3)>:<$STR(N31)>:0:0:1><ItemShow:<$STR(N4)>:<$STR(N41)>:0:0:1><ItemShow:<$STR(N5)>:<$STR(N51)>:0:0:1><ItemShow:<$STR(N6)>:<$STR(N61)>:0:0:1><ItemShow:<$STR(N7)>:<$STR(N71)>:0:0:1><ItemShow:<$STR(N8)>:<$STR(N81)>:0:0:1>\<ItemShow:<$STR(N9)>:<$STR(N91)>:0:25:1>
+
+}
+
+[@沃玛神庙战利品]
+{
+#IF
+#ACT
+CHANGEEXP + 30000
+GIVE 金币 20000
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\沃玛列表.txt <$STR(S1)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\沃玛列表.txt <$STR(S2)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\沃玛列表.txt <$STR(S3)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\沃玛列表.txt <$STR(S4)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\沃玛列表.txt <$STR(S5)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\沃玛列表.txt <$STR(S6)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\沃玛列表.txt <$STR(S7)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\沃玛列表.txt <$STR(S8)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\沃玛列表.txt <$STR(S9)>
+MOVR N11 1 3
+MOVR N21 1 3
+MOVR N31 1 3
+MOVR N41 1 3
+MOVR N51 1 3
+MOVR N61 1 3
+MOVR N71 1 3
+MOVR N81 1 3
+MOVR N91 1 3
+GIVE <$STR(S1)> <$STR(N11)>
+GIVE <$STR(S2)> <$STR(N21)>
+GIVE <$STR(S3)> <$STR(N31)>
+GIVE <$STR(S4)> <$STR(N41)>
+GIVE <$STR(S5)> <$STR(N51)>
+GIVE <$STR(S6)> <$STR(N61)>
+GIVE <$STR(S7)> <$STR(N71)>
+GIVE <$STR(S8)> <$STR(N81)>
+GIVE <$STR(S9)> <$STR(N91)>
+GetDBItemFieldValue <$STR(S1)> idx <$STR(N1)>
+GetDBItemFieldValue <$STR(S2)> idx <$STR(N2)>
+GetDBItemFieldValue <$STR(S3)> idx <$STR(N3)>
+GetDBItemFieldValue <$STR(S4)> idx <$STR(N4)>
+GetDBItemFieldValue <$STR(S5)> idx <$STR(N5)>
+GetDBItemFieldValue <$STR(S6)> idx <$STR(N6)>
+GetDBItemFieldValue <$STR(S7)> idx <$STR(N7)>
+GetDBItemFieldValue <$STR(S8)> idx <$STR(N8)>
+GetDBItemFieldValue <$STR(S9)> idx <$STR(N9)>
+#IF
+#ACT
+messagebox 本次扫荡获得:<经验值>x30000，<金币>x20000。\收获战利品为:\<ItemShow:<$STR(N1)>:<$STR(N11)>:0:0:1><ItemShow:<$STR(N2)>:<$STR(N21)>:0:0:1><ItemShow:<$STR(N3)>:<$STR(N31)>:0:0:1><ItemShow:<$STR(N4)>:<$STR(N41)>:0:0:1><ItemShow:<$STR(N5)>:<$STR(N51)>:0:0:1><ItemShow:<$STR(N6)>:<$STR(N61)>:0:0:1><ItemShow:<$STR(N7)>:<$STR(N71)>:0:0:1><ItemShow:<$STR(N8)>:<$STR(N81)>:0:0:1>\<ItemShow:<$STR(N9)>:<$STR(N91)>:0:25:1>
+}
+
+[@恶虫之窟战利品]
+{
+#IF
+#ACT
+CHANGEEXP + 40000
+GIVE 金币 30000
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\蜈蚣列表.txt <$STR(S1)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\蜈蚣列表.txt <$STR(S2)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\蜈蚣列表.txt <$STR(S3)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\蜈蚣列表.txt <$STR(S4)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\蜈蚣列表.txt <$STR(S5)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\蜈蚣列表.txt <$STR(S6)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\蜈蚣列表.txt <$STR(S7)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\蜈蚣列表.txt <$STR(S8)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\蜈蚣列表.txt <$STR(S9)>
+MOVR N11 1 3
+MOVR N21 1 3
+MOVR N31 1 3
+MOVR N41 1 3
+MOVR N51 1 3
+MOVR N61 1 3
+MOVR N71 1 3
+MOVR N81 1 3
+MOVR N91 1 3
+GIVE <$STR(S1)> <$STR(N11)>
+GIVE <$STR(S2)> <$STR(N21)>
+GIVE <$STR(S3)> <$STR(N31)>
+GIVE <$STR(S4)> <$STR(N41)>
+GIVE <$STR(S5)> <$STR(N51)>
+GIVE <$STR(S6)> <$STR(N61)>
+GIVE <$STR(S7)> <$STR(N71)>
+GIVE <$STR(S8)> <$STR(N81)>
+GIVE <$STR(S9)> <$STR(N91)>
+GetDBItemFieldValue <$STR(S1)> idx <$STR(N1)>
+GetDBItemFieldValue <$STR(S2)> idx <$STR(N2)>
+GetDBItemFieldValue <$STR(S3)> idx <$STR(N3)>
+GetDBItemFieldValue <$STR(S4)> idx <$STR(N4)>
+GetDBItemFieldValue <$STR(S5)> idx <$STR(N5)>
+GetDBItemFieldValue <$STR(S6)> idx <$STR(N6)>
+GetDBItemFieldValue <$STR(S7)> idx <$STR(N7)>
+GetDBItemFieldValue <$STR(S8)> idx <$STR(N8)>
+GetDBItemFieldValue <$STR(S9)> idx <$STR(N9)>
+#IF
+#ACT
+messagebox 本次扫荡获得:<经验值>x40000，<金币>x30000。\收获战利品为:\<ItemShow:<$STR(N1)>:<$STR(N11)>:0:0:1><ItemShow:<$STR(N2)>:<$STR(N21)>:0:0:1><ItemShow:<$STR(N3)>:<$STR(N31)>:0:0:1><ItemShow:<$STR(N4)>:<$STR(N41)>:0:0:1><ItemShow:<$STR(N5)>:<$STR(N51)>:0:0:1><ItemShow:<$STR(N6)>:<$STR(N61)>:0:0:1><ItemShow:<$STR(N7)>:<$STR(N71)>:0:0:1><ItemShow:<$STR(N8)>:<$STR(N81)>:0:0:1>\<ItemShow:<$STR(N9)>:<$STR(N91)>:0:25:1>
+
+}
+
+[@野猪巢穴战利品]
+{
+#IF
+#ACT
+CHANGEEXP + 80000
+GIVE 金币 60000
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\野猪列表.txt <$STR(S1)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\野猪列表.txt <$STR(S2)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\野猪列表.txt <$STR(S3)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\野猪列表.txt <$STR(S4)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\野猪列表.txt <$STR(S5)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\野猪列表.txt <$STR(S6)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\野猪列表.txt <$STR(S7)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\野猪列表.txt <$STR(S8)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\野猪列表.txt <$STR(S9)>
+MOVR N11 1 3
+MOVR N21 1 3
+MOVR N31 1 3
+MOVR N41 1 3
+MOVR N51 1 3
+MOVR N61 1 3
+MOVR N71 1 3
+MOVR N81 1 3
+MOVR N91 1 3
+GIVE <$STR(S1)> <$STR(N11)>
+GIVE <$STR(S2)> <$STR(N21)>
+GIVE <$STR(S3)> <$STR(N31)>
+GIVE <$STR(S4)> <$STR(N41)>
+GIVE <$STR(S5)> <$STR(N51)>
+GIVE <$STR(S6)> <$STR(N61)>
+GIVE <$STR(S7)> <$STR(N71)>
+GIVE <$STR(S8)> <$STR(N81)>
+GIVE <$STR(S9)> <$STR(N91)>
+GetDBItemFieldValue <$STR(S1)> idx <$STR(N1)>
+GetDBItemFieldValue <$STR(S2)> idx <$STR(N2)>
+GetDBItemFieldValue <$STR(S3)> idx <$STR(N3)>
+GetDBItemFieldValue <$STR(S4)> idx <$STR(N4)>
+GetDBItemFieldValue <$STR(S5)> idx <$STR(N5)>
+GetDBItemFieldValue <$STR(S6)> idx <$STR(N6)>
+GetDBItemFieldValue <$STR(S7)> idx <$STR(N7)>
+GetDBItemFieldValue <$STR(S8)> idx <$STR(N8)>
+GetDBItemFieldValue <$STR(S9)> idx <$STR(N9)>
+#IF
+#ACT
+messagebox 本次扫荡获得:<经验值>x80000，<金币>x60000。\收获战利品为:\<ItemShow:<$STR(N1)>:<$STR(N11)>:0:0:1><ItemShow:<$STR(N2)>:<$STR(N21)>:0:0:1><ItemShow:<$STR(N3)>:<$STR(N31)>:0:0:1><ItemShow:<$STR(N4)>:<$STR(N41)>:0:0:1><ItemShow:<$STR(N5)>:<$STR(N51)>:0:0:1><ItemShow:<$STR(N6)>:<$STR(N61)>:0:0:1><ItemShow:<$STR(N7)>:<$STR(N71)>:0:0:1><ItemShow:<$STR(N8)>:<$STR(N81)>:0:0:1>\<ItemShow:<$STR(N9)>:<$STR(N91)>:0:25:1>
+
+}
+
+[@祖玛神庙战利品]
+{
+#IF
+#ACT
+CHANGEEXP + 150000
+GIVE 金币 200000
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\祖玛列表.txt <$STR(S1)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\祖玛列表.txt <$STR(S2)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\祖玛列表.txt <$STR(S3)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\祖玛列表.txt <$STR(S4)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\祖玛列表.txt <$STR(S5)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\祖玛列表.txt <$STR(S6)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\祖玛列表.txt <$STR(S7)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\祖玛列表.txt <$STR(S8)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\祖玛列表.txt <$STR(S9)>
+MOVR N11 1 3
+MOVR N21 1 3
+MOVR N31 1 3
+MOVR N41 1 3
+MOVR N51 1 3
+MOVR N61 1 3
+MOVR N71 1 3
+MOVR N81 1 3
+MOVR N91 1 3
+GIVE <$STR(S1)> <$STR(N11)>
+GIVE <$STR(S2)> <$STR(N21)>
+GIVE <$STR(S3)> <$STR(N31)>
+GIVE <$STR(S4)> <$STR(N41)>
+GIVE <$STR(S5)> <$STR(N51)>
+GIVE <$STR(S6)> <$STR(N61)>
+GIVE <$STR(S7)> <$STR(N71)>
+GIVE <$STR(S8)> <$STR(N81)>
+GIVE <$STR(S9)> <$STR(N91)>
+GetDBItemFieldValue <$STR(S1)> idx <$STR(N1)>
+GetDBItemFieldValue <$STR(S2)> idx <$STR(N2)>
+GetDBItemFieldValue <$STR(S3)> idx <$STR(N3)>
+GetDBItemFieldValue <$STR(S4)> idx <$STR(N4)>
+GetDBItemFieldValue <$STR(S5)> idx <$STR(N5)>
+GetDBItemFieldValue <$STR(S6)> idx <$STR(N6)>
+GetDBItemFieldValue <$STR(S7)> idx <$STR(N7)>
+GetDBItemFieldValue <$STR(S8)> idx <$STR(N8)>
+GetDBItemFieldValue <$STR(S9)> idx <$STR(N9)>
+#IF
+#ACT
+messagebox 本次扫荡获得:<经验值>x150000，<金币>x200000。\收获战利品为:\<ItemShow:<$STR(N1)>:<$STR(N11)>:0:0:1><ItemShow:<$STR(N2)>:<$STR(N21)>:0:0:1><ItemShow:<$STR(N3)>:<$STR(N31)>:0:0:1><ItemShow:<$STR(N4)>:<$STR(N41)>:0:0:1><ItemShow:<$STR(N5)>:<$STR(N51)>:0:0:1><ItemShow:<$STR(N6)>:<$STR(N61)>:0:0:1><ItemShow:<$STR(N7)>:<$STR(N71)>:0:0:1><ItemShow:<$STR(N8)>:<$STR(N81)>:0:0:1>\<ItemShow:<$STR(N9)>:<$STR(N91)>:0:25:1>
+
+}
+
+[@牛魔领地战利品]
+{
+#IF
+#ACT
+CHANGEEXP + 250000
+GIVE 金币 300000
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\牛魔列表.txt <$STR(S1)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\牛魔列表.txt <$STR(S2)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\牛魔列表.txt <$STR(S3)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\牛魔列表.txt <$STR(S4)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\牛魔列表.txt <$STR(S5)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\牛魔列表.txt <$STR(S6)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\牛魔列表.txt <$STR(S7)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\牛魔列表.txt <$STR(S8)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\牛魔列表.txt <$STR(S9)>
+MOVR N11 1 3
+MOVR N21 1 3
+MOVR N31 1 3
+MOVR N41 1 3
+MOVR N51 1 3
+MOVR N61 1 3
+MOVR N71 1 3
+MOVR N81 1 3
+MOVR N91 1 3
+GIVE <$STR(S1)> <$STR(N11)>
+GIVE <$STR(S2)> <$STR(N21)>
+GIVE <$STR(S3)> <$STR(N31)>
+GIVE <$STR(S4)> <$STR(N41)>
+GIVE <$STR(S5)> <$STR(N51)>
+GIVE <$STR(S6)> <$STR(N61)>
+GIVE <$STR(S7)> <$STR(N71)>
+GIVE <$STR(S8)> <$STR(N81)>
+GIVE <$STR(S9)> <$STR(N91)>
+GetDBItemFieldValue <$STR(S1)> idx <$STR(N1)>
+GetDBItemFieldValue <$STR(S2)> idx <$STR(N2)>
+GetDBItemFieldValue <$STR(S3)> idx <$STR(N3)>
+GetDBItemFieldValue <$STR(S4)> idx <$STR(N4)>
+GetDBItemFieldValue <$STR(S5)> idx <$STR(N5)>
+GetDBItemFieldValue <$STR(S6)> idx <$STR(N6)>
+GetDBItemFieldValue <$STR(S7)> idx <$STR(N7)>
+GetDBItemFieldValue <$STR(S8)> idx <$STR(N8)>
+GetDBItemFieldValue <$STR(S9)> idx <$STR(N9)>
+#IF
+#ACT
+messagebox 本次扫荡获得:<经验值>x250000，<金币>x300000。\收获战利品为:\<ItemShow:<$STR(N1)>:<$STR(N11)>:0:0:1><ItemShow:<$STR(N2)>:<$STR(N21)>:0:0:1><ItemShow:<$STR(N3)>:<$STR(N31)>:0:0:1><ItemShow:<$STR(N4)>:<$STR(N41)>:0:0:1><ItemShow:<$STR(N5)>:<$STR(N51)>:0:0:1><ItemShow:<$STR(N6)>:<$STR(N61)>:0:0:1><ItemShow:<$STR(N7)>:<$STR(N71)>:0:0:1><ItemShow:<$STR(N8)>:<$STR(N81)>:0:0:1>\<ItemShow:<$STR(N9)>:<$STR(N91)>:0:25:1>
+
+}
+
+[@万恶之源战利品]
+{
+#IF
+#ACT
+CHANGEEXP + 400000
+GIVE 金币 500000
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\赤月列表.txt <$STR(S1)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\赤月列表.txt <$STR(S2)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\赤月列表.txt <$STR(S3)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\赤月列表.txt <$STR(S4)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\赤月列表.txt <$STR(S5)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\赤月列表.txt <$STR(S6)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\赤月列表.txt <$STR(S7)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\赤月列表.txt <$STR(S8)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\赤月列表.txt <$STR(S9)>
+MOVR N11 1 3
+MOVR N21 1 3
+MOVR N31 1 3
+MOVR N41 1 3
+MOVR N51 1 3
+MOVR N61 1 3
+MOVR N71 1 3
+MOVR N81 1 3
+MOVR N91 1 3
+GIVE <$STR(S1)> <$STR(N11)>
+GIVE <$STR(S2)> <$STR(N21)>
+GIVE <$STR(S3)> <$STR(N31)>
+GIVE <$STR(S4)> <$STR(N41)>
+GIVE <$STR(S5)> <$STR(N51)>
+GIVE <$STR(S6)> <$STR(N61)>
+GIVE <$STR(S7)> <$STR(N71)>
+GIVE <$STR(S8)> <$STR(N81)>
+GIVE <$STR(S9)> <$STR(N91)>
+GetDBItemFieldValue <$STR(S1)> idx <$STR(N1)>
+GetDBItemFieldValue <$STR(S2)> idx <$STR(N2)>
+GetDBItemFieldValue <$STR(S3)> idx <$STR(N3)>
+GetDBItemFieldValue <$STR(S4)> idx <$STR(N4)>
+GetDBItemFieldValue <$STR(S5)> idx <$STR(N5)>
+GetDBItemFieldValue <$STR(S6)> idx <$STR(N6)>
+GetDBItemFieldValue <$STR(S7)> idx <$STR(N7)>
+GetDBItemFieldValue <$STR(S8)> idx <$STR(N8)>
+GetDBItemFieldValue <$STR(S9)> idx <$STR(N9)>
+#IF
+#ACT
+messagebox 本次扫荡获得:<经验值>x400000，<金币>x500000。\收获战利品为:\<ItemShow:<$STR(N1)>:<$STR(N11)>:0:0:1><ItemShow:<$STR(N2)>:<$STR(N21)>:0:0:1><ItemShow:<$STR(N3)>:<$STR(N31)>:0:0:1><ItemShow:<$STR(N4)>:<$STR(N41)>:0:0:1><ItemShow:<$STR(N5)>:<$STR(N51)>:0:0:1><ItemShow:<$STR(N6)>:<$STR(N61)>:0:0:1><ItemShow:<$STR(N7)>:<$STR(N71)>:0:0:1><ItemShow:<$STR(N8)>:<$STR(N81)>:0:0:1>\<ItemShow:<$STR(N9)>:<$STR(N91)>:0:25:1>
+
+}
+
+[@魔龙领域战利品]
+{
+#IF
+#ACT
+CHANGEEXP + 666666
+GIVE 金币 888888
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\魔龙列表.txt <$STR(S1)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\魔龙列表.txt <$STR(S2)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\魔龙列表.txt <$STR(S3)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\魔龙列表.txt <$STR(S4)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\魔龙列表.txt <$STR(S5)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\魔龙列表.txt <$STR(S6)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\魔龙列表.txt <$STR(S7)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\魔龙列表.txt <$STR(S8)>
+GETRANDOMLINETEXT ..\QuestDiary\关卡副本\魔龙列表.txt <$STR(S9)>
+MOVR N11 1 3
+MOVR N21 1 3
+MOVR N31 1 3
+MOVR N41 1 3
+MOVR N51 1 3
+MOVR N61 1 3
+MOVR N71 1 3
+MOVR N81 1 3
+MOVR N91 1 3
+GIVE <$STR(S1)> <$STR(N11)>
+GIVE <$STR(S2)> <$STR(N21)>
+GIVE <$STR(S3)> <$STR(N31)>
+GIVE <$STR(S4)> <$STR(N41)>
+GIVE <$STR(S5)> <$STR(N51)>
+GIVE <$STR(S6)> <$STR(N61)>
+GIVE <$STR(S7)> <$STR(N71)>
+GIVE <$STR(S8)> <$STR(N81)>
+GIVE <$STR(S9)> <$STR(N91)>
+GetDBItemFieldValue <$STR(S1)> idx <$STR(N1)>
+GetDBItemFieldValue <$STR(S2)> idx <$STR(N2)>
+GetDBItemFieldValue <$STR(S3)> idx <$STR(N3)>
+GetDBItemFieldValue <$STR(S4)> idx <$STR(N4)>
+GetDBItemFieldValue <$STR(S5)> idx <$STR(N5)>
+GetDBItemFieldValue <$STR(S6)> idx <$STR(N6)>
+GetDBItemFieldValue <$STR(S7)> idx <$STR(N7)>
+GetDBItemFieldValue <$STR(S8)> idx <$STR(N8)>
+GetDBItemFieldValue <$STR(S9)> idx <$STR(N9)>
+#IF
+#ACT
+messagebox 本次扫荡获得:<经验值>x666666，<金币>x888888。\收获战利品为:\<ItemShow:<$STR(N1)>:<$STR(N11)>:0:0:1><ItemShow:<$STR(N2)>:<$STR(N21)>:0:0:1><ItemShow:<$STR(N3)>:<$STR(N31)>:0:0:1><ItemShow:<$STR(N4)>:<$STR(N41)>:0:0:1><ItemShow:<$STR(N5)>:<$STR(N51)>:0:0:1><ItemShow:<$STR(N6)>:<$STR(N61)>:0:0:1><ItemShow:<$STR(N7)>:<$STR(N71)>:0:0:1><ItemShow:<$STR(N8)>:<$STR(N81)>:0:0:1>\<ItemShow:<$STR(N9)>:<$STR(N91)>:0:25:1>
+
+}
+

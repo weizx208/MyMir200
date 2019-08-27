@@ -1,0 +1,622 @@
+(@@sendmsg @storage @getback @@offlinemsg)
+
+[@ItemUpgrade]
+#IF
+CheckGold 100000
+#ACT
+Take 金币 100000
+#ELSEACT
+sendmsg 6 升级装备需要10w金币。
+SetUpgradeFail
+Break
+
+;-----------------------挂机----------------------------
+
+[@StartAutoOnline]
+#IF
+CHECKMAPNAME 3
+#ACT
+SENDMSG 6 盟重地图禁止挂机!
+#ELSEACT
+MESSAGEBOX 付费提示：\　\该地图不支持免费挂机动作，这可能需要消费您的挂机点。\　\是否同意付费挂机点进行挂机操作？(Y/N) @付费挂机 @取消
+break
+
+[@付费挂机]
+#IF
+LARGE U1 0
+#ACT
+DEC U1 1
+StartAutoPlayGame
+SetOnTimer 1 60
+SENDMSG 6 {[挂机]：已经开始挂机自动打怪，使用快捷键|255:0:1}{“CTRL+ALT+X”|254:0:1}{停止挂机。|255:0:1}
+SENDMSG 6 {[挂机]：盟重的托管中心升级地图不需消耗挂机点！|255:0:1}
+SENDMSG 6 {[挂机]：您支付了1分钟挂机时间，下1分钟开始计时。挂机时间剩余：[<$STR(U1)>分钟]|255:0:1}
+#ELSEACT
+MESSAGEBOX 付费提示：\　\您得挂机点为[0]已不足以挂机了！\　\您可以在商城中购买挂机点卷增加挂机时间！
+break
+
+[@StopAutoOnline]
+#IF
+#ACT
+SetOffTimer 1
+StopAutoPlayGame
+SENDMSG 6 [挂机]：已经停止了挂机自动打怪，使用快捷键{“CTRL+ALT+X”|254:0:1}开始挂机。
+
+;-----------------------新手礼物发放----------------------------
+
+[@天果礼物一]
+#IF
+CHECK [901] 1
+#ACT
+SET [901] 0
+KILLMONEXPRATE 300 7200
+GMEXECUTE SHOWEFFECT 78
+GUILDNOTICEMSG 251 252 提示：您己在线2分钟，获赠[3倍经验1小时]
+SENDCENTERMSG 251 0 您将获得系统送出的第2份礼物，请稍等[%d] 0 180 @天果礼物二
+CLOSEBIGDIALOGBOX
+BREAK
+#SAY
+恭喜<$USERNAME>，\ \
+您已经在线2分钟，第1份礼物己经发放到您的背包。\ \
+请不要下线，继续在线3分钟系统送您第2份礼物。\ \
+                                     <谢谢/@EXIT>
+[@天果礼物二]
+#IF
+CHECK [902] 1
+#ACT
+SET [902] 0
+GiveStateItem  随机传送石 1 1 0 1 1 1 0
+GiveStateItem 盟重传送石 1 1 0 1 1 1 0
+GMEXECUTE SHOWEFFECT 79
+GUILDNOTICEMSG 251 252 提示：您己在线3分钟，获赠[随机传送石][盟重传送石]各一份!
+SENDCENTERMSG 251 0 您将获得系统送出的第3份礼物，请稍等[%d] 0 300 @天果礼物三
+CLOSEBIGDIALOGBOX
+BREAK
+#SAY
+恭喜<$USERNAME>，\ \
+您已经在线5分钟，第2份礼物己经发放到您的背包。\ \
+请不要下线，继续在线5分钟系统送您第3份礼物。\ \
+                                     <谢谢/@EXIT>
+[@天果礼物三]
+#IF
+CHECK [903] 1
+#ACT
+SET [903] 0
+GiveStateItem 个性发型 1 1 0 1 1 1 0
+GMEXECUTE SHOWEFFECT 80
+GUILDNOTICEMSG 251 252 提示：您己在线10分钟，获赠[个性发型]一份!
+CLOSEBIGDIALOGBOX
+BREAK
+#SAY
+恭喜<$USERNAME>，\ \
+您已经在线10分钟，第3份礼物己经发放到您的背包。\ \
+礼物已发送完毕。游戏愉快！\ \
+                                     <谢谢/@EXIT>
+
+;-----------------------升级触发----------------------------
+
+[@PlayLevelUp]
+#IF
+#ACT
+#CALL [功能脚本\升级触发.TXT] @升级触发
+
+;-----------------------XXXX----------------------------
+
+[@bq]
+#ACT
+break
+
+;-----------------------XXXX----------------------------
+
+[@PlayOffLine]
+
+[@PlayReconnection]
+
+;-----------------------帮助触发-------------------------
+
+[@Help]
+
+;-------------------------------------------------------
+;-----------------------摆摊----------------------------
+
+[@ShopStall]
+#IF
+INSAFEZONE
+#ELSEACT
+MESSAGEBOX 需要在安全区才能摆摊。
+BREAK
+
+#IF
+CHECKSHOPSTALLSTATUS
+#ACT
+MESSAGEBOX 你是否确认要停止摆摊。 @确定开始或停止摆摊
+#ELSEACT
+MESSAGEBOX 你是否确认要开始摆摊。 @确定开始或停止摆摊
+
+[@确定开始或停止摆摊]
+#ACT
+SHOPSTALL
+
+[@QueryMyShopFail]
+
+#ACT
+MESSAGEBOX 你还没有个人商店，是否创建你的个人商店？\\点击确定创建个人商店。 @创建个人商店 @取消
+
+;-----------------------个人商店----------------------------
+
+[@创建个人商店]
+亲爱的玩家你好。这里可以申请开店。\
+你可以把你的物品放到你的店铺里出售，\
+游戏中的玩家可以查询到你要出售的物品。\
+也可以把不用的物品放到店铺的仓库里。\
+点击客户端中“店”就可以进入到你的店铺中,\
+也可以查询其他用户的店铺和物品，\
+可以很方便的把仓库物品和出售的物品相互转移。\
+还可以进行摆摊操作。\ 
+
+<我要开店(点击输入你喜欢的店铺名称)/@@InputString1>\
+
+[@InputString1]
+#IF
+CHECKMYSHOP
+#ACT
+MESSAGEBOX 你已经有店铺了。
+BREAK
+
+#IF
+CHECKSHOPNAME <$STR(S1)>
+#ACT
+MESSAGEBOX <$STR(S1)>店铺名称已经存在，请重新选择一个。
+BREAK
+
+#IF
+#ACT
+CREATEMYSHOP <$STR(S1)>
+
+[@CreateMyShopOK]
+#SAY
+你的店铺创建成功。
+
+[@CreateMyShopFail]
+#SAY
+你的店铺创建失败。
+
+[@取消]
+
+;-----------------------商铺购买触发----------------------------
+[@BuyShopItem]
+#IF
+small M0 9999
+#ACT
+AddTextList ..\QUESTDIARY\变量文件\商城消费记录.TXT 【<$USERNAME>】消费【<$STR(M0)>】个元宝购买了【<$STR(S0)>】<$DATETIME>
+SENDMSG 5 ※商铺※:购买【<$STR(S0)>】消费【<$STR(M0)>】元宝。
+BREAK
+#ELSEACT
+AddTextList ..\QUESTDIARY\变量文件\商城消费记录.TXT 【<$USERNAME>】消费【<$STR(M0)>】个金币购买了【<$STR(S0)>】<$DATETIME>
+SENDMSG 5 ※商铺※:购买【<$STR(S0)>】花费【<$STR(M0)>】金币。
+BREAK
+
+;-----------------------GM后台----------------------------
+
+[@UserCmd0]
+#IF
+ISADMIN
+#ACT
+#CALL [控制台.TXT] @控制台
+
+[@UserCmd1]
+#CALL [表情系统\表情.TXT] @表情
+
+;-----------------------拾取鉴定----------------------------
+
+;[@PickUpItemEX]
+;#CALL [拾取鉴定.TXT] @拾取鉴定
+
+;-----------------------死亡触发----------------------------
+
+[@PlayDie]
+#If
+#ACT
+INC U92 1
+
+#IF
+checkitemw 血饮
+EQUAL N$血咒 0
+NOT CHECKTEXTLIST ..\QuestDiary\怪物分类\BOSS.txt <$CURRRTARGETNAME>
+#ACT
+PLAYEFFECT 10 270 10 1 100 0 0 0 0
+PLAYSOUND Wav\M2-3.wav 1 4 0
+REALIVE
+L.AddhpPer - 20
+MOV N$血咒 1
+SetOnTimer 6 300 1
+break
+
+#if
+#ACT
+messagebox 是否花费500元宝原地复活？ @是 @否
+
+[@是]
+#IF
+CHECKGAMEGOLD > 499
+#ACT
+GAMEGOLD - 500
+REALIVE
+#elseact
+messagebox 元宝不足!
+goto @否
+
+[@否]
+#ACT
+gohome
+REALIVE
+
+;-----------------------物理攻击触发--------主动--------------------
+[@Attack]
+#CALL [攻击触发\攻击功能.TXT] @攻击功能
+#CALL [攻击触发\特殊装备.TXT] @特殊装备
+#CALL [武器精通.TXT] @精通
+;-----------------------物理攻击触发--------被动--------------------
+[@Struck]
+#CALL [被攻击触发\被攻击功能.TXT] @被攻击功能
+#CALL [被攻击触发\特殊装备a.TXT] @特殊装备a
+#CALL [被攻击触发\被攻击功能.TXT] @被物理
+
+
+;-----------------------魔法攻击触发--------主动--------------------
+[@MagicStruck]
+#CALL [被攻击触发\被攻击功能.TXT] @被攻击功能
+#CALL [被攻击触发\被攻击功能.TXT] @被魔法
+;-----------------------魔法攻击触发--------被动--------------------
+[@MagicAttack]
+#CALL [攻击触发\攻击功能.TXT] @魔法攻击功能
+#CALL [攻击触发\特殊装备.TXT] @特殊装备1
+#CALL [攻击触发\技能触发.TXT] @技能触发
+#CALL [武器精通.TXT] @精通
+
+;-----------------------杀怪触发----------------------------
+
+[@KillMon]
+#CALL [杀怪触发\杀怪功能.TXT] @杀怪功能
+#CALL [关卡副本\副本通关.TXT] @副本通关
+#CALL [杀怪触发\杀怪召唤.TXT] @套装杀怪
+#CALL [武器精通.TXT] @精通1
+
+;-----------------------杀怪触发--------对应地图参数中需要加入ONKILLMON才可生效--------------------
+[@OnKillMob]
+#CALL [\功能脚本\双击触发.txt] @双击触发
+
+#CALL [\功能脚本\穿戴触发.txt] @穿戴触发
+
+;-----------------------释放魔法的时候触发----------------------------
+
+[@MagSelfFunc2]
+#IF
+checkitemw 半月
+#ACT
+HumanHP + 8
+
+[@MagSelfFunc17]
+#CALL [\技能触发\逍遥扇.txt] @骷髅
+
+[@MagSelfFunc29]
+#IF
+checkitemw 半月
+#ACT
+HumanHP + 8
+
+[@MagSelfFunc28]
+#ACT
+M.PLAYEFFECT 84 90 18 1 100 0 0 0 1
+M.ChangeState 8 2 1
+
+[@MagSelfFunc30]
+#CALL [\技能触发\逍遥扇.txt] @神兽
+
+[@MagSelfFunc55]
+#CALL [\技能触发\逍遥扇.txt] @月灵
+#CALL [\技能触发\月灵共存.txt] @月灵A
+
+#IF 
+CHECKSLAVENAME 白虎幼崽
+#ACT
+break
+
+#IF
+checkitemw 白色虎齿项链
+random 16
+#ACT
+RECALLMOB 白虎幼崽 1 0 0
+
+[@MagSelfFunc69]
+#ACT
+M.ChangeState 8 <$STR(N$困魔)> 2
+
+[@MagSelfFunc1000]
+#IF
+EQUAL N500 0
+#ACT
+MOV N500 1
+sendmsg 6 开启烈焰之径。
+#ELSEACT
+MOV N500 0
+sendmsg 5 关闭烈焰之径。
+
+[@Walk]
+#CALL [\移动触发\幽灵.txt] @幽灵
+
+#IF
+EQUAL N500 1
+#ACT
+#CALL [\技能触发\火径.txt] @火径
+
+#IF
+EQUAL N$疾行 1
+#ACT
+#CALL [\技能触发\疾行.txt] @疾行
+
+[@Run]
+#CALL [\移动触发\幽灵.txt] @幽灵
+
+#IF
+EQUAL N500 1
+#ACT
+#CALL [\技能触发\火径.txt] @火径跑步
+
+#IF
+EQUAL N$疾行 1
+#ACT
+#CALL [\技能触发\疾行.txt] @疾行
+
+
+[@MagSelfFunc1005]
+#IF
+#ACT
+MOV N$疾行 1
+DELAYGOTO 10000 @清除疾行
+
+#IF
+CHECKSKILL 疾行如风 = 0
+#ACT
+CHANGESPEED 1 200 10
+CHANGESPEED 2 2 10
+break
+#IF
+CHECKSKILL 疾行如风 = 1
+#ACT
+CHANGESPEED 1 300 10
+CHANGESPEED 2 4 10
+break
+#IF
+CHECKSKILL 疾行如风 = 2
+#ACT
+CHANGESPEED 1 400 10
+CHANGESPEED 2 6 10
+break
+#IF
+CHECKSKILL 疾行如风 = 3
+#ACT
+CHANGESPEED 1 500 10
+CHANGESPEED 2 8 10
+break
+
+[@清除疾行]
+#ACT
+MOV N$疾行 0
+
+[@MagSelfFunc1006]
+#OR
+CHECKSLAVENAME 心魔1
+CHECKSLAVENAME 心魔11
+#ACT
+SENDMSG 6 唤醒失败...
+BREAK
+#IF
+gender man
+#ACT
+goto @男心魔
+#elseact
+goto @女心魔
+
+[@男心魔]
+#IF
+CHECKSKILL 心魔分离 = 0
+#ACT
+RECALLMOB 心魔1 1 0 0
+#IF
+CHECKSKILL 心魔分离 = 1
+#ACT
+RECALLMOB 心魔1 9 0 0
+#IF
+CHECKSKILL 心魔分离 = 2
+#ACT
+RECALLMOB 心魔1 1 0 0
+RECALLMOB 心魔1 1 0 0
+#IF
+CHECKSKILL 心魔分离 = 3
+#ACT
+RECALLMOB 心魔1 9 0 0
+RECALLMOB 心魔1 9 0 0
+
+[@女心魔]
+#IF
+CHECKSKILL 心魔分离 = 0
+#ACT
+RECALLMOB 心魔2 1 0 0
+#IF
+CHECKSKILL 心魔分离 = 1
+#ACT
+RECALLMOB 心魔2 9 0 0
+#IF
+CHECKSKILL 心魔分离 = 2
+#ACT
+RECALLMOB 心魔2 1 0 0
+RECALLMOB 心魔2 1 0 0
+#IF
+CHECKSKILL 心魔分离 = 3
+#ACT
+RECALLMOB 心魔2 9 0 0
+RECALLMOB 心魔2 9 0 0
+
+[@MagSelfFunc1007]
+#OR
+CHECKSLAVENAME 地狱恶魔1
+CHECKSLAVENAME 地狱恶魔2
+CHECKSLAVENAME 地狱恶魔3
+CHECKSLAVENAME 地狱恶魔4
+#ACT
+SENDMSG 6 召唤失败...
+BREAK
+
+#IF
+CHECKSKILL 地狱召唤 = 0
+#ACT
+DELAYGOTO 3000 @地狱恶魔1
+#IF
+CHECKSKILL 地狱召唤 = 1
+#ACT
+DELAYGOTO 3000 @地狱恶魔2
+#IF
+CHECKSKILL 地狱召唤 = 2
+#ACT
+DELAYGOTO 3000 @地狱恶魔3
+#IF
+CHECKSKILL 地狱召唤 = 3
+#ACT
+DELAYGOTO 3000 @地狱恶魔4
+
+[@地狱恶魔1]
+#ACT
+RECALLMOB 地狱恶魔1 1 0 0
+[@地狱恶魔2]
+#ACT
+RECALLMOB 地狱恶魔2 1 0 0
+[@地狱恶魔3]
+#ACT
+RECALLMOB 地狱恶魔3 1 0 0
+[@地狱恶魔4]
+#ACT
+RECALLMOB 地狱恶魔4 1 0 0
+
+;-----------------------按钮触发----------------------------
+[@ButtonClick1]
+#IF
+CHECKLEVELEX > 0
+#ACT
+ADDBUTTON 100 10 47 48 49 10 10 0 -1 展开图标
+DELBUTTON 1
+DELBUTTON 2
+DELBUTTON 3
+DELBUTTON 4
+DELBUTTON 5
+DELBUTTON 6
+DELBUTTON 7
+DELBUTTON 8
+DELBUTTON 9
+DELBUTTON 11
+DELBUTTON 12
+DELBUTTON 13
+DELBUTTON 14
+
+[@ButtonClick4]
+#CALL [\功能脚本\天果会员.TXT] @会员命令
+
+[@ButtonClick10]
+#CALL [\游戏登陆\按钮检测.txt] @开始按钮检测
+
+
+[@ButtonClick100]
+#CALL [一键回收\回收.TXT] @回收
+
+[@ButtonClick13]
+#ACT
+OpenStorageView 1
+
+
+
+[@ButtonClick17]
+#IF
+	EQUAL S$掉落提示过滤开启 已开启
+#ACT
+	MOV S$掉落提示过滤开启
+	FILTERGLOBALMSG 1 0
+	ADDBUTTON 78 17 274 275 276 88 80 7 -1 103#关闭掉落提示
+	BREAK
+	
+#IF
+#ACT
+	MOV S$掉落提示过滤开启 已开启
+	FILTERGLOBALMSG 1 1
+	ADDBUTTON 78 17 277 277 277 88 80 7 -1 103#开启掉落提示
+	BREAK
+	
+[@ButtonClick18]
+#IF
+	EQUAL S$公告提示过滤开启 已开启
+#ACT
+	MOV S$公告提示过滤开启
+	FILTERGLOBALMSG 2 0
+	ADDBUTTON 78 18 278 279 280 118 80 7 -1 103#关闭公告提示
+	BREAK
+	
+#IF
+#ACT
+	MOV S$公告提示过滤开启 已开启
+	FILTERGLOBALMSG 2 1
+	ADDBUTTON 78 18 281 281 281 118 80 7 -1 103#开启公告提示
+	BREAK
+	
+[@ButtonClick19]
+#IF
+	EQUAL S$全局提示过滤开启 已开启
+#ACT
+	MOV S$掉落提示过滤开启
+	MOV S$公告提示过滤开启
+	MOV S$全局提示过滤开启
+	FILTERGLOBALMSG 1 0
+	FILTERGLOBALMSG 2 0
+	FILTERGLOBALMSG 3 0
+	ADDBUTTON 78 17 274 275 276 88 80 7 -1 103#关闭掉落提示
+	ADDBUTTON 78 18 278 279 280 118 80 7 -1 103#关闭公告提示
+	ADDBUTTON 78 19 282 283 284 148 80 7 -1 103#关闭全服提示
+	BREAK
+	
+#IF
+#ACT
+	MOV S$掉落提示过滤开启 已开启
+	MOV S$公告提示过滤开启 已开启
+	MOV S$全局提示过滤开启 已开启
+	FILTERGLOBALMSG 1 1
+	FILTERGLOBALMSG 2 1
+	FILTERGLOBALMSG 3 1
+	ADDBUTTON 78 17 277 277 277 88 80 7 -1 103#开启全服提示
+	ADDBUTTON 78 18 281 281 281 118 80 7 -1 103#开启公告提示
+	ADDBUTTON 78 19 285 285 285 148 80 7 -1 103#开启掉落提示
+	BREAK
+
+;-----------------------按钮触发----------------------------
+
+[@净心池]
+#ACT
+AddhpPer + 100
+AddMpPer + 100
+SendCenterMsg 180 251 你的身体倍感舒适。 0 3
+
+[@退出副本]
+#ACT
+Movr N$随机X -9 9
+Movr N$随机Y -9 9
+Inc N$随机X 330
+Inc N$随机Y 330
+Mapmove n3 N$随机X N$随机Y
+close
+break
+;-----------------------杀人触发----------------------------
+[@KillPlay]
+#If
+#Act
+INC U91 1
+#CALL [\功能脚本\连杀脚本.txt] @连杀脚本_A
+
+
+
